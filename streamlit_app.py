@@ -29,7 +29,7 @@ st.image("logo2.jpg")
 
 st.subheader("Reservations formular  ")
 
-year = st.selectbox("booking år", options=[ "2025", "2026"])
+year = st.selectbox("booking år", options=[ "2024", "2025", "2026"])
 bruger = st.selectbox("bruger computer ", options=["finn"])
 
 now = st.date_input("booking dato")
@@ -47,53 +47,76 @@ st.markdown(f"**Antal dage denne booking**  {days.days}")
 
 
 if year == '2024':
-
-    if bruger == "finn":
-       #df = pd.read_excel('downloaded_file.xlsx', sheet_name='book_simp')
-        df = pd.read_excel(r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\2024 BOOKING 1_0.xlsx",
-                           'book_simp')
-
     if bruger == "naja":
-        df = pd.read_excel(r"C:Users\naja\Onedrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\2024 BOOKING 1_0.xlsx",
-                           'book_simp')
+        file_id = '1-9mALBucV-67ytDpfsWD9vUwXA_-tHOj'
+        url = f'https://drive.google.com/uc?id={file_id}'
+        df = pd.read_excel(url, sheet_name='book_simp')
+        print(df)
+        #df = pd.read_excel(r"C:\Users\naja\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\2025_BOOKING_ 2_0.xlsx",
+        #                   sheet_name='book_simp')
+    if bruger == "finn":
+
+        file_id = '1-9mALBucV-67ytDpfsWD9vUwXA_-tHOj'
+        url = f'https://drive.google.com/uc?id={file_id}'
+        df = pd.read_excel(url, sheet_name='book_simp')
+        print(df)
+        #df = pd.read_excel(r'C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\2025_BOOKING_ 2_0.xlsx',
+        #                   sheet_name='book_simp')
+
     else:
-        st.markdown("fil fejl 2024")
+        streamlit.markdown("Fil fejl 2025")
 
     new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
     unique_values = new_data["1-I"].unique()
+
     counts_1 = new_data["1-I"].value_counts()
     counts_2 = new_data["2-I"].value_counts()
     counts_3 = new_data["3-I"].value_counts()
     counts_4 = new_data["4-I"].value_counts()
     counts_5 = new_data["5-I"].value_counts()
-    vær_1 = (counts_1['F'])
-    vær_2 = (counts_2['F'])
-    vær_3 = (counts_3['F'])
-    vær_4 = (counts_4['F'])
-    vær_5 = (counts_5['F'])
-    if vær_1 == days.days:
+    #chat
+    print(f"Counts 1: {counts_1}")
+    print(f"Counts 2: {counts_2}")
+    print(f"Counts 3: {counts_3}")
+    print(f"Counts 4: {counts_4}")
+    print(f"Counts 5: {counts_5}")
+
+    room_1 = (counts_1.get("va", 0))
+    room_2 = (counts_2.get("va", 0))
+    room_3 = (counts_3.get("va", 0))
+    room_4 = (counts_4.get("va", 0))
+    room_5 = (counts_5.get("va", 0))
+    # chat
+    print(f"Room 1: {room_1}")
+    print(f"Room 2: {room_2}")
+    print(f"Room 3: {room_3}")
+    print(f"Room 4: {room_4}")
+    print(f"Room 5: {room_5}")
+
+    if room_1 == days.days:
         ledige_rum_1 = 1
     else:
         ledige_rum_1 = 0
-    if vær_2 == days.days:
+    if room_2 == days.days:
         ledige_rum_2 = 1
     else:
         ledige_rum_2 = 0
-    if vær_3 == days.days:
+    if room_3 == days.days:
         ledige_rum_3 = 1
     else:
         ledige_rum_3 = 0
-    if vær_4 == days.days:
+    if room_4 == days.days:
         ledige_rum_4 = 1
     else:
         ledige_rum_4 = 0
-    if vær_5 == days.days:
+    if room_5 == days.days:
         ledige_rum_5 = 1
     else:
         ledige_rum_5 = 0
     ledige_rum = ledige_rum_1 + ledige_rum_2 + ledige_rum_3 + ledige_rum_4 + ledige_rum_5
-    #print(unique_value)
-    st.markdown(f"**Antal ledige rum**  {ledige_rum}")
+    print(unique_values)
+    st.markdown(f"**Antal ledige rum**  {ledige_rum}")  # "ledige} rum ", {ledige_rum})
+
 
 if year == '2025':
 
@@ -395,12 +418,16 @@ nationalitet = st.text_input("Nationalitet - DK S N NL etc")
 
 #"D:\Hammerdata\Database hammerknuden.xlsx"
 #"Database hammerknuden.xlsx
+#https://docs.google.com/spreadsheets/d/1-9Ks0RY1bMlEM0QuYGVv5_VXztI97Yu6/edit?usp=drive_link&ouid=113417285199087461988&rtpof=true&sd=true
+file_id ='1-9Ks0RY1bMlEM0QuYGVv5_VXztI97Yu6'
+url = f'https://drive.google.com/uc?id={file_id}'
 
 st.subheader("USB database skal være indsat for at bruge known guest checkbox  ")
 known_guest = st.checkbox("check for known person")
 if known_guest:
 
-    df = pd.read_excel("D:\Hammerdata\Database hammerknuden.xlsx", sheet_name="Dtb", dtype={"telefon": str})
+    #df = pd.read_excel("D:\Hammerdata\Database hammerknuden.xlsx", sheet_name="Dtb", dtype={"telefon": str})
+    df = pd.read_excel(url, sheet_name='Dtb')
     search_value = telefon
     pd.set_option("display.max_columns", None)
     rows1 = df[df['telefon'] == search_value]
