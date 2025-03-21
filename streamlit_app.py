@@ -121,12 +121,20 @@ if year == '2024':
 if year == '2025':
 
     if bruger == "naja":
-        df = pd.read_excel(r"C:\Users\naja\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\2025_BOOKING_ 2_0.xlsx",
-                           sheet_name='book_simp')
-    if bruger == "finn":
-        df = pd.read_excel(r'C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\2025_BOOKING_ 2_0.xlsx',
-                           sheet_name='book_simp')
+        #df = pd.read_excel(r"C:\Users\naja\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\2025_BOOKING_ 2_0.xlsx",
+        #                   sheet_name='book_simp')
+        file_id = '1fS2Gs3mOTKGNj0DEQ96Kkahkj7nS_gJW'
+        url = f'https://drive.google.com/uc?id={file_id}'
+        df = pd.read_excel(url, sheet_name='book_simp')
+        print(df)
 
+    if bruger == "finn":
+        #df = pd.read_excel(r'C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\2025_BOOKING_ 2_0.xlsx',
+        #                   sheet_name='book_simp')
+        file_id = '1fS2Gs3mOTKGNj0DEQ96Kkahkj7nS_gJW'
+        url = f'https://drive.google.com/uc?id={file_id}'
+        df = pd.read_excel(url, sheet_name='book_simp')
+        print(df)
     else:
         streamlit.markdown("Fil fejl 2025")
 
@@ -419,21 +427,24 @@ nationalitet = st.text_input("Nationalitet - DK S N NL etc")
 #"D:\Hammerdata\Database hammerknuden.xlsx"
 #"Database hammerknuden.xlsx
 #https://docs.google.com/spreadsheets/d/1-9Ks0RY1bMlEM0QuYGVv5_VXztI97Yu6/edit?usp=drive_link&ouid=113417285199087461988&rtpof=true&sd=true
-file_id ='1-9Ks0RY1bMlEM0QuYGVv5_VXztI97Yu6'
-url = f'https://drive.google.com/uc?id={file_id}'
 
-st.subheader("USB database skal være indsat for at bruge known guest checkbox  ")
+
+
+#st.subheader("USB database skal være indsat for at bruge known guest checkbox  ")
 known_guest = st.checkbox("check for known person")
 if known_guest:
 
+    file_id ='1-9Ks0RY1bMlEM0QuYGVv5_VXztI97Yu6'
+    url = f'https://drive.google.com/uc?id={file_id}'
     #df = pd.read_excel("D:\Hammerdata\Database hammerknuden.xlsx", sheet_name="Dtb", dtype={"telefon": str})
     df = pd.read_excel(url, sheet_name='Dtb')
     search_value = telefon
     pd.set_option("display.max_columns", None)
     rows1 = df[df['telefon'] == search_value]
 
-    df = pd.read_excel("D:\Hammerdata\Database hammerknuden.xlsx", sheet_name="Dtb", dtype={"email": str})
+    #df = pd.read_excel("D:\Hammerdata\Database hammerknuden.xlsx", sheet_name="Dtb", dtype={"email": str})
     search_value = email_address
+    df = pd.read_excel(url, sheet_name='Dtb')
     pd.set_option("display.max_columns", None)
     rows2 = df[df['Email'] == search_value]
 
