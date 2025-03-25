@@ -491,7 +491,6 @@ if send_data and year == '2025':
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
                  rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast, pristotal, known,
                  excel_path=url)
-
                  #excel_path=r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025 output.xlsx")
     if bruger == "naja":
         some_book_data = ({year}, {booking_number}, {name}, {checkin_date}, {checkout_date}, {now}, {nationalitet},
