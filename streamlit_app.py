@@ -438,9 +438,9 @@ if known_guest:
     file_id ='1-9Ks0RY1bMlEM0QuYGVv5_VXztI97Yu6'
     url = f'https://drive.google.com/uc?id={file_id}'
     output = 'database.xlsx'
-    gdown.download(url, output,quiet=False)
+    gdown.download(url, output, quiet=False)
     #df = pd.read_excel("D:\Hammerdata\Database hammerknuden.xlsx", sheet_name="Dtb", dtype={"telefon": str})
-    df = pd.read_excel(output, sheet_name='Dtb')
+    df = pd.read_excel(url, output, sheet_name='Dtb')
     #df = pd.read_excel(url, sheet_name='Dtb')
     search_value = telefon
     pd.set_option("display.max_columns", None)
@@ -448,7 +448,7 @@ if known_guest:
 
     #df = pd.read_excel("D:\Hammerdata\Database hammerknuden.xlsx", sheet_name="Dtb", dtype={"email": str})
     search_value = email_address
-    df = pd.read_excel(url, sheet_name='Dtb')
+    df = pd.read_excel(url, output, sheet_name='Dtb')
     pd.set_option("display.max_columns", None)
     rows2 = df[df['Email'] == search_value]
 
