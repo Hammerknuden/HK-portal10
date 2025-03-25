@@ -437,17 +437,17 @@ if known_guest:
 
     file_id = '1-9Ks0RY1bMlEM0QuYGVv5_VXztI97Yu6'
     url = f'https://drive.google.com/uc?id={file_id}'
-    output = 'database.xlsx'
-    gdown.download(url, output, quiet=False)
+    #output = 'database.xlsx'
+    #gdown.download(url, output, quiet=False)
     #df = pd.read_excel("D:\Hammerdata\Database hammerknuden.xlsx", sheet_name="Dtb", dtype={"telefon": str})
-    df = pd.read_excel(output, sheet_name='Dtb')
-    #df = pd.read_excel(url, sheet_name='Dtb')
+    #df = pd.read_excel(output, sheet_name='Dtb')
+    df = pd.read_excel(url, sheet_name='Dtb')
     search_value = telefon
     pd.set_option("display.max_columns", None)
     rows1 = df[df['telefon'] == search_value]
     #df = pd.read_excel("D:\Hammerdata\Database hammerknuden.xlsx", sheet_name="Dtb", dtype={"email": str})
     search_value = email_address
-    df = pd.read_excel(output)
+    df = pd.read_excel(url)
     pd.set_option("display.max_columns", None)
     rows2 = df[df['Email'] == search_value]
 
@@ -473,7 +473,7 @@ if send_data and year == '2024':
                  excel_path=r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2024 output.xlsx")
     if bruger == "naja":
         some_book_data = ({year}, {booking_number}, {name}, {checkin_date}, {checkout_date}, {now}, {nationalitet},
-                          {web},{seng}, {rabat}, {num_rooms}, {num_guests}, {email_address}, {telefon}, {spouse},
+                          {web}, {seng}, {rabat}, {num_rooms}, {num_guests}, {email_address}, {telefon}, {spouse},
                           {single_room}, {breakfast}, {pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
                  rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast, pristotal, known,
@@ -483,12 +483,16 @@ if send_data and year == '2024':
 
 if send_data and year == '2025':
     if bruger == "finn":
+        file_id = '1QGGa7LG9OfryfefhJ4QohGYxqjNJ-fPg'
+        url = f'https://drive.google.com/uc?id={file_id}'
         some_book_data = ({year}, {booking_number}, {name}, {checkin_date}, {checkout_date}, {now}, {nationalitet},
                           {web}, {seng}, {rabat}, {num_rooms}, {num_guests}, {email_address}, {telefon}, {spouse},
                           {single_room}, {breakfast}, {pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
                  rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast, pristotal, known,
-                 excel_path=r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025 output.xlsx")
+                 excel_path=url)
+
+                 #excel_path=r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025 output.xlsx")
     if bruger == "naja":
         some_book_data = ({year}, {booking_number}, {name}, {checkin_date}, {checkout_date}, {now}, {nationalitet},
                           {web}, {seng}, {rabat}, {num_rooms}, {num_guests}, {email_address}, {telefon}, {spouse},
