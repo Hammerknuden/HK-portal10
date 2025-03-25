@@ -6,6 +6,7 @@ import requests
 from datetime import datetime, date
 from pathlib import Path
 import numpy as np
+import gdown
 #from django.contrib.sites import requests
 
 from confirmation_email import (admin_email, send_danish_confirmation_email, send_english_confirmation_email,
