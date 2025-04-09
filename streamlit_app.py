@@ -122,18 +122,20 @@ if year == '2024':
 if year == '2025':
 
     if bruger == "naja":
+        url = 'https://my.microsoftpersonalcontent.com/personal/3be7f4b38f07ed41/_layouts/15/download.aspx?UniqueId=1077df0c-baf7-4a87-ad56-dd626b73020b&Translate=false&tempauth=v1e.eyJzaXRlaWQiOiI4MTRkMjJlYi05ZmY2LTRmZWMtYjcxNi04M2VkNWYxODdiNWUiLCJhcHBpZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDA0ODE3MTBhNCIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC9teS5taWNyb3NvZnRwZXJzb25hbGNvbnRlbnQuY29tQDkxODgwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCIsImV4cCI6IjE3NDQyMjI0NjUifQ.KC9jXbujauBxUH6l2xsghR-L_3X_2LaUGcbOTvSIGJJwcYKActkI0tDaHFx3Xilu1kv9fHLI0jLJ9-5fuWGOUbFZvDnmskLBp3kVd-HCS_N-MZIRAGVz1LYrDh4eQMJ7vEZxgHsnVYjh-F28F02zzzd1-tg3dApt8hCTtfJuyxuNqg9bkfDMcJkdpduO44JO69d6GJlOOyCFi6QRGsNad1aDy0sszgRyDbv9t_HITvV4dzBhHRtjRiPj7eNJzGd1fyrPVJREJGl3L-jqKLh0vwaWGoN4qcHL-nEgUmRZWJ4PpTNOdvXSlZ2IKojzBtMB-ZK_G4I4gSX7K7Gr732iBfYDRG711ANop0N-Kg6pBO0EgYhpczkouJCGb-EBlYAdHDx00YCaxMVeTgmXrWlFBw.Sx5UzW5NW5VRE8yivXqnZKw88cSewUT3egnggwwptKU&ApiVersion=2.0&AVOverride=1'
         #df = pd.read_excel(r"C:\Users\naja\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\2025_BOOKING_ 2_0.xlsx",
         #                   sheet_name='book_simp')
-        file_id = '1fS2Gs3mOTKGNj0DEQ96Kkahkj7nS_gJW'
-        url = f'https://drive.google.com/uc?id={file_id}'
+        #file_id = '1fS2Gs3mOTKGNj0DEQ96Kkahkj7nS_gJW'
+        #url = f'https://drive.google.com/uc?id={file_id}'
         df = pd.read_excel(url, sheet_name='book_simp')
         print(df)
 
     if bruger == "finn":
+        url = 'https://my.microsoftpersonalcontent.com/personal/3be7f4b38f07ed41/_layouts/15/download.aspx?UniqueId=1077df0c-baf7-4a87-ad56-dd626b73020b&Translate=false&tempauth=v1e.eyJzaXRlaWQiOiI4MTRkMjJlYi05ZmY2LTRmZWMtYjcxNi04M2VkNWYxODdiNWUiLCJhcHBpZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDA0ODE3MTBhNCIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC9teS5taWNyb3NvZnRwZXJzb25hbGNvbnRlbnQuY29tQDkxODgwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCIsImV4cCI6IjE3NDQyMjI0NjUifQ.KC9jXbujauBxUH6l2xsghR-L_3X_2LaUGcbOTvSIGJJwcYKActkI0tDaHFx3Xilu1kv9fHLI0jLJ9-5fuWGOUbFZvDnmskLBp3kVd-HCS_N-MZIRAGVz1LYrDh4eQMJ7vEZxgHsnVYjh-F28F02zzzd1-tg3dApt8hCTtfJuyxuNqg9bkfDMcJkdpduO44JO69d6GJlOOyCFi6QRGsNad1aDy0sszgRyDbv9t_HITvV4dzBhHRtjRiPj7eNJzGd1fyrPVJREJGl3L-jqKLh0vwaWGoN4qcHL-nEgUmRZWJ4PpTNOdvXSlZ2IKojzBtMB-ZK_G4I4gSX7K7Gr732iBfYDRG711ANop0N-Kg6pBO0EgYhpczkouJCGb-EBlYAdHDx00YCaxMVeTgmXrWlFBw.Sx5UzW5NW5VRE8yivXqnZKw88cSewUT3egnggwwptKU&ApiVersion=2.0&AVOverride=1'
         #df = pd.read_excel(r'C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\2025_BOOKING_ 2_0.xlsx',
         #                   sheet_name='book_simp')
-        file_id = '1fS2Gs3mOTKGNj0DEQ96Kkahkj7nS_gJW'
-        url = f'https://drive.google.com/uc?id={file_id}'
+        #file_id = '1fS2Gs3mOTKGNj0DEQ96Kkahkj7nS_gJW'
+        #url = f'https://drive.google.com/uc?id={file_id}'
         df = pd.read_excel(url, sheet_name='book_simp')
         print(df)
     else:
@@ -196,9 +198,10 @@ if year == '2026':
         df = pd.read_excel(r"C:\Users\naja\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\2025_BOOKING_ 2_0.xlsx",
                            sheet_name='book_simp')
     if bruger == "finn":
-        df = pd.read_excel(r'C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\2025_BOOKING_ 2_0.xlsx',
-                           sheet_name='book_simp')
-
+        url = 'https://my.microsoftpersonalcontent.com/personal/3be7f4b38f07ed41/_layouts/15/download.aspx?UniqueId=c4800bac-58a6-42a3-9d2a-384fbb61a0d4&Translate=false&tempauth=v1e.eyJzaXRlaWQiOiI4MTRkMjJlYi05ZmY2LTRmZWMtYjcxNi04M2VkNWYxODdiNWUiLCJhcHBpZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDA0ODE3MTBhNCIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC9teS5taWNyb3NvZnRwZXJzb25hbGNvbnRlbnQuY29tQDkxODgwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCIsImV4cCI6IjE3NDQyMjE5MjMifQ.3ZGKHNSNrEwxYS3J9-MkdowfhBw8yUhYO4e5yQU9fbUcBXcGDeyQemLwwMj4LTS-_oCECU8iGs2sIXEtW8FYp0J1H94xzI0k2MDrgLIDqlsWmXhe-zKL3GrN_EwHb6gY0HONqVr0y3pFpJ-ytxM6ja-EZrBhkS0seHbJOFM-y3K56iwlJXMNVdvzehjV_JUZCoUexKzSlyOPjZo-hVKgKJ_JjBM6ZM-0VmXAMi9xVFWs8qVe7da2sahwH_pf7jpRT4zRD29a_Q5FcKF8wSoFn702ccgQvTD4WKH4BHAxUoOPhElJ0RzMsEn_snhYPOxRBs2pBFh_sRg3G5uCzVjSFqWDl6GWKBgSeEFJmDqgH03LZZsNhiPYyj-IDyY5zZ9jmq5CbA2JV3f1hXFbupjYzg.wlYWX8uXnAPv-FWHMe3nolRvM4_9-uPQBzxIFXih1m8&ApiVersion=2.0&AVOverride=1'
+        #df = pd.read_excel(r'C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\2025_BOOKING_ 2_0.xlsx',
+        #                   sheet_name='book_simp')
+        df = pd.read_excel(url, sheet_name='book_simp')
     else:
         streamlit.markdown("Fil fejl 2025")
 
