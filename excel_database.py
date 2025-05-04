@@ -15,7 +15,7 @@ def add_data(year, book_data, booking_number, name, checkin_date, checkout_date,
 
     #file_id = '1QGGa7LG9OfryfefhJ4QohGYxqjNJ-fPg'
     #url = f'https://drive.google.com/uc?id={file_id}'
-    url = 'https://my.microsoftpersonalcontent.com/personal/3be7f4b38f07ed41/_layouts/15/download.aspx?UniqueId=8f07ed41-f4b3-20e7-803b-347a00000000&Translate=false&tempauth=v1e.eyJzaXRlaWQiOiI4MTRkMjJlYi05ZmY2LTRmZWMtYjcxNi04M2VkNWYxODdiNWUiLCJhcHBpZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDA0ODE3MTBhNCIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC9teS5taWNyb3NvZnRwZXJzb25hbGNvbnRlbnQuY29tQDkxODgwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCIsImV4cCI6IjE3NDQ1NjcxNTkifQ.FFKEiUyAVvvwNfcY-XURV5o9txNuDgDlkOqPCoOs9hxXaz6o8Xdl5JCuNqip1DsYf1PsL_eppOQaiMs8yAb19B-913qbl_Wm6WhBWSDg_ABTsKtoOjtZk2BobGKAMOe5YGKBVx2XRg9yYECK78nF6SL-BdlLvwDQ9h1-lk2xzHYjkuvQz-RUbDVP98oGUEulb0HyDoXoNHKXIKPWaDqwaO3Z1nX2ArxeJUsrYpCpyOVO9DgfZmZbXpN1ISaCftId69f-sL8p3VeBPp60q14wR6RSLRTCR6OogS6_n5FaT_i7WEWROhZZGQCQu8b-mj49cj7oK433D799xHEWQGZMj9aAtmgOlnNmYPd2DTR4vsJHqwRdku9GZHMxh6E5gMMnX1nDq9TiNRRgXxY_PfCkuQ.bfdtvAsY4-xAmvqfIV-uZJK8wsuXFS4ogvhuQHXceS4&ApiVersion=2.0&AVOverride=1'
+    url = 'https://drive.usercontent.google.com/download?id=1QGGa7LG9OfryfefhJ4QohGYxqjNJ-fPg&export=download&authuser=0&confirm=t&uuid=4ece34a8-c6d3-4fb2-b14f-d679260a2777&at=APcmpoxYX9pwMTHWhzO7j9CamHva:1746354652387'
     df1 = pd.DataFrame(book_data)
     print(df1)
     rek = int(booking_number)
