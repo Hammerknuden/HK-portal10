@@ -128,7 +128,9 @@ if year == '2026':
         df = pd.read_excel(r"C:\Users\naja\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\2025_BOOKING_ 2_0.xlsx",
                            sheet_name='book_simp')
     if bruger == "finn":
-        url = 'https://drive.usercontent.google.com/download?id=1RM638gexIKWNgr9MklHKUIhkbG04vRoS&export=download&authuser=0&confirm=t&uuid=c8cf876a-8582-47d3-9201-f610e3714aba&at=APcmpowNFjWHPIfgJEV53Hj998yU:1746354865653'
+        #url = 'https://drive.usercontent.google.com/download?id=1RM638gexIKWNgr9MklHKUIhkbG04vRoS&export=download&authuser=0&confirm=t&uuid=c8cf876a-8582-47d3-9201-f610e3714aba&at=APcmpowNFjWHPIfgJEV53Hj998yU:1746354865653'
+        #url = 'https://drive.usercontent.google.com/download?id=1RM638gexIKWNgr9MklHKUIhkbG04vRoS&export=download&authuser=0&confirm=t&uuid=725b9feb-58b8-4d60-96f3-c207ebf9d4d1&at=APcmpoytbzqvDaY2v0iWOoJegS7C:1746373384412'
+        url = 'https://drive.usercontent.google.com/download?id=1RM638gexIKWNgr9MklHKUIhkbG04vRoS&export=download&authuser=0&confirm=t&uuid=2155e28f-6119-49d6-902d-064afd303b6a&at=APcmpoxm7SwQpOQkyMWs_vCMRnR5:1746373726707'
         df = pd.read_excel(url, sheet_name='book_simp')
         print(df)
     else:
