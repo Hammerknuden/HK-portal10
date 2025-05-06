@@ -270,23 +270,20 @@ else:
     br_f = 0
     breakfast = "N"
 
-if Sprog == "DK":
-    if breakfast:
-        text_bf = "Morgenmad er inkluderet i prisen"
-    else:
-        text_bf = "Morgenmas er ikke inkluderet i prisen"
+if breakfast and Sprog == "DK":
+    text_bf = "Morgenmad er inkluderet i prisen"
+else:
+    text_bf = "Morgenmad er ikke inkluderet i prisen"
 
-if Sprog == "UK":
-    if breakfast:
-        text_bf = "Breakfast is included "
-    else:
-        text_bf = " Breakfast is not included "
+if breakfast and Sprog == "UK":
+    text_bf = "Breakfast is included "
+else:
+    text_bf = " Breakfast is not included "
 
-if Sprog == "D":
-    if breakfast:
-        text_bf = "Das Frühstück ist im Preis inbegriffen"
-    else:
-        text_bf = "Frühstück ist nicht mit enthalten"
+if breakfast and Sprog == "D":
+    text_bf = "Das Frühstück ist im Preis inbegriffen"
+else:
+    text_bf = "Frühstück ist nicht mit enthalten"
 
 
 if year == '2024':
