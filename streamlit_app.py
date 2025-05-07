@@ -265,25 +265,37 @@ Sprog = st.selectbox("Sprog - email confirmation dk uk D", options=["DK", "UK", 
 breakfast = st.checkbox("Morgenmad")
 if breakfast:
     br_f = int(bf_price * int(num_guests) * int(days.days))
-    breakfast = "Y"
+    BF = "Y"
+    if Sprog == "DK":
+        text_bf = "Morgenmad er inkluderet i prisen"
+    if Sprog == "UK":
+        text_bf = "Breakfast is included "
+    if Sprog == "D":
+        text_bf = "Das Frühstück ist im Preis inbegriffen"
 else:
     br_f = 0
-    breakfast = "N"
+    BF = "N"
+    if Sprog == "DK":
+        text_bf = "Morgenmad er ikke inkluderet i prisen"
+    if Sprog == "UK":
+        text_bf = " Breakfast is not included "
+    if Sprog == "D":
+        text_bf = "Frühstück ist nicht mit enthalten"
 
-if breakfast and Sprog == "DK":
-    text_bf = "Morgenmad er inkluderet i prisen"
-else:
-    text_bf = "Morgenmad er ikke inkluderet i prisen"
+#if breakfast and Sprog == "DK":
+#    text_bf = "Morgenmad er inkluderet i prisen"
+#else:
+#    text_bf = "Morgenmad er ikke inkluderet i prisen"
 
-if breakfast and Sprog == "UK":
-    text_bf = "Breakfast is included "
-else:
-    text_bf = " Breakfast is not included "
+#if breakfast and Sprog == "UK":
+#    text_bf = "Breakfast is included "
+#else:
+#    text_bf = " Breakfast is not included "
 
-if breakfast and Sprog == "D":
-    text_bf = "Das Frühstück ist im Preis inbegriffen"
-else:
-    text_bf = "Frühstück ist nicht mit enthalten"
+#if breakfast and Sprog == "D":
+#    text_bf = "Das Frühstück ist im Preis inbegriffen"
+#else:
+ #   text_bf = "Frühstück ist nicht mit enthalten"
 
 
 if year == '2024':

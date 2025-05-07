@@ -4,14 +4,14 @@ import streamlit
 
 
 def add_data(year, book_data, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng, procent,
-             num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast, pristotal, known,
+             num_rooms, num_guests, email_address, telefon, spouse, single_room, BF, pristotal, known,
              excel_path='url'):
 
     book_data = {'book nr': [booking_number], 'navn': [name], 'Checkin': [checkin_date],
                  'checkout': [checkout_date], 'booking dato': [now], 'nation': [nationalitet], 'web': [web],
                  'ankomst': '', 'bed': [seng], 'rabat': [procent], 'antal værelser': [num_rooms],
                  'nr gæst': [num_guests], 'Email': [email_address], 'telefon': [telefon], 'Spouse': [spouse],
-                 'enkelt': [single_room], 'morgenmad': [breakfast], 'pris ialt': [pristotal], 'known': [known]}
+                 'enkelt': [single_room], 'morgenmad': [BF], 'pris ialt': [pristotal], 'known': [known]}
 
     #file_id = '1QGGa7LG9OfryfefhJ4QohGYxqjNJ-fPg'
     #url = f'https://drive.google.com/uc?id={file_id}'
@@ -26,7 +26,7 @@ def add_data(year, book_data, booking_number, name, checkin_date, checkout_date,
                      'checkout': [checkout_date], 'booking dato': [now], 'nation': [nationalitet], 'web': [web],
                      'ankomst': '', 'bed': [seng], 'rabat': [procent], 'antal værelser': [num_rooms],
                      'nr gæst': [num_guests], 'Email': [email_address], 'telefon': [telefon], 'Spouse': [spouse],
-                     'enkelt': [single_room], 'morgenmad': [breakfast], 'pris ialt': [pristotal], 'known': [known]}
+                     'enkelt': [single_room], 'morgenmad': [BF], 'pris ialt': [pristotal], 'known': [known]}
 
         print(" data sendt to excel")
 #if year == '2025':
