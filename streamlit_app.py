@@ -364,6 +364,7 @@ print(formatted_pristotal)
 st.markdown(f"**Den totale pris** {formatted_pristotal}kr")
 
 name = st.text_input("Navn ")
+fam_name = st.text_input("efternavn  ")
 telefon = st.text_input(" Kontakt telefon")
 email_address = st.text_input("email")
 
@@ -374,14 +375,18 @@ if known_guest:
     #url = 'https://my.microsoftpersonalcontent.com/personal/3be7f4b38f07ed41/_layouts/15/download.aspx?UniqueId=2bbcff11-e1ae-4318-b932-2b346cafe12a&Translate=false&tempauth=v1e.eyJzaXRlaWQiOiI4MTRkMjJlYi05ZmY2LTRmZWMtYjcxNi04M2VkNWYxODdiNWUiLCJhcHBpZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDA0ODE3MTBhNCIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC9teS5taWNyb3NvZnRwZXJzb25hbGNvbnRlbnQuY29tQDkxODgwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCIsImV4cCI6IjE3NDQyMjQzMzIifQ.nyxJ9VDCOEUH1De6k6_WMUeZH7pWDSsbjc4eS4L9JAYNw5sALkGHRgUcgwAypaXa2gRB8aNJOzyPPeNDOGaI4Luoh2H3hMGYsfW4cieH0SLeW-ZrTXFiAxVpBTlx61wEgkVQKIFmnsnmkUi5oszkv01Z7e0_duCIAxh8Angh-6gGwgLGDgazcLyj8uPl-vtSI239C5_ru4h9PtZfrzPptxZkilew5Ezk9B6gXxXXb3UtOemjIFPyx1H2iClPr86fErAE1upM5fIMCfpfqMR7iIcYGpaw2Tp1hEc3FpcrQ6Oyh-jM4TEYXtnstDXQgAO0aXItsYqilQoTiFwWr5a16-GRgRBcpX3oFECsW-HqhKK76UOc0xt-UHvGkAkbh0wcoOW3vf8DKhRn4RFVG_0SDg.4FvHwf39ZNmtPiaSkFxRy0DluCempaNwp2oWI6Zmfs4&ApiVersion=2.0&AVOverride=1'
     #url = hk_database
     url = 'https://drive.usercontent.google.com/download?id=1-9Ks0RY1bMlEM0QuYGVv5_VXztI97Yu6&export=download&authuser=0&confirm=t&uuid=dfaf9014-eab9-4edd-8563-0ea10daa469a&at=APcmpowChzeTZhFD_oliD1ZjOTed:1746344499202'
+    df = pd.read_excel(url, sheet_name='Dtb', dtype={"familienavn": str})
+    search_value = fam_name
+    pd.set_option("display.max_columns", None, )
+    rows1 = df[df['familienavn'] == search_value]
     df = pd.read_excel(url, sheet_name='Dtb', dtype={"telefon": str})
     search_value = telefon
     pd.set_option("display.max_columns", None,)
-    rows1 = df[df['telefon'] == search_value]
+    rows2 = df[df['telefon'] == search_value]
     df = pd.read_excel(url, sheet_name="Dtb", dtype={"email": str})
     search_value = email_address
     pd.set_option("display.max_columns", None)
-    rows2 = df[df['Email'] == search_value]
+    rows3 = df[df['Email'] == search_value]
 
     if telefon:
         st.dataframe(rows1)
