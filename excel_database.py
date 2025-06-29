@@ -5,7 +5,7 @@ import streamlit
 
 def add_data(year, book_data, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng, procent,
              num_rooms, num_guests, email_address, telefon, spouse, single_room, BF, pristotal, known,
-             excel_path='url'):
+             excel_path='2025 output.xlsx'):
 
     book_data = {'book nr': [booking_number], 'navn': [name], 'Checkin': [checkin_date],
                  'checkout': [checkout_date], 'booking dato': [now], 'nation': [nationalitet], 'web': [web],
@@ -15,7 +15,8 @@ def add_data(year, book_data, booking_number, name, checkin_date, checkout_date,
 
     #file_id = '1QGGa7LG9OfryfefhJ4QohGYxqjNJ-fPg'
     #url = f'https://drive.google.com/uc?id={file_id}'
-    url = 'https://drive.usercontent.google.com/download?id=1QGGa7LG9OfryfefhJ4QohGYxqjNJ-fPg&export=download&authuser=0&confirm=t&uuid=4ece34a8-c6d3-4fb2-b14f-d679260a2777&at=APcmpoxYX9pwMTHWhzO7j9CamHva:1746354652387'
+    #url = 'https://drive.usercontent.google.com/download?id=1QGGa7LG9OfryfefhJ4QohGYxqjNJ-fPg&export=download&authuser=0&confirm=t&uuid=4ece34a8-c6d3-4fb2-b14f-d679260a2777&at=APcmpoxYX9pwMTHWhzO7j9CamHva:1746354652387'
+    #file = "rC:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025 output.xlsx"
     df1 = pd.DataFrame(book_data)
     print(df1)
     rek = int(booking_number)
