@@ -38,8 +38,11 @@ st.image("logo2.jpg")
 
 st.subheader("Reservations formular  ")
 
-year = st.selectbox("booking år", options=[ "2025", "2026"])
-bruger = st.selectbox("bruger computer ", options=["finn"])
+year = st.selectbox("booking år", options=["2025", "2026"])
+bruger = st.selectbox("bruger computer ", options=["Finn", "Naja"])
+network = st.selectbox("vælg lokal eller web ", options=["local", "URL"])
+
+file_name_1 = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
 
 now = st.date_input("booking dato")
 
@@ -62,66 +65,114 @@ if year == '2025':
         df = pd.read_excel(url, sheet_name='book_simp')
         print(df)
 
-    if bruger == "finn":
-        #url = 'https://my.microsoftpersonalcontent.com/personal/3be7f4b38f07ed41/_layouts/15/download.aspx?UniqueId=1077df0c-baf7-4a87-ad56-dd626b73020b&Translate=false&tempauth=v1e.eyJzaXRlaWQiOiI4MTRkMjJlYi05ZmY2LTRmZWMtYjcxNi04M2VkNWYxODdiNWUiLCJhcHBpZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDA0ODE3MTBhNCIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC9teS5taWNyb3NvZnRwZXJzb25hbGNvbnRlbnQuY29tQDkxODgwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCIsImV4cCI6IjE3NDQyMjI0NjUifQ.KC9jXbujauBxUH6l2xsghR-L_3X_2LaUGcbOTvSIGJJwcYKActkI0tDaHFx3Xilu1kv9fHLI0jLJ9-5fuWGOUbFZvDnmskLBp3kVd-HCS_N-MZIRAGVz1LYrDh4eQMJ7vEZxgHsnVYjh-F28F02zzzd1-tg3dApt8hCTtfJuyxuNqg9bkfDMcJkdpduO44JO69d6GJlOOyCFi6QRGsNad1aDy0sszgRyDbv9t_HITvV4dzBhHRtjRiPj7eNJzGd1fyrPVJREJGl3L-jqKLh0vwaWGoN4qcHL-nEgUmRZWJ4PpTNOdvXSlZ2IKojzBtMB-ZK_G4I4gSX7K7Gr732iBfYDRG711ANop0N-Kg6pBO0EgYhpczkouJCGb-EBlYAdHDx00YCaxMVeTgmXrWlFBw.Sx5UzW5NW5VRE8yivXqnZKw88cSewUT3egnggwwptKU&ApiVersion=2.0&AVOverride=1'
+    if bruger == "Finn" and network == "URL":
         url = 'https://drive.usercontent.google.com/download?id=1fS2Gs3mOTKGNj0DEQ96Kkahkj7nS_gJW&export=download&authuser=0&confirm=t&uuid=8a74ef99-d891-4950-8622-11ff5c7b5ee4&at=APcmpowsxXunj5Rcd1q_LcxQwLws:1746354248379'
-        #file_id = '1fS2Gs3mOTKGNj0DEQ96Kkahkj7nS_gJW'
-        #url = f'https://drive.google.com/uc?id={file_id}'
         df = pd.read_excel(url, sheet_name='book_simp')
+        new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
+        unique_values = new_data["1-I"].unique()
+
+        counts_1 = new_data["1-I"].value_counts()
+        counts_2 = new_data["2-I"].value_counts()
+        counts_3 = new_data["3-I"].value_counts()
+        counts_4 = new_data["4-I"].value_counts()
+        counts_5 = new_data["5-I"].value_counts()
+        # chat
+        print(f"Counts 1: {counts_1}")
+        print(f"Counts 2: {counts_2}")
+        print(f"Counts 3: {counts_3}")
+        print(f"Counts 4: {counts_4}")
+        print(f"Counts 5: {counts_5}")
+
+        room_1 = (counts_1.get("va", 0))
+        room_2 = (counts_2.get("va", 0))
+        room_3 = (counts_3.get("va", 0))
+        room_4 = (counts_4.get("va", 0))
+        room_5 = (counts_5.get("va", 0))
+        # chat
+        print(f"Room 1: {room_1}")
+        print(f"Room 2: {room_2}")
+        print(f"Room 3: {room_3}")
+        print(f"Room 4: {room_4}")
+        print(f"Room 5: {room_5}")
+
+        if room_1 == days.days:
+            ledige_rum_1 = 1
+        else:
+            ledige_rum_1 = 0
+        if room_2 == days.days:
+            ledige_rum_2 = 1
+        else:
+            ledige_rum_2 = 0
+        if room_3 == days.days:
+            ledige_rum_3 = 1
+        else:
+            ledige_rum_3 = 0
+        if room_4 == days.days:
+            ledige_rum_4 = 1
+        else:
+            ledige_rum_4 = 0
+        if room_5 == days.days:
+            ledige_rum_5 = 1
+        else:
+            ledige_rum_5 = 0
+        ledige_rum = ledige_rum_1 + ledige_rum_2 + ledige_rum_3 + ledige_rum_4 + ledige_rum_5
+        print(unique_values)
+        st.markdown(f"**Antal ledige rum**  {ledige_rum}")  # "ledige} rum ", {ledige_rum})
         print(df)
-    else:
-        streamlit.markdown("Fil fejl 2025")
+    if bruger == "Finn" and network == "lokal":
+        #file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
+        file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
+        df = pd.read_excel(file_name, sheet_name='book_simp')
+        new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
+        unique_values = new_data["1-I"].unique()
 
-    new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
-    unique_values = new_data["1-I"].unique()
+        counts_1 = new_data["1-I"].value_counts()
+        counts_2 = new_data["2-I"].value_counts()
+        counts_3 = new_data["3-I"].value_counts()
+        counts_4 = new_data["4-I"].value_counts()
+        counts_5 = new_data["5-I"].value_counts()
+            #chat
+        print(f"Counts 1: {counts_1}")
+        print(f"Counts 2: {counts_2}")
+        print(f"Counts 3: {counts_3}")
+        print(f"Counts 4: {counts_4}")
+        print(f"Counts 5: {counts_5}")
 
-    counts_1 = new_data["1-I"].value_counts()
-    counts_2 = new_data["2-I"].value_counts()
-    counts_3 = new_data["3-I"].value_counts()
-    counts_4 = new_data["4-I"].value_counts()
-    counts_5 = new_data["5-I"].value_counts()
-    #chat
-    print(f"Counts 1: {counts_1}")
-    print(f"Counts 2: {counts_2}")
-    print(f"Counts 3: {counts_3}")
-    print(f"Counts 4: {counts_4}")
-    print(f"Counts 5: {counts_5}")
+        room_1 = (counts_1.get("va", 0))
+        room_2 = (counts_2.get("va", 0))
+        room_3 = (counts_3.get("va", 0))
+        room_4 = (counts_4.get("va", 0))
+        room_5 = (counts_5.get("va", 0))
+            # chat
+        print(f"Room 1: {room_1}")
+        print(f"Room 2: {room_2}")
+        print(f"Room 3: {room_3}")
+        print(f"Room 4: {room_4}")
+        print(f"Room 5: {room_5}")
 
-    room_1 = (counts_1.get("va", 0))
-    room_2 = (counts_2.get("va", 0))
-    room_3 = (counts_3.get("va", 0))
-    room_4 = (counts_4.get("va", 0))
-    room_5 = (counts_5.get("va", 0))
-    # chat
-    print(f"Room 1: {room_1}")
-    print(f"Room 2: {room_2}")
-    print(f"Room 3: {room_3}")
-    print(f"Room 4: {room_4}")
-    print(f"Room 5: {room_5}")
-
-    if room_1 == days.days:
-        ledige_rum_1 = 1
-    else:
-        ledige_rum_1 = 0
-    if room_2 == days.days:
-        ledige_rum_2 = 1
-    else:
-        ledige_rum_2 = 0
-    if room_3 == days.days:
-        ledige_rum_3 = 1
-    else:
-        ledige_rum_3 = 0
-    if room_4 == days.days:
-        ledige_rum_4 = 1
-    else:
-        ledige_rum_4 = 0
-    if room_5 == days.days:
-        ledige_rum_5 = 1
-    else:
-        ledige_rum_5 = 0
-    ledige_rum = ledige_rum_1 + ledige_rum_2 + ledige_rum_3 + ledige_rum_4 + ledige_rum_5
-    print(unique_values)
-    st.markdown(f"**Antal ledige rum**  {ledige_rum}")  # "ledige} rum ", {ledige_rum})
+        if room_1 == days.days:
+            ledige_rum_1 = 1
+        else:
+            ledige_rum_1 = 0
+        if room_2 == days.days:
+            ledige_rum_2 = 1
+        else:
+            ledige_rum_2 = 0
+        if room_3 == days.days:
+            ledige_rum_3 = 1
+        else:
+            ledige_rum_3 = 0
+        if room_4 == days.days:
+            ledige_rum_4 = 1
+        else:
+            ledige_rum_4 = 0
+        if room_5 == days.days:
+            ledige_rum_5 = 1
+        else:
+            ledige_rum_5 = 0
+        ledige_rum = ledige_rum_1 + ledige_rum_2 + ledige_rum_3 + ledige_rum_4 + ledige_rum_5
+        print(unique_values)
+        st.markdown(f"**Antal ledige rum**  {ledige_rum}")  # "ledige} rum ", {ledige_rum})
 
 if year == '2026':
 
@@ -129,8 +180,6 @@ if year == '2026':
         df = pd.read_excel(r"C:\Users\naja\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\2025_BOOKING_ 2_0.xlsx",
                            sheet_name='book_simp')
     if bruger == "finn":
-        #url = 'https://drive.usercontent.google.com/download?id=1RM638gexIKWNgr9MklHKUIhkbG04vRoS&export=download&authuser=0&confirm=t&uuid=c8cf876a-8582-47d3-9201-f610e3714aba&at=APcmpowNFjWHPIfgJEV53Hj998yU:1746354865653'
-        #url = 'https://drive.usercontent.google.com/download?id=1RM638gexIKWNgr9MklHKUIhkbG04vRoS&export=download&authuser=0&confirm=t&uuid=725b9feb-58b8-4d60-96f3-c207ebf9d4d1&at=APcmpoytbzqvDaY2v0iWOoJegS7C:1746373384412'
         url = 'https://drive.usercontent.google.com/download?id=1RM638gexIKWNgr9MklHKUIhkbG04vRoS&export=download&authuser=0&confirm=t&uuid=2155e28f-6119-49d6-902d-064afd303b6a&at=APcmpoxm7SwQpOQkyMWs_vCMRnR5:1746373726707'
         df = pd.read_excel(url, sheet_name='book_simp')
         print(df)
@@ -189,14 +238,11 @@ if year == '2026':
     st.markdown(f"**Antal ledige rum**  {ledige_rum}")  # "ledige} rum ", {ledige_rum})
 
 def highlight_cells(val):
-#chat
+
 
     color = 'background-color: #66FF66' if val == 'va' else ''  # Grøn for 'va'
     return color
-# Brug applymap til at anvende funktionen på alle celler i DataFrame
-#styled_data = new_data.style.applymap(highlight_cells)
-styled_data = new_data[['dato', '1-I', '2-I', '3-I', '4-I', '5-I']].style.applymap(highlight_cells)
-# Vis den styliserede DataFrame i Streamlit
+styled_data = new_data[['dato', '1-I', '2-I', '3-I', '4-I', '5-I']].style.applymap(highlight_cells) # Vis den styliserede DataFrame i Streamlit
 st.dataframe(styled_data)
 
 num_guests = st.number_input("Antal gæster", value=2, step=1)
