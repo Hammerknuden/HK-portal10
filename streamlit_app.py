@@ -119,7 +119,7 @@ if year == '2025':
         print(unique_values)
         st.markdown(f"**Antal ledige rum**  {ledige_rum}")  # "ledige} rum ", {ledige_rum})
         print(df)
-    if bruger == "Finn" and network == "lokal":
+    if bruger == "Finn" and network == "local":
         #file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
         file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
         df = pd.read_excel(file_name, sheet_name='book_simp')
