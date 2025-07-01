@@ -5,7 +5,7 @@ import streamlit
 
 def add_data(year, book_data, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng, procent,
              num_rooms, num_guests, email_address, telefon, spouse, single_room, BF, pristotal, known,
-             excel_path='2025 output.xlsx'):
+             excel_path=r'C:\Users\finnj\-repoHK2\HK-portal10\2025 output.xlsx'):
 
     book_data = {'book nr': [booking_number], 'navn': [name], 'Checkin': [checkin_date],
                  'checkout': [checkout_date], 'booking dato': [now], 'nation': [nationalitet], 'web': [web],
@@ -32,9 +32,9 @@ def add_data(year, book_data, booking_number, name, checkin_date, checkout_date,
         print(" data sendt to excel")
 #if year == '2025':
 
-#    def add_data(book_data, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng, rabat,
-#                 num_rooms, num_guests, email_address, telefon, single_room, breakfast, pristotal, known,
-#                 excel_path='2025output.xlsx'):
+#def add_data(book_data, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng, rabat,
+            #num_rooms, num_guests, email_address, telefon, single_room, breakfast, pristotal, known,
+            #excel_path='2025 output.xlsx'):
 
 #        book_data = {'book nr': [booking_number], 'navn': [name], 'Checkin': [checkin_date],
 #                     'checkout': [checkout_date], 'booking dato': [now], 'nation': [nationalitet], 'web': [web],

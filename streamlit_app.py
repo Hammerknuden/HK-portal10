@@ -455,17 +455,19 @@ if send_data and year == '2024':
     if bruger == "finn":
         some_book_data = ({year}, {booking_number}, {name}, {checkin_date}, {checkout_date}, {now}, {nationalitet},
                           {web}, {seng}, {rabat}, {num_rooms}, {num_guests}, {email_address}, {telefon}, {spouse},
-                          {single_room}, {breakfast}, {pristotal}, {known})
+                          {single_room}, {breakfast}, {formatted_pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
-                 rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast, pristotal, known,
+                 rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
+                 formatted_pristotal, known,
                  excel_path=r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2024 output.xlsx")
     if bruger == "naja":
         some_book_data = ({year}, {booking_number}, {name}, {checkin_date}, {checkout_date}, {now}, {nationalitet},
                           {web}, {seng}, {rabat}, {num_rooms}, {num_guests}, {email_address}, {telefon}, {spouse},
-                          {single_room}, {breakfast}, {pristotal}, {known})
+                          {single_room}, {breakfast}, {formatted_pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
-                 rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast, pristotal, known,
-                 excel_path=r"C:\Users\bonne\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2024 output.xlsx")
+            rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
+            formatted_pristotal, known,
+            excel_path=r"C:\Users\bonne\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2024 output.xlsx")
 
     st.markdown("2024 data sendt til excel")
 
@@ -473,23 +475,23 @@ if send_data and year == '2025':
     if bruger == "finn":
         #file_id = '1QGGa7LG9OfryfefhJ4QohGYxqjNJ-fPg'
         #url = f'https://drive.google.com/uc?id={file_id}'
-        url = 'https://drive.usercontent.google.com/download?id=1QGGa7LG9OfryfefhJ4QohGYxqjNJ-fPg&export=download&authuser=0&confirm=t&uuid=4ece34a8-c6d3-4fb2-b14f-d679260a2777&at=APcmpoxYX9pwMTHWhzO7j9CamHva:1746354652387'
+        #url = 'https://drive.usercontent.google.com/download?id=1QGGa7LG9OfryfefhJ4QohGYxqjNJ-fPg&export=download&authuser=0&confirm=t&uuid=4ece34a8-c6d3-4fb2-b14f-d679260a2777&at=APcmpoxYX9pwMTHWhzO7j9CamHva:1746354652387'
         some_book_data = ({year}, {booking_number}, {name}, {checkin_date}, {checkout_date}, {now}, {nationalitet},
                           {web}, {seng}, {rabat}, {num_rooms}, {num_guests}, {email_address}, {telefon}, {spouse},
                           {single_room}, {breakfast}, {formatted_pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
                  rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
                  formatted_pristotal, known,
-                 excel_path='2025 output.xlsx')
+                 excel_path=r"C:\Users\finnj\-repoHK2\HK-portal10\2025 output.xlsx")
                  #excel_path=r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025 output.xlsx")
     if bruger == "naja":
         some_book_data = ({year}, {booking_number}, {name}, {checkin_date}, {checkout_date}, {now}, {nationalitet},
                           {web}, {seng}, {rabat}, {num_rooms}, {num_guests}, {email_address}, {telefon}, {spouse},
-                          {single_room}, {breakfast}, {pristotal}, {known})
+                          {single_room}, {breakfast}, {formatted_pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
-                 rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast, pristotal, known,
-                 excel_path=r"C:\Users\bonne\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025 output.xlsx")
-
+                 rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
+                 formatted_pristotal, known,
+                 excel_path=r"C:\Users\finnj\-repoHK2\HK-portal10\2025 output.xlsx")
     st.markdown("2025 data sendt til excel")
 
 if send_data and year == '2026': # husk at indsætte bruger naja / finn
@@ -498,14 +500,16 @@ if send_data and year == '2026': # husk at indsætte bruger naja / finn
                           {web}, {seng}, {rabat}, {num_rooms}, {num_guests}, {email_address}, {telefon}, {spouse},
                           {single_room}, {breakfast}, {formatted_pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
-                 rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast, formatted_pristotal, known,
+                 rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
+                 formatted_pristotal, known,
                  excel_path=r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2026 output.xlsx")
     if bruger == "naja":
         some_book_data = ({year}, {booking_number}, {name}, {checkin_date}, {checkout_date}, {now}, {nationalitet},
                           {web}, {seng}, {rabat}, {num_rooms}, {num_guests}, {email_address}, {telefon}, {spouse},
-                          {single_room}, {breakfast}, {pristotal}, {known})
+                          {single_room}, {breakfast}, {formatted_pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
-                 rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast, pristotal, known,
+                 rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
+                 formatted_pristotal, known,
                  excel_path=r"C:\Users\bonne\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2026 output.xlsx")
 
     st.markdown("2026 data sendt til excel")
@@ -597,17 +601,17 @@ booking_submitted = st.button("Bekræft booking")
 if Sprog == "DK" and booking_submitted:
     send_danish_confirmation_email(to_addr, confirmation_password, name, num_rooms, num_guests, booking_number,
                                    checkin_date, checkout_date, text_bf, prismed, text_web, formatted_justering,
-                                   pristotal, text_ank, text_bed, text_free)
+                                   formatted_pristotal, text_ank, text_bed, text_free)
     st.markdown('dansk email er sendt')
 elif Sprog == "UK" and booking_submitted:
     send_english_confirmation_email(to_addr, confirmation_password, name, num_rooms, num_guests, booking_number,
                                     checkin_date, checkout_date, text_bf, prismed, text_web, formatted_justering,
-                                    pristotal, text_ank, text_bed, text_free)
+                                    formatted_pristotal, text_ank, text_bed, text_free)
     st.markdown('engelsk email er sendt')
 elif Sprog == "D" and booking_submitted:
     send_german_confirmation_email(to_addr, confirmation_password, name, num_rooms, num_guests, booking_number,
                                    checkin_date, checkout_date, text_bf, prismed, text_web, formatted_justering,
-                                   pristotal, text_ank, text_bed, text_free)
+                                   formatted_pristotal, text_ank, text_bed, text_free)
     st.markdown('tysk email er sendt')
 else:
     st.markdown('mail er ikke sendt ')
