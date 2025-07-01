@@ -476,9 +476,10 @@ if send_data and year == '2025':
         url = 'https://drive.usercontent.google.com/download?id=1QGGa7LG9OfryfefhJ4QohGYxqjNJ-fPg&export=download&authuser=0&confirm=t&uuid=4ece34a8-c6d3-4fb2-b14f-d679260a2777&at=APcmpoxYX9pwMTHWhzO7j9CamHva:1746354652387'
         some_book_data = ({year}, {booking_number}, {name}, {checkin_date}, {checkout_date}, {now}, {nationalitet},
                           {web}, {seng}, {rabat}, {num_rooms}, {num_guests}, {email_address}, {telefon}, {spouse},
-                          {single_room}, {breakfast}, {pristotal}, {known})
+                          {single_room}, {breakfast}, {formatted_pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
-                 rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast, pristotal, known,
+                 rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
+                 formatted_pristotal, known,
                  excel_path='2025 output.xlsx')
                  #excel_path=r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025 output.xlsx")
     if bruger == "naja":
@@ -495,9 +496,9 @@ if send_data and year == '2026': # husk at indsætte bruger naja / finn
     if bruger == "finn":
         some_book_data = ({year}, {booking_number}, {name}, {checkin_date}, {checkout_date}, {now}, {nationalitet},
                           {web}, {seng}, {rabat}, {num_rooms}, {num_guests}, {email_address}, {telefon}, {spouse},
-                          {single_room}, {breakfast}, {pristotal}, {known})
+                          {single_room}, {breakfast}, {formatted_pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
-                 rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast, pristotal, known,
+                 rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast, formatted_pristotal, known,
                  excel_path=r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2026 output.xlsx")
     if bruger == "naja":
         some_book_data = ({year}, {booking_number}, {name}, {checkin_date}, {checkout_date}, {now}, {nationalitet},
