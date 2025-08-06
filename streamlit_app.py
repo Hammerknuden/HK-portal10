@@ -187,7 +187,7 @@ if year == '2026':
         new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
         unique_values = new_data["1-I"].unique()
 
-        counts_1 = new_data["1-I"].value_counts()
+        counts_1 = new_data["1-I"].value_counts()eam
         counts_2 = new_data["2-I"].value_counts()
         counts_3 = new_data["3-I"].value_counts()
         counts_4 = new_data["4-I"].value_counts()
