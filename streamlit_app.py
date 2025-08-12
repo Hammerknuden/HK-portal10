@@ -42,7 +42,7 @@ year = st.selectbox("booking år", options=["2025", "2026"])
 bruger = st.selectbox("bruger computer ", options=["Finn", "Naja"])
 network = st.selectbox("vælg lokal eller web ", options=["local", "URL"])
 
-file_name_1 = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
+#file_name_1 = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
 
 now = st.date_input("booking dato")
 
@@ -283,15 +283,15 @@ if year == '2025':
         single_room = "N"
 if year == '2026':
     if single_room:
-        high_season_price = 985  #2025 950
-        low_season_price = 865   #2025 830
+        high_season_price = 985  #2025 950 ca 3%
+        low_season_price = 865   #2025 830 ca 4%
         single_room = "Y"
     if web == "FM":
         high_season_price = 1085
         low_season_price = 1085
     else:
-        high_season_price = 1085   #2025 1050
-        low_season_price = 965     #2025 930
+        high_season_price = 1085   #2025 1050 ca 3%
+        low_season_price = 965     #2025 930 ca 3%
         single_room = "N"
 
 print(low_season_price)
