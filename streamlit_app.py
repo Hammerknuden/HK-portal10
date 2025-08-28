@@ -308,6 +308,8 @@ st.markdown(f"**Low season** {low_season_price}")
 Sprog = st.selectbox("Sprog - email confirmation dk uk D", options=["DK", "UK", "D"])
 
 breakfast = st.checkbox("Morgenmad")
+breakfast_alt = st.checkbox("begrænset morgenmad  ")
+
 if breakfast:
     br_f = int(bf_price * int(num_guests) * int(days.days))
     BF = "Y"
@@ -327,21 +329,15 @@ else:
     if Sprog == "D":
         text_bf = "Frühstück ist nicht mit enthalten"
 
-#if breakfast and Sprog == "DK":
-#    text_bf = "Morgenmad er inkluderet i prisen"
-#else:
-#    text_bf = "Morgenmad er ikke inkluderet i prisen"
-
-#if breakfast and Sprog == "UK":
-#    text_bf = "Breakfast is included "
-#else:
-#    text_bf = " Breakfast is not included "
-
-#if breakfast and Sprog == "D":
-#    text_bf = "Das Frühstück ist im Preis inbegriffen"
-#else:
- #   text_bf = "Frühstück ist nicht mit enthalten"
-
+if breakfast and breakfast_alt:
+    br_f = 0
+    BF = "A"
+    if Sprog == "DK":
+        text_bf = "Morgenmad kan tilkøbes alle dage undtagen Søndag"
+    if Sprog == "UK":
+        text_bf = "Breakfast can be purchased every day except Sunday. "
+    if Sprog == "D":
+        text_bf = "Frühstück kann täglich außer sonntags erworben werden."
 
 if year == '2024':
     high_season_start = datetime.strptime("24-06-24", _format := "%d-%m-%y").date()
