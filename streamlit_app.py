@@ -423,7 +423,7 @@ if known_guest and 'local':
     df = pd.read_excel(url, sheet_name='Dtb', dtype={'familienavn': str})
     search_value = fam_name
     pd.set_option("display.max_columns", None, )
-    rows1 = df[df['familienavn'] == search_value]
+    rows1 = df[df['Familienavn'] == search_value]
     df = pd.read_excel(url, sheet_name='Dtb', dtype={'telefon': str})
     search_value = telefon
     pd.set_option("display.max_columns", None,)
@@ -431,7 +431,7 @@ if known_guest and 'local':
     df = pd.read_excel(url, sheet_name="Dtb", dtype={'Email': str})
     search_value = email_address
     pd.set_option("display.max_columns", None)
-    rows3 = df[df['email'] == search_value]
+    rows3 = df[df['Email'] == search_value]
 
     if fam_name:
         st.dataframe(rows1)
