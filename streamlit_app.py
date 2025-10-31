@@ -283,15 +283,15 @@ if year == '2025':
         single_room = "N"
 if year == '2026':
     if single_room:
-        high_season_price = 985  #2025 950 ca 3%
-        low_season_price = 865   #2025 830 ca 4%
+        high_season_price = 950  #2025 950 ca 3% =985
+        low_season_price = 830   #2025 830 ca 4% =865
         single_room = "Y"
     if web == "FM":
-        high_season_price = 1085
-        low_season_price = 1085
+        high_season_price = 1050
+        low_season_price = 1050
     else:
-        high_season_price = 1085   #2025 1050 ca 3%
-        low_season_price = 965     #2025 930 ca 3%
+        high_season_price = 1050   #2025 1050 ca 3% = 1085
+        low_season_price = 930     #2025 930 ca 3% = 965
         single_room = "N"
 
 print(low_season_price)
