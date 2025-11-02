@@ -61,7 +61,7 @@ if year == '2027':
 
     if bruger == "naja":
         #url = 'https://my.microsoftpersonalcontent.com/personal/3be7f4b38f07ed41/_layouts/15/download.aspx?UniqueId=1077df0c-baf7-4a87-ad56-dd626b73020b&Translate=false&tempauth=v1e.eyJzaXRlaWQiOiI4MTRkMjJlYi05ZmY2LTRmZWMtYjcxNi04M2VkNWYxODdiNWUiLCJhcHBpZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDA0ODE3MTBhNCIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC9teS5taWNyb3NvZnRwZXJzb25hbGNvbnRlbnQuY29tQDkxODgwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCIsImV4cCI6IjE3NDQyMjI0NjUifQ.KC9jXbujauBxUH6l2xsghR-L_3X_2LaUGcbOTvSIGJJwcYKActkI0tDaHFx3Xilu1kv9fHLI0jLJ9-5fuWGOUbFZvDnmskLBp3kVd-HCS_N-MZIRAGVz1LYrDh4eQMJ7vEZxgHsnVYjh-F28F02zzzd1-tg3dApt8hCTtfJuyxuNqg9bkfDMcJkdpduO44JO69d6GJlOOyCFi6QRGsNad1aDy0sszgRyDbv9t_HITvV4dzBhHRtjRiPj7eNJzGd1fyrPVJREJGl3L-jqKLh0vwaWGoN4qcHL-nEgUmRZWJ4PpTNOdvXSlZ2IKojzBtMB-ZK_G4I4gSX7K7Gr732iBfYDRG711ANop0N-Kg6pBO0EgYhpczkouJCGb-EBlYAdHDx00YCaxMVeTgmXrWlFBw.Sx5UzW5NW5VRE8yivXqnZKw88cSewUT3egnggwwptKU&ApiVersion=2.0&AVOverride=1'
-        url = book2025
+        url = 'https://drive.usercontent.google.com/download?id=1MmfCR70RlDt3EIQ6eAIrf9OULon2OD_H&export=download&authuser=0&confirm=t&uuid=7431c7df-098e-4b7a-8c03-2e3eb8f9f2d0&at=AKSUxGPJgja3nhqecB-TrvRbQljN:1762079784321'
         df = pd.read_excel(url, sheet_name='book_simp')
         print(df)
 
@@ -122,7 +122,7 @@ if year == '2027':
         print(df)
     if bruger == "Finn" and network == "local":
         #file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
-        "file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
+        #file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
         file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\hammerknuden\BOOKING\filer\2027_BOOKING 10.xlsx"
         df = pd.read_excel(file_name, sheet_name='book_simp')
         new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
@@ -259,17 +259,17 @@ if web == "FM":
 else:
     procent = 0
 
-if year == '2024':
+if year == '2027':
     if single_room:
-        high_season_price = 925  #2025 950
-        low_season_price = 805   #2025 830
+        high_season_price = 985  #2025 950
+        low_season_price = 865   #2025 830
         single_room = "Y"
     if web == "FM":
-        high_season_price = 1025
-        low_season_price = 1025
+        high_season_price = 1085
+        low_season_price = 1085
     else:
-        high_season_price = 1025   #2025 1050
-        low_season_price = 905     #2025 930
+        high_season_price = 1085   #2025 1050
+        low_season_price = 965     #2025 930
         single_room = "N"
 if year == '2025':
     if single_room:
@@ -298,12 +298,12 @@ if year == '2026':
 
 print(low_season_price)
 print(high_season_price)
-if year == '2024':
-    bf_price = 95  #breakfast 2025 100,-
+if year == '2027':
+    bf_price = 110  #breakfast 2025 100,-
 if year == '2025':
     bf_price = 100
 if year == '2026':
-    bf_price = 110
+    bf_price = 100
 st.markdown(f"**High season** {high_season_price}")
 st.markdown(f"**Low season** {low_season_price}")
 
@@ -341,9 +341,9 @@ if breakfast and breakfast_alt:
     if Sprog == "D":
         text_bf = "Frühstück kann täglich außer sonntags erworben werden."
 
-if year == '2024':
-    high_season_start = datetime.strptime("24-06-24", _format := "%d-%m-%y").date()
-    high_season_end = datetime.strptime("19-08-24", _format := "%d-%m-%y").date()
+if year == '2027':
+    high_season_start = datetime.strptime("22-06-27", _format := "%d-%m-%y").date()
+    high_season_end = datetime.strptime("17-08-27", _format := "%d-%m-%y").date()
 if year == '2025':
     high_season_start = datetime.strptime("29-06-25", _format := "%d-%m-%y").date()
     high_season_end = datetime.strptime("26-08-25", _format := "%d-%m-%y").date()
