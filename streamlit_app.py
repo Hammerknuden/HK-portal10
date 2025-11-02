@@ -38,7 +38,7 @@ st.image("logo2.jpg")
 
 st.subheader("Reservations formular  ")
 
-year = st.selectbox("booking år", options=["2025", "2026"])
+year = st.selectbox("booking år", options=["2026", "2027"])
 bruger = st.selectbox("bruger computer ", options=["Finn", "Naja"])
 network = st.selectbox("vælg lokal eller web ", options=["local", "URL"])
 
@@ -57,7 +57,7 @@ days = checkout_date - checkin_date
 st.text("Skema viser ikke udchecksdagen da den er irelevant i forbindelse med reservation")
 st.markdown(f"**Antal dage denne booking**  {days.days}")
 
-if year == '2025':
+if year == '2027':
 
     if bruger == "naja":
         #url = 'https://my.microsoftpersonalcontent.com/personal/3be7f4b38f07ed41/_layouts/15/download.aspx?UniqueId=1077df0c-baf7-4a87-ad56-dd626b73020b&Translate=false&tempauth=v1e.eyJzaXRlaWQiOiI4MTRkMjJlYi05ZmY2LTRmZWMtYjcxNi04M2VkNWYxODdiNWUiLCJhcHBpZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDA0ODE3MTBhNCIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC9teS5taWNyb3NvZnRwZXJzb25hbGNvbnRlbnQuY29tQDkxODgwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCIsImV4cCI6IjE3NDQyMjI0NjUifQ.KC9jXbujauBxUH6l2xsghR-L_3X_2LaUGcbOTvSIGJJwcYKActkI0tDaHFx3Xilu1kv9fHLI0jLJ9-5fuWGOUbFZvDnmskLBp3kVd-HCS_N-MZIRAGVz1LYrDh4eQMJ7vEZxgHsnVYjh-F28F02zzzd1-tg3dApt8hCTtfJuyxuNqg9bkfDMcJkdpduO44JO69d6GJlOOyCFi6QRGsNad1aDy0sszgRyDbv9t_HITvV4dzBhHRtjRiPj7eNJzGd1fyrPVJREJGl3L-jqKLh0vwaWGoN4qcHL-nEgUmRZWJ4PpTNOdvXSlZ2IKojzBtMB-ZK_G4I4gSX7K7Gr732iBfYDRG711ANop0N-Kg6pBO0EgYhpczkouJCGb-EBlYAdHDx00YCaxMVeTgmXrWlFBw.Sx5UzW5NW5VRE8yivXqnZKw88cSewUT3egnggwwptKU&ApiVersion=2.0&AVOverride=1'
@@ -66,7 +66,8 @@ if year == '2025':
         print(df)
 
     if bruger == "Finn" and network == "URL":
-        url = 'https://drive.usercontent.google.com/download?id=1fS2Gs3mOTKGNj0DEQ96Kkahkj7nS_gJW&export=download&authuser=0&confirm=t&uuid=8a74ef99-d891-4950-8622-11ff5c7b5ee4&at=APcmpowsxXunj5Rcd1q_LcxQwLws:1746354248379'
+        # url 2025 url = 'https://drive.usercontent.google.com/download?id=1fS2Gs3mOTKGNj0DEQ96Kkahkj7nS_gJW&export=download&authuser=0&confirm=t&uuid=8a74ef99-d891-4950-8622-11ff5c7b5ee4&at=APcmpowsxXunj5Rcd1q_LcxQwLws:1746354248379'
+        url = 'https://drive.usercontent.google.com/download?id=1MmfCR70RlDt3EIQ6eAIrf9OULon2OD_H&export=download&authuser=0&confirm=t&uuid=7431c7df-098e-4b7a-8c03-2e3eb8f9f2d0&at=AKSUxGPJgja3nhqecB-TrvRbQljN:1762079784321'
         df = pd.read_excel(url, sheet_name='book_simp')
         new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
         unique_values = new_data["1-I"].unique()
@@ -121,7 +122,8 @@ if year == '2025':
         print(df)
     if bruger == "Finn" and network == "local":
         #file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
-        file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
+        "file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
+        file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\hammerknuden\BOOKING\filer\2027_BOOKING 10.xlsx"
         df = pd.read_excel(file_name, sheet_name='book_simp')
         new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
         unique_values = new_data["1-I"].unique()
