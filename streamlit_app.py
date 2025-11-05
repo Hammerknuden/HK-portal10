@@ -59,15 +59,9 @@ st.markdown(f"**Antal dage denne booking**  {days.days}")
 
 if year == '2027':
 
-    if bruger == "naja":
-        #url = 'https://my.microsoftpersonalcontent.com/personal/3be7f4b38f07ed41/_layouts/15/download.aspx?UniqueId=1077df0c-baf7-4a87-ad56-dd626b73020b&Translate=false&tempauth=v1e.eyJzaXRlaWQiOiI4MTRkMjJlYi05ZmY2LTRmZWMtYjcxNi04M2VkNWYxODdiNWUiLCJhcHBpZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDA0ODE3MTBhNCIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC9teS5taWNyb3NvZnRwZXJzb25hbGNvbnRlbnQuY29tQDkxODgwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCIsImV4cCI6IjE3NDQyMjI0NjUifQ.KC9jXbujauBxUH6l2xsghR-L_3X_2LaUGcbOTvSIGJJwcYKActkI0tDaHFx3Xilu1kv9fHLI0jLJ9-5fuWGOUbFZvDnmskLBp3kVd-HCS_N-MZIRAGVz1LYrDh4eQMJ7vEZxgHsnVYjh-F28F02zzzd1-tg3dApt8hCTtfJuyxuNqg9bkfDMcJkdpduO44JO69d6GJlOOyCFi6QRGsNad1aDy0sszgRyDbv9t_HITvV4dzBhHRtjRiPj7eNJzGd1fyrPVJREJGl3L-jqKLh0vwaWGoN4qcHL-nEgUmRZWJ4PpTNOdvXSlZ2IKojzBtMB-ZK_G4I4gSX7K7Gr732iBfYDRG711ANop0N-Kg6pBO0EgYhpczkouJCGb-EBlYAdHDx00YCaxMVeTgmXrWlFBw.Sx5UzW5NW5VRE8yivXqnZKw88cSewUT3egnggwwptKU&ApiVersion=2.0&AVOverride=1'
-        url = 'https://drive.usercontent.google.com/download?id=1MmfCR70RlDt3EIQ6eAIrf9OULon2OD_H&export=download&authuser=0&confirm=t&uuid=7431c7df-098e-4b7a-8c03-2e3eb8f9f2d0&at=AKSUxGPJgja3nhqecB-TrvRbQljN:1762079784321'
-        df = pd.read_excel(url, sheet_name='book_simp')
-        print(df)
-
-    if bruger == "Finn" and network == "URL":
-        # url 2025 url = 'https://drive.usercontent.google.com/download?id=1fS2Gs3mOTKGNj0DEQ96Kkahkj7nS_gJW&export=download&authuser=0&confirm=t&uuid=8a74ef99-d891-4950-8622-11ff5c7b5ee4&at=APcmpowsxXunj5Rcd1q_LcxQwLws:1746354248379'
-        url = 'https://drive.usercontent.google.com/download?id=1MmfCR70RlDt3EIQ6eAIrf9OULon2OD_H&export=download&authuser=0&confirm=t&uuid=7431c7df-098e-4b7a-8c03-2e3eb8f9f2d0&at=AKSUxGPJgja3nhqecB-TrvRbQljN:1762079784321'
+    if bruger == "Naja" and network == "URL":
+        #url = 'https://drive.usercontent.google.com/download?id=1MmfCR70RlDt3EIQ6eAIrf9OULon2OD_H&export=download&authuser=0&confirm=t&uuid=7431c7df-098e-4b7a-8c03-2e3eb8f9f2d0&at=AKSUxGPJgja3nhqecB-TrvRbQljN:1762079784321'
+        url = 'https://drive.usercontent.google.com/download?id=1MmfCR70RlDt3EIQ6eAIrf9OULon2OD_H&export=download&authuser=0&confirm=t&uuid=6021d22c-fa0f-45f4-9e61-2d99b296fcf1&at=AKSUxGMOeGtFihvrcKgymyTxiynP:1762359003826'
         df = pd.read_excel(url, sheet_name='book_simp')
         new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
         unique_values = new_data["1-I"].unique()
@@ -120,6 +114,64 @@ if year == '2027':
         print(unique_values)
         st.markdown(f"**Antal ledige rum**  {ledige_rum}")  # "ledige} rum ", {ledige_rum})
         print(df)
+
+    if bruger == "Finn" and network == "URL":
+        # url 2025 url = 'https://drive.usercontent.google.com/download?id=1fS2Gs3mOTKGNj0DEQ96Kkahkj7nS_gJW&export=download&authuser=0&confirm=t&uuid=8a74ef99-d891-4950-8622-11ff5c7b5ee4&at=APcmpowsxXunj5Rcd1q_LcxQwLws:1746354248379'
+        #url = 'https://drive.usercontent.google.com/download?id=1MmfCR70RlDt3EIQ6eAIrf9OULon2OD_H&export=download&authuser=0&confirm=t&uuid=7431c7df-098e-4b7a-8c03-2e3eb8f9f2d0&at=AKSUxGPJgja3nhqecB-TrvRbQljN:1762079784321'
+        url = 'https://drive.usercontent.google.com/download?id=1MmfCR70RlDt3EIQ6eAIrf9OULon2OD_H&export=download&authuser=0&confirm=t&uuid=6021d22c-fa0f-45f4-9e61-2d99b296fcf1&at=AKSUxGMOeGtFihvrcKgymyTxiynP:1762359003826'
+        df = pd.read_excel(url, sheet_name='book_simp')
+        new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
+        unique_values = new_data["1-I"].unique()
+
+        counts_1 = new_data["1-I"].value_counts()
+        counts_2 = new_data["2-I"].value_counts()
+        counts_3 = new_data["3-I"].value_counts()
+        counts_4 = new_data["4-I"].value_counts()
+        counts_5 = new_data["5-I"].value_counts()
+        # chat
+        print(f"Counts 1: {counts_1}")
+        print(f"Counts 2: {counts_2}")
+        print(f"Counts 3: {counts_3}")
+        print(f"Counts 4: {counts_4}")
+        print(f"Counts 5: {counts_5}")
+
+        room_1 = (counts_1.get("va", 0))
+        room_2 = (counts_2.get("va", 0))
+        room_3 = (counts_3.get("va", 0))
+        room_4 = (counts_4.get("va", 0))
+        room_5 = (counts_5.get("va", 0))
+        # chat
+        print(f"Room 1: {room_1}")
+        print(f"Room 2: {room_2}")
+        print(f"Room 3: {room_3}")
+        print(f"Room 4: {room_4}")
+        print(f"Room 5: {room_5}")
+
+        if room_1 == days.days:
+            ledige_rum_1 = 1
+        else:
+            ledige_rum_1 = 0
+        if room_2 == days.days:
+            ledige_rum_2 = 1
+        else:
+            ledige_rum_2 = 0
+        if room_3 == days.days:
+            ledige_rum_3 = 1
+        else:
+            ledige_rum_3 = 0
+        if room_4 == days.days:
+            ledige_rum_4 = 1
+        else:
+            ledige_rum_4 = 0
+        if room_5 == days.days:
+            ledige_rum_5 = 1
+        else:
+            ledige_rum_5 = 0
+        ledige_rum = ledige_rum_1 + ledige_rum_2 + ledige_rum_3 + ledige_rum_4 + ledige_rum_5
+        print(unique_values)
+        st.markdown(f"**Antal ledige rum**  {ledige_rum}")  # "ledige} rum ", {ledige_rum})
+        print(df)
+
     if bruger == "Finn" and network == "local":
         #file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
         #file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
@@ -178,7 +230,7 @@ if year == '2027':
 
 if year == '2026':
 
-    if bruger == "naja":
+    if bruger == "naja" and network == 'local':
         df = pd.read_excel(r"C:\Users\naja\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\2025_BOOKING 10.xlsx",
                            sheet_name='book_simp')
 
