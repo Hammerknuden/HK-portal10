@@ -618,7 +618,7 @@ if send_data and year == '2026':
                           {single_room}, {breakfast}, {formatted_pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
                  rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
-                 formatted_pristotal, known, comments, excel_path="output26", sheet_name="book")
+                 formatted_pristotal, known, comments, excel_path="output26")
                  #excel_path=r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2024 output.xlsx")
 
     if bruger == "naja":
@@ -640,7 +640,7 @@ if send_data and year == '2027':
                           {single_room}, {breakfast}, {formatted_pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
                  rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
-                 formatted_pristotal, known, comments, excel_path='output27.xlsx', sheet_name="book")
+                 formatted_pristotal, known, comments, excel_path='output27.xlsx')
                  #excel_path=r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025 output.xlsx")
     if bruger == "Naja":
         some_book_data = ({year}, {booking_number}, {name}, {checkin_date}, {checkout_date}, {now}, {nationalitet},
@@ -667,7 +667,7 @@ if send_data and year == '2026': # husk at indsætte bruger naja / finn
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
                  rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
                  formatted_pristotal, known, comments,
-                 excel_path='output.xlsx')#r"C:\Users\bonne\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2026 output.xlsx")
+                 excel_path='output26.xlsx')#r"C:\Users\bonne\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2026 output.xlsx")
 
     st.markdown("2026 data sendt til excel")
 
