@@ -618,7 +618,7 @@ if send_data and year == '2026':
                           {single_room}, {breakfast}, {formatted_pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
                  rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
-                 formatted_pristotal, known, comments, excel_path="http://gofile.me/2UxBN/Y2K0RpZCG")#output26")
+                 formatted_pristotal, known, comments, excel_path="output26")
                  #excel_path=r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2024 output.xlsx")
 
     if bruger == "naja":
