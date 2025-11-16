@@ -6,7 +6,7 @@ import openpyxl
 
 def add_data(year, book_data, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng, procent,
              num_rooms, num_guests, email_address, telefon, spouse, single_room, BF, pristotal, known, comments,
-             excel_path='output26.xlsx'): #r'C:\Users\finnj\-repoHK2\HK-portal10\2025 output.xlsx'):
+             excel_path='https://bonneviedisk.de6.quickconnect.to/fbdownload/output26.xlsx?dlink=%222f48616d6d65726b6e7564656e20646174612f6f757470757432362e786c7378%22&noCache=1763300812393&mode=download&stdhtml=false&SynoToken=ARev9TKHrSgEU&SynoHash=c8LsrImQYaXzl7We15UXIXTTSuoUXQ.ODQ'): #r'C:\Users\finnj\-repoHK2\HK-portal10\2025 output.xlsx'):
 
     book_data = {'book nr': [booking_number], 'navn': [name], 'Checkin': [checkin_date],
                 'checkout': [checkout_date], 'booking dato': [now], 'nation': [nationalitet], 'web': [web],
