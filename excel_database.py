@@ -1,6 +1,7 @@
 import pandas as pd
 from pathlib import Path
 import streamlit
+import openpyxl
 
 def add_data(year, book_data, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng, procent,
              num_rooms, num_guests, email_address, telefon, spouse, single_room, BF, pristotal, known, comments,
