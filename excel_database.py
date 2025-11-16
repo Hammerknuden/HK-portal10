@@ -2,7 +2,6 @@ import pandas as pd
 from pathlib import Path
 import streamlit
 
-
 def add_data(year, book_data, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng, procent,
              num_rooms, num_guests, email_address, telefon, spouse, single_room, BF, pristotal, known, comments,
              excel_path='output.xlsx'): #r'C:\Users\finnj\-repoHK2\HK-portal10\2025 output.xlsx'):
