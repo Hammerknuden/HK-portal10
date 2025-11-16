@@ -634,9 +634,7 @@ if send_data and year == '2026':
 
 if send_data and year == '2027':
     if bruger == "Finn":
-        #file_id = '1QGGa7LG9OfryfefhJ4QohGYxqjNJ-fPg'
-        #url = f'https://drive.google.com/uc?id={file_id}'
-        #url = 'https://drive.usercontent.google.com/download?id=1QGGa7LG9OfryfefhJ4QohGYxqjNJ-fPg&export=download&authuser=0&confirm=t&uuid=4ece34a8-c6d3-4fb2-b14f-d679260a2777&at=APcmpoxYX9pwMTHWhzO7j9CamHva:1746354652387'
+
         some_book_data = ({year}, {booking_number}, {name}, {checkin_date}, {checkout_date}, {now}, {nationalitet},
                           {web}, {seng}, {rabat}, {num_rooms}, {num_guests}, {email_address}, {telefon}, {spouse},
                           {single_room}, {breakfast}, {formatted_pristotal}, {known})
