@@ -618,18 +618,18 @@ if send_data and year == '2026':
                           {single_room}, {breakfast}, {formatted_pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
                  rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
-                 formatted_pristotal, known, comments, excel_path='output.xlsx', sheet_name='book')
+                 formatted_pristotal, known, comments, excel_path='output.xlsx')
                  #'https://bonneviedisk.de6.quickconnect.to/fbdownload/output26.xlsx?dlink=%222f48616d6d65726b6e7564656e20646174612f6f757470757432362e786c7378%22&noCache=1763300812393&mode=download&stdhtml=false&SynoToken=ARev9TKHrSgEU&SynoHash=c8LsrImQYaXzl7We15UXIXTTSuoUXQ.ODQ')
                  #'https://docs.google.com/spreadsheets/d/145-hYZvfkUMGAHI8fP_M6xNVXN-6fpHI/edit?usp=drive_link&ouid=113417285199087461988&rtpof=true&sd=true')
                  #excel_path=r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2024 output.xlsx")
 
-    if bruger == "naja":
+    if bruger == "Naja":
         some_book_data = ({year}, {booking_number}, {name}, {checkin_date}, {checkout_date}, {now}, {nationalitet},
                           {web}, {seng}, {rabat}, {num_rooms}, {num_guests}, {email_address}, {telefon}, {spouse},
                           {single_room}, {breakfast}, {formatted_pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
-                rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
-                formatted_pristotal, known, comments, excel_path="output.xlsx", sheet_name="book")
+                 rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
+                 formatted_pristotal, known, comments, excel_path='output.xlsx')
     st.markdown("2026 data sendt til excel")
 
 if send_data and year == '2027':
@@ -659,8 +659,8 @@ if send_data and year == '2026': # husk at indsætte bruger naja / finn
                           {single_room}, {breakfast}, {formatted_pristotal}, {known}, {comments})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
                  rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
-                 formatted_pristotal, known,
-                 excel_path='output.xlsx')#r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2026 output.xlsx")
+                 formatted_pristotal, known, excel_path='output.xlsx')
+        #r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2026 output.xlsx")
     if bruger == "Naja":
         some_book_data = ({year}, {booking_number}, {name}, {checkin_date}, {checkout_date}, {now}, {nationalitet},
                           {web}, {seng}, {rabat}, {num_rooms}, {num_guests}, {email_address}, {telefon}, {spouse},
