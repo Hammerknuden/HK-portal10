@@ -618,7 +618,7 @@ if send_data and year == '2026':
                           {single_room}, {breakfast}, {formatted_pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
                  rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
-                 formatted_pristotal, known, comments, excel_path='output26.xlsx', sheet_name='book')
+                 formatted_pristotal, known, comments, excel_path='output.xlsx', sheet_name='book')
                  #'https://bonneviedisk.de6.quickconnect.to/fbdownload/output26.xlsx?dlink=%222f48616d6d65726b6e7564656e20646174612f6f757470757432362e786c7378%22&noCache=1763300812393&mode=download&stdhtml=false&SynoToken=ARev9TKHrSgEU&SynoHash=c8LsrImQYaXzl7We15UXIXTTSuoUXQ.ODQ')
                  #'https://docs.google.com/spreadsheets/d/145-hYZvfkUMGAHI8fP_M6xNVXN-6fpHI/edit?usp=drive_link&ouid=113417285199087461988&rtpof=true&sd=true')
                  #excel_path=r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2024 output.xlsx")
@@ -629,7 +629,7 @@ if send_data and year == '2026':
                           {single_room}, {breakfast}, {formatted_pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
                 rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
-                formatted_pristotal, known, comments, excel_path="output26.xlsx", sheet_name="book")
+                formatted_pristotal, known, comments, excel_path="output.xlsx", sheet_name="book")
     st.markdown("2026 data sendt til excel")
 
 if send_data and year == '2027':
@@ -640,7 +640,7 @@ if send_data and year == '2027':
                           {single_room}, {breakfast}, {formatted_pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
                  rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
-                 formatted_pristotal, known, comments, excel_path="output27.xlsx", sheet_name="book")
+                 formatted_pristotal, known, comments, excel_path="output.xlsx", sheet_name="book")
                  #'https://docs.google.com/spreadsheets/d/145-hYZvfkUMGAHI8fP_M6xNVXN-6fpHI/edit?usp=drive_link&ouid=113417285199087461988&rtpof=true&sd=true')
                  #excel_path=r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025 output.xlsx")
     if bruger == "Naja":
@@ -649,7 +649,7 @@ if send_data and year == '2027':
                           {single_room}, {breakfast}, {formatted_pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
                  rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
-                 formatted_pristotal, known, comments, excel_path="output27.xlsx")  #"C:\Users\finnj\-repoHK2\HK-portal10\2025 output.xlsx")
+                 formatted_pristotal, known, comments, excel_path="output.xlsx")  #"C:\Users\finnj\-repoHK2\HK-portal10\2025 output.xlsx")
     st.markdown("2027 data sendt til excel")
 
 if send_data and year == '2026': # husk at indsætte bruger naja / finn
@@ -668,7 +668,7 @@ if send_data and year == '2026': # husk at indsætte bruger naja / finn
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
                  rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
                  formatted_pristotal, known, comments,
-                 excel_path='output26.xlsx')#r"C:\Users\bonne\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2026 output.xlsx")
+                 excel_path='output.xlsx')#r"C:\Users\bonne\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2026 output.xlsx")
 
     st.markdown("2026 data sendt til excel")
 
