@@ -557,7 +557,7 @@ print(formatted_pristotal)
 st.markdown(f"**Den totale pris** {formatted_pristotal}kr")
 
 name = st.text_input("Navn ")
-fam_name = st.text_input("Efternavn  ")
+fam_name = st.text_input("Efternavn (kun til søgning ellers blank)  ")
 telefon = st.text_input(" Kontakt telefon")
 email_address = st.text_input("email")
 
@@ -722,7 +722,7 @@ elif web == "web" and Sprog == "UK":
     justering = rabat_t
     formatted_justering = f"{justering:.2f}kr."
 elif web == "web" and Sprog == "D":
-    text_web = f"Jegliche Ermäßigung im Zusammenhang mit dieser Buchung gilt."
+    text_web = f"Der Rabatt im Zusammenhang mit dieser Buchung beträgt."
     justering = rabat_t
     formatted_justering = f"{justering:.2f}kr"
 else:
