@@ -229,7 +229,7 @@ def german_email_html_template(logo_cid, name, num_rooms, num_guests, booking_nu
             Die Reservierung gilt für {num_rooms} Doppelzimmer, Ed Bad, Kochnische und Terrasse für {num_guests} Gäste
             </p>
             <p>
-            Buchungsnummer ist<span style="padding-left:3em"><b>{booking_number}</b> 
+            Buchungsnummer ist<span style="padding-left:3em"><b> {booking_number}</b> 
             <hr>
             <p>Reservierung ist von<span style="padding-left:3em"><b> {checkin_date}</b></span></p>
             <p>Bis<span style="padding-left:10em"><b> {checkout_date}</b></span></p>
