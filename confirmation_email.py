@@ -231,7 +231,7 @@ def german_email_html_template(logo_cid, name, num_rooms, num_guests, booking_nu
             <p>
             Buchungsnummer ist<span style="padding-left:3em"><b>{booking_number}</b> 
             <hr>
-            <p>Reservierung ist von<span style="padding-left:3em"><b> {checkin_date}</b></span</p>
+            <p>Reservierung ist von<span style="padding-left:3em"><b> {checkin_date}</b></span></p>
             <p>Bis<span style="padding-left:10em"><b> {checkout_date}</b></span></p>
             <hr>
             <p>Der Check-in erfolgt später 14:30 Uhr am Tag des Check-in und Check-out vorher 10:00 Uhr, ansonsten nach 
@@ -248,7 +248,7 @@ def german_email_html_template(logo_cid, name, num_rooms, num_guests, booking_nu
                 </tr>
                 <tr>
                     <td>{text_web}.</td>
-                    <td><span style=float:right>{formatted_justering}kr</span></td>
+                    <td><span style=float:right>{formatted_justering}</span></td>
                 </tr>
                 <tr>
                     <td>Der Endpreis wird während des Aufenthalts abgerechnet.</td>
