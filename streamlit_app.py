@@ -494,8 +494,8 @@ if breakfast and breakfast_alt:
 if year == '2027':
     high_season_start = datetime.strptime("22-06-27", _format := "%d-%m-%y").date()
     high_season_end = datetime.strptime("17-08-27", _format := "%d-%m-%y").date()
-    st.markdown(f"Højsæson starter {high_season_start}")
-    st.markdown(f"højsøson slutter {high_season_end}")
+    st.markdown(f"**Højsæson starter** {high_season_start}")
+    st.markdown(f"**højsøson slutter** {high_season_end}")
 if year == '2025':
     high_season_start = datetime.strptime("29-06-25", _format := "%d-%m-%y").date()
     high_season_end = datetime.strptime("26-08-25", _format := "%d-%m-%y").date()
@@ -503,7 +503,7 @@ if year == '2026':
     high_season_start = datetime.strptime("28-06-26", _format := "%d-%m-%y").date()
     high_season_end = datetime.strptime("25-08-26", _format := "%d-%m-%y").date()
     st.markdown(f"Højsæson starter {high_season_start}")
-    st.markdown(f"højsøson slutter {high_season_end}")
+    st.markdown(f"Højsøson slutter {high_season_end}")
 
 days = checkout_date - checkin_date
 
