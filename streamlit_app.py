@@ -502,6 +502,7 @@ if year == '2026':
     high_season_end = datetime.strptime("25-08-26", _format := "%d-%m-%y").date()
 
 days = checkout_date - checkin_date
+st.markdown("Højsæson 2026", {high_season_start},{high_season_end})
 
 high_season_days = high_season_end - high_season_start
 high_booking = (checkin_date >= high_season_start) and (checkout_date <= high_season_end)
