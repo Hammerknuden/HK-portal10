@@ -411,15 +411,15 @@ else:
 
 if year == '2027':
     if single_room:
-        high_season_price = 985  #2025 950
-        low_season_price = 865   #2025 830
+        high_season_price = 985  #2026 975
+        low_season_price = 865   #2026 850
         single_room = "Y"
     if web == "FM":
-        high_season_price = 1085
-        low_season_price = 1085
+        high_season_price = 1085  #2026 1075
+        low_season_price = 1085   #2026 1075
     else:
-        high_season_price = 1085   #2025 1050
-        low_season_price = 965     #2025 930
+        high_season_price = 1085   #2026 1075
+        low_season_price = 965     #2026 950
         single_room = "N"
 if year == '2025':
     if single_room:
@@ -435,15 +435,15 @@ if year == '2025':
         single_room = "N"
 if year == '2026':
     if single_room:
-        high_season_price = 950  #2025 950 ca 3% =985
-        low_season_price = 830   #2025 830 ca 4% =865
+        high_season_price = 975  #2025 950 ca 3% =985
+        low_season_price = 850   #2025 830 ca 4% =865
         single_room = "Y"
     if web == "FM":
-        high_season_price = 1050
-        low_season_price = 1050
+        high_season_price = 1075
+        low_season_price = 1075
     else:
-        high_season_price = 1050   #2025 1050 ca 3% = 1085
-        low_season_price = 930     #2025 930 ca 3% = 965
+        high_season_price = 1075   #2025 1050 ca 3% = 1085
+        low_season_price = 950     #2025 930 ca 3% = 965
         single_room = "N"
 
 print(low_season_price)
@@ -501,7 +501,7 @@ if year == '2025':
     high_season_end = datetime.strptime("26-08-25", _format := "%d-%m-%y").date()
 if year == '2026':
     high_season_start = datetime.strptime("28-06-26", _format := "%d-%m-%y").date()
-    high_season_end = datetime.strptime("25-08-26", _format := "%d-%m-%y").date()
+    high_season_end = datetime.strptime("15-08-26", _format := "%d-%m-%y").date()
     st.markdown(f"**Højsæson starter** {high_season_start}")
     st.markdown(f"**Højsæson slutter** {high_season_end}")
 
