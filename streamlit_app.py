@@ -421,17 +421,17 @@ if year == '2027':
         high_season_price = 1085   #2026 1075
         low_season_price = 965     #2026 950
         single_room = "N"
-if year == '2025':
+if year == '2028':
     if single_room:
-        high_season_price = 950  #2025 950
-        low_season_price = 830   #2025 830
+        high_season_price = 950  #2026 975
+        low_season_price = 830   #2026 850
         single_room = "Y"
     if web == "FM":
-        high_season_price = 1050
-        low_season_price = 1050
+        high_season_price = 1050  #2026 1075
+        low_season_price = 1050   #2026 1075
     else:
-        high_season_price = 1050   #2025 1050
-        low_season_price = 930     #2025 930
+        high_season_price = 1050   #2026 1075
+        low_season_price = 930     #2026 950
         single_room = "N"
 if year == '2026':
     if single_room:
