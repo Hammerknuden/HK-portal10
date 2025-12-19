@@ -610,7 +610,8 @@ if send_data and year == '2026':
                           {single_room}, {breakfast}, {formatted_pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
                  rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
-                 formatted_pristotal, known, comments, excel_path='output.xlsx')
+                 formatted_pristotal, known, comments, excel_path='http://bonneviedisk.de6.quickconnect.to/'
+                                                                  'volume1/Hammerknuden data/output26.xlsx')
     if bruger == "Naja":
         some_book_data = ({year}, {booking_number}, {name}, {checkin_date}, {checkout_date}, {now}, {nationalitet},
                           {web}, {seng}, {rabat}, {num_rooms}, {num_guests}, {email_address}, {telefon}, {spouse},
