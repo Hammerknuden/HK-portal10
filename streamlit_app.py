@@ -395,8 +395,11 @@ def highlight_cells(val):
 styled_data = new_data[['dato', '1-I', '2-I', '3-I', '4-I', '5-I']].style.map(highlight_cells) # Vis den styliserede DataFrame i Streamlit
 st.dataframe(styled_data)
 #style.applymap(highlight_cells)
+if single_room:
+    num_guests = st.number_input("max en gæst", value=1, step=0)
+else:
+    num_guests = st.number_input("Antal gæster", value=2, step=1)
 
-num_guests = st.number_input("Antal gæster", value=2, step=1)
 num_rooms = st.number_input("Antal rum", value=1, step=1)
 web = st.selectbox("booking via web bc eller FM folkemøde ( ikke mulighed for enk rum)", options=["web", "bc", "FM"])
 seng = st.text_input(" type seng DB, ENK, OPCH, OPIN ")
