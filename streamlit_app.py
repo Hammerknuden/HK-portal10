@@ -48,7 +48,6 @@ st.markdown(f"**Antal dage denne booking**  {days.days}")
 if year == '2027':
 
     if bruger == "Naja" and network == "URL":
-        #url = 'https://drive.usercontent.google.com/download?id=1MmfCR70RlDt3EIQ6eAIrf9OULon2OD_H&export=download&authuser=0&confirm=t&uuid=7431c7df-098e-4b7a-8c03-2e3eb8f9f2d0&at=AKSUxGPJgja3nhqecB-TrvRbQljN:1762079784321'
         url = 'https://drive.usercontent.google.com/download?id=1MmfCR70RlDt3EIQ6eAIrf9OULon2OD_H&export=download&authuser=0&confirm=t&uuid=6021d22c-fa0f-45f4-9e61-2d99b296fcf1&at=AKSUxGMOeGtFihvrcKgymyTxiynP:1762359003826'
         df = pd.read_excel(url, sheet_name='book_simp')
         new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
@@ -104,8 +103,6 @@ if year == '2027':
         print(df)
 
     if bruger == "Finn" and network == "URL":
-        # url 2025 url = 'https://drive.usercontent.google.com/download?id=1fS2Gs3mOTKGNj0DEQ96Kkahkj7nS_gJW&export=download&authuser=0&confirm=t&uuid=8a74ef99-d891-4950-8622-11ff5c7b5ee4&at=APcmpowsxXunj5Rcd1q_LcxQwLws:1746354248379'
-        #url = 'https://drive.usercontent.google.com/download?id=1MmfCR70RlDt3EIQ6eAIrf9OULon2OD_H&export=download&authuser=0&confirm=t&uuid=7431c7df-098e-4b7a-8c03-2e3eb8f9f2d0&at=AKSUxGPJgja3nhqecB-TrvRbQljN:1762079784321'
         url = 'https://drive.usercontent.google.com/download?id=1MmfCR70RlDt3EIQ6eAIrf9OULon2OD_H&export=download&authuser=0&confirm=t&uuid=6021d22c-fa0f-45f4-9e61-2d99b296fcf1&at=AKSUxGMOeGtFihvrcKgymyTxiynP:1762359003826'
         df = pd.read_excel(url, sheet_name='book_simp')
         new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
