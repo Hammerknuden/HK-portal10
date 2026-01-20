@@ -48,7 +48,9 @@ st.markdown(f"**Antal dage denne booking**  {days.days}")
 if year == '2027':
 
     if bruger == "Naja" and network == "URL":
-        url = 'https://drive.usercontent.google.com/download?id=1MmfCR70RlDt3EIQ6eAIrf9OULon2OD_H&export=download&authuser=0&confirm=t&uuid=6021d22c-fa0f-45f4-9e61-2d99b296fcf1&at=AKSUxGMOeGtFihvrcKgymyTxiynP:1762359003826'
+
+        url = 'https://drive.usercontent.google.com/download?id=1MmfCR70RlDt3EIQ6eAIrf9OULon2OD_H&export=download&authuser=0&confirm=t&uuid=7dd1f9ba-ed4a-42c2-a132-82f8d2e22397&at=ANTm3cwMOdRTd0PJdNqed2GXWO9C:1768913209284'
+        #url = 'https://drive.usercontent.google.com/download?id=1MmfCR70RlDt3EIQ6eAIrf9OULon2OD_H&export=download&authuser=0&confirm=t&uuid=6021d22c-fa0f-45f4-9e61-2d99b296fcf1&at=AKSUxGMOeGtFihvrcKgymyTxiynP:1762359003826'
         df = pd.read_excel(url, sheet_name='book_simp')
         new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
         unique_values = new_data["1-I"].unique()
@@ -158,9 +160,7 @@ if year == '2027':
         print(df)
 
     if bruger == "Finn" and network == "local":
-        #file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
-        #file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
-        #file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\hammerknuden\BOOKING\filer\2027_BOOKING 10.xlsx"
+
         file_name = "2027_BOOKING 10.xlsx"
         df = pd.read_excel(file_name, sheet_name='book_simp')
         new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
