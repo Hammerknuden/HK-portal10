@@ -27,7 +27,7 @@ st.image("logo2.jpg")
 st.subheader("Reservations formular  ")
 
 year = st.selectbox("booking år", options=["2026", "2027"])
-bruger = st.selectbox("bruger computer ", options=["Finn", "Naja"])
+bruger = "Finn"  #st.selectbox("bruger computer ", options=["Finn", "Naja"])
 network = "local"  #st.selectbox("vælg lokal eller web ", options=["local", "URL"])
 
 #file_name_1 = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
