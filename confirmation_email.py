@@ -74,7 +74,7 @@ def danish_email_html_template(logo_cid, name, num_rooms, num_guests, booking_nu
                 </tr>
                 <hr>
                 <tr>
-                    <td> Kontakt informationer email: {email_address} telefon : {telefon} </td>
+                    <td> Jeres/din ontakt informationer email: {email_address} telefon : {telefon} </td>
                 </tr>
             </table>
             <hr>
@@ -147,8 +147,8 @@ def english_email_html_template(logo_cid, name, num_rooms, num_guests, booking_n
             <p>
             The booking reference number is              <b>{booking_number}</b> 
             <hr>
-            <p>Inn check is on the<span style="padding-left:3em"><b>{checkin_date}</b></span></p>
-            <p>Checkout is on the<span style="padding-left:3em"><b>{checkout_date}</b></span></p>
+            <p>Inn check is on the <span style="padding-left:3em"><b>{checkin_date}</b></span></p>
+            <p>Checkout is on the <span style="padding-left:3em"><b>{checkout_date}</b></span></p>
             <hr>
             <p>Check-in is after 14:30 on the day of check-in and check-out before 10:00, otherwise by appointment
             </p>
@@ -158,21 +158,21 @@ def english_email_html_template(logo_cid, name, num_rooms, num_guests, booking_n
                     <td>{text_bf}</td>
                     <td><span style=float:right> -- </style></td>
                 </tr>
-                <tr>
+                <tr> 
                     <td>The price is.. </td>
                     <td><span style=float:right>{formatted_prismed}kr</span></td>
                 </tr>
                 <tr>
                     <td>{text_web}..</td>
-                    <td><span style=float:right>{formatted_justering}kr</span></td>
+                    <td><span style=float:right>{formatted_justering}</span></td>
                 </tr>
                 <tr>
                     <td>Total price to be settled during stay....</td>
-                    <td><span style=float:right>{formatted_pristotal}kr</span></td>
+                    <td><span style=float:right>{formatted_pristotal} kr</span></td>
                 </tr>
                 <hr>
                 <tr>
-                    <td> Contact information email: {email_address}, Phone: {telefon} </td>
+                    <td> Your Contact information email: {email_address}, Phone: {telefon} </td>
             </table>
             <hr>
             <p> GDPR; Hammerknuden stores name, address, email address and telephone number as part of the mandatory guest data registration 
@@ -255,7 +255,7 @@ def german_email_html_template(logo_cid, name, num_rooms, num_guests, booking_nu
                 </tr>
                 <tr>
                     <td>Der Preis für den Aufenthalt beträgt</td>
-                    <td><span style=float:right>{formatted_prismed}kr</span></td>
+                    <td><span style=float:right>{formatted_prismed} kr</span></td>
                 </tr>
                 <tr>
                     <td>{text_web}.</td>
@@ -263,7 +263,7 @@ def german_email_html_template(logo_cid, name, num_rooms, num_guests, booking_nu
                 </tr>
                 <tr>
                     <td>Der Endpreis wird während des Aufenthalts abgerechnet.</td>
-                    <td><span style=float:right>{formatted_pristotal}kr</span></td>
+                    <td><span style=float:right>{formatted_pristotal} kr</span></td>
                 </tr>
             <hr>
                 <tr>
