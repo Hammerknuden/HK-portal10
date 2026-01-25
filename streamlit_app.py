@@ -214,9 +214,7 @@ if year == '2027':
         print(unique_values)
         st.markdown(f"**Antal ledige rum**  {ledige_rum}")  # "ledige} rum ", {ledige_rum})
     if bruger == "Naja" and network == "local":
-        #file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
-        #file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025_BOOKING_ 2_0.xlsx"
-        #file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\hammerknuden\BOOKING\filer\2027_BOOKING 10.xlsx"
+
         file_name = "2027_BOOKING 10.xlsx"
         df = pd.read_excel(file_name, sheet_name='book_simp')
         new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
@@ -718,18 +716,18 @@ if web == "web" and Sprog == "DK":
 elif web == "FM" and Sprog == "DK":
     text_web = "Evt tillæg i forbindelse med denne booking"
     justering = pris_add_t
-    formatted_justering = f"{justering:.2f}kr"
+    formatted_justering = f"{justering:.2f} kr"
     print(formatted_justering)
     depositum = pristotal * 0.5
     st.markdown(f"** depositum 50% ** {depositum:.2f}")
 elif web == "web" and Sprog == "UK":
     text_web = "Any discount in connection with this booking is."
     justering = rabat_t
-    formatted_justering = f"{justering:.2f}kr."
+    formatted_justering = f"{justering:.2f} kr."
 elif web == "web" and Sprog == "D":
     text_web = f"Der Rabatt im Zusammenhang mit dieser Buchung beträgt."
     justering = rabat_t
-    formatted_justering = f"{justering:.2f}kr"
+    formatted_justering = f"{justering:.2f} kr"
 else:
     text_web = " - "
     formatted_justering = " - "

@@ -62,17 +62,19 @@ def danish_email_html_template(logo_cid, name, num_rooms, num_guests, booking_nu
                 </tr>
                 <tr>
                     <td>Prisen på opholdet er</td>
-                    <td><span style=float:right>{formatted_prismed}kr</span></td>
+                    <td><span style=float:right>{formatted_prismed} kr</span></td>
                 </tr>
                 <tr>
                     <td>{text_web}</td>
-                    <td><span style=float:right>{formatted_justering}kr</span></td>
+                    <td><span style=float:right>{formatted_justering} </span></td>
                 </tr>
                 <tr>
                     <td>Endelig pris afregnes under opholdet.</td>
-                    <td><span style=float:right>{formatted_pristotal}kr</span></td>
+                    <td><span style=float:right>{formatted_pristotal} kr</span></td>
                 </tr>
-                    <td> Kontakt informationer email: {email_address} telefon : {telefon}
+                <tr>
+                    <td> Kontakt informationer email: {email_address} telefon : {telefon} </td>
+                </tr>
             </table>
             <hr>
             <p> GDPR; Hammerknuden gemmer navn, adresse, email og telefon nummer som en del af den obligatoriske gæste 
