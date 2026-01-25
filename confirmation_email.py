@@ -96,12 +96,14 @@ def danish_email_html_template(logo_cid, name, num_rooms, num_guests, booking_nu
 
 def send_danish_confirmation_email(to_addr, confirmation_password, name, num_rooms, num_guests,
                                    booking_number, checkin_date, checkout_date, text_bf, formatted_prismed, text_web,
-                                   formatted_justering, formatted_pristotal, text_ank, text_bed, text_free):
+                                   formatted_justering, formatted_pristotal, text_ank, text_bed, text_free, email_address,
+                                   telefon):
 
     logo_cid = make_msgid()
     html_content = danish_email_html_template(logo_cid[1:-1], name, num_rooms, num_guests, booking_number,
                                               checkin_date, checkout_date, text_bf, formatted_prismed, text_web,
-                                              formatted_justering, formatted_pristotal, text_ank, text_bed, text_free)
+                                              formatted_justering, formatted_pristotal, text_ank, text_bed, text_free,
+                                              email_address, telefon)
     # construct email
     email = EmailMessage()
 

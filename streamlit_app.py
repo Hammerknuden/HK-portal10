@@ -746,7 +746,7 @@ booking_submitted = st.button("Bekræft booking")
 if Sprog == "DK" and booking_submitted:
     send_danish_confirmation_email(to_addr, confirmation_password, name, num_rooms, num_guests, booking_number,
                                    checkin_date, checkout_date, text_bf, prismed, text_web, formatted_justering,
-                                   formatted_pristotal, text_ank, text_bed, text_free)
+                                   formatted_pristotal, text_ank, text_bed, text_free, email_address, telefon)
     st.markdown('dansk email er sendt')
 elif Sprog == "UK" and booking_submitted:
     send_english_confirmation_email(to_addr, confirmation_password, name, num_rooms, num_guests, booking_number,
