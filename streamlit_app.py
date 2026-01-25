@@ -751,12 +751,12 @@ if Sprog == "DK" and booking_submitted:
 elif Sprog == "UK" and booking_submitted:
     send_english_confirmation_email(to_addr, confirmation_password, name, num_rooms, num_guests, booking_number,
                                     checkin_date, checkout_date, text_bf, prismed, text_web, formatted_justering,
-                                    formatted_pristotal, text_ank, text_bed, text_free)
+                                    formatted_pristotal, text_ank, text_bed, text_free, email_address, telefon)
     st.markdown('engelsk email er sendt')
 elif Sprog == "D" and booking_submitted:
     send_german_confirmation_email(to_addr, confirmation_password, name, num_rooms, num_guests, booking_number,
                                    checkin_date, checkout_date, text_bf, prismed, text_web, formatted_justering,
-                                   formatted_pristotal, text_ank, text_bed, text_free)
+                                   formatted_pristotal, text_ank, text_bed, text_free, email_address, telefon)
     st.markdown('tysk email er sendt')
 else:
     st.markdown('mail er ikke sendt ')

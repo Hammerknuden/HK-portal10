@@ -72,6 +72,7 @@ def danish_email_html_template(logo_cid, name, num_rooms, num_guests, booking_nu
                     <td>Endelig pris afregnes under opholdet.</td>
                     <td><span style=float:right>{formatted_pristotal} kr</span></td>
                 </tr>
+                <hr>
                 <tr>
                     <td> Kontakt informationer email: {email_address} telefon : {telefon} </td>
                 </tr>
@@ -121,7 +122,7 @@ def send_danish_confirmation_email(to_addr, confirmation_password, name, num_roo
 
 def english_email_html_template(logo_cid, name, num_rooms, num_guests, booking_number, checkin_date, checkout_date,
                                 text_bf, formatted_prismed, text_web, formatted_justering, formatted_pristotal,
-                                text_ank, text_bed, text_free):
+                                text_ank, text_bed, text_free, email_address, telefon):
 
     return f"""<html>        <html style="display: table; margin: auto;">
         <head>
@@ -169,6 +170,9 @@ def english_email_html_template(logo_cid, name, num_rooms, num_guests, booking_n
                     <td>Total price to be settled during stay....</td>
                     <td><span style=float:right>{formatted_pristotal}kr</span></td>
                 </tr>
+                <hr>
+                <tr>
+                    <td> Contact information email: {email_address}, Phone: {telefon} </td>
             </table>
             <hr>
             <p> GDPR; Hammerknuden stores name, address, email address and telephone number as part of the mandatory guest data registration 
@@ -189,11 +193,13 @@ def english_email_html_template(logo_cid, name, num_rooms, num_guests, booking_n
 
 def send_english_confirmation_email(to_addr, confirmation_password, name, num_rooms, num_guests, booking_number,
                                     checkin_date, checkout_date, text_bf, formatted_prismed, text_web,
-                                    formatted_justering, formatted_pristotal, text_ank, text_bed, text_free):
+                                    formatted_justering, formatted_pristotal, text_ank, text_bed, text_free,
+                                    email_address, telefon):
     logo_cid = make_msgid()
     html_content = english_email_html_template(logo_cid[1:-1], name, num_rooms, num_guests, booking_number,
                                                checkin_date, checkout_date, text_bf, formatted_prismed, text_web,
-                                               formatted_justering, formatted_pristotal, text_ank, text_bed, text_free)
+                                               formatted_justering, formatted_pristotal, text_ank, text_bed, text_free,
+                                               email_address, telefon)
     # construct email
     email = EmailMessage()
 
@@ -211,7 +217,7 @@ def send_english_confirmation_email(to_addr, confirmation_password, name, num_ro
 
 def german_email_html_template(logo_cid, name, num_rooms, num_guests, booking_number, checkin_date, checkout_date,
                                text_bf, formatted_prismed, text_web, formatted_justering, formatted_pristotal,
-                               text_ank, text_bed, text_free):
+                               text_ank, text_bed, text_free, email_address, telefon):
     return f"""<html>        <html style="display: table; margin: auto;">
         <head>
             <meta charset="UTF-8" />
@@ -259,6 +265,10 @@ def german_email_html_template(logo_cid, name, num_rooms, num_guests, booking_nu
                     <td>Der Endpreis wird während des Aufenthalts abgerechnet.</td>
                     <td><span style=float:right>{formatted_pristotal}kr</span></td>
                 </tr>
+            <hr>
+                <tr>
+                    <td> Ihre Kontaktinformationen email: {email_address} Telefon; {telefon} </td>
+                </tr>            
             </table>
             <hr>
             <p>DSGVO; Hammerknuden speichert Name, Adresse, E-Mail-Adresse und Telefonnummer als Teil der 
