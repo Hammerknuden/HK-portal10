@@ -74,7 +74,7 @@ def danish_email_html_template(logo_cid, name, num_rooms, num_guests, booking_nu
                 </tr>
                 <hr>
                 <tr>
-                    <td> Jeres/din ontakt informationer email: {email_address} telefon : {telefon} </td>
+                    <td> Jeres/Din kontakt information email: {email_address} telefon : {telefon} </td>
                 </tr>
             </table>
             <hr>
