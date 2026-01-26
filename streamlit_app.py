@@ -720,7 +720,8 @@ elif web == "FM" and Sprog == "DK":
     print(formatted_justering)
     depositum = pristotal * 0.5
     st.markdown(f"** depositum 50% ** {depositum:.2f}")
-    text_free = f"Depositum {depositum:.2f}  kr skal indbetales ved kontooverførsel eller mobolpay inden 15 feb.2026 "
+    text_free = (f"Depositum {depositum:.2f}  kr skal indbetales ved kontooverførsel eller mobilpay 133565"
+                 "inden 15 feb.2026 ")
 elif web == "web" and Sprog == "UK":
     text_web = "Any discount in connection with this booking is."
     justering = rabat_t
