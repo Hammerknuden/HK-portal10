@@ -450,10 +450,10 @@ if year == '2026' and (web == 'bc' or web == 'web'):
 
 else:
     st.markdown('FAULT')
-
-
 print(high_season_price)
 print(low_season_price)
+st.markdown(f"**High season** {high_season_price}")
+st.markdown(f"**Low season** {low_season_price}")
 
 if year == '2027':
     bf_price = 110  #breakfast 2025 100,-
@@ -461,8 +461,8 @@ if year == '2025':
     bf_price = 100
 if year == '2026':
     bf_price = 100
-st.markdown(f"**High season** {high_season_price}")
-st.markdown(f"**Low season** {low_season_price}")
+
+
 
 Sprog = st.selectbox("Sprog - email confirmation dk uk D", options=["DK", "UK", "D"])
 
