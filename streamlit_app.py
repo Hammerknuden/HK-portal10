@@ -464,8 +464,8 @@ if year == '2026':
         st.markdown('FAULT')
 else:
     st.markdown('wrong year')
-st.markdown(f"**High season** {high_season_price}")
-st.markdown(f"**Low season** {low_season_price}")
+    st.markdown(f"**High season** {high_season_price}")
+    st.markdown(f"**Low season** {low_season_price}")
 
 if year == '2027':
     bf_price = 110  #breakfast 2025 100,-
