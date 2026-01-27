@@ -436,13 +436,18 @@ if year == '2026' and single_room:
         high_season_price = 975  #2025 950 ca 3% =985
         low_season_price = 850   #2025 830 ca 4% =865
         single_room = "Y"
-        if year == '2026' and web == 'FM':
-            high_season_price = 1075
-            low_season_price = 1075
-        else:
-            high_season_price = 1075   #2025 1050 ca 3% = 1085
-            low_season_price = 950     #2025 930 ca 3% = 965
-            single_room = "N"
+if year == '2026' and web == 'FM':
+
+        high_season_price = 1075
+        low_season_price = 1075
+if year == '2026' and web == 'bc' or year == '2026' and web == 'web':
+
+        high_season_price = 1075   #2025 1050 ca 3% = 1085
+        low_season_price = 950     #2025 930 ca 3% = 965
+        single_room = "N"
+else:
+    st.markdown('FAULT')
+
 
 print(high_season_price)
 print(low_season_price)
