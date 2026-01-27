@@ -444,8 +444,9 @@ if year == '2026':
         low_season_price = 950     #2025 930 ca 3% = 965
         single_room = "N"
 
-print(low_season_price)
 print(high_season_price)
+print(low_season_price)
+
 if year == '2027':
     bf_price = 110  #breakfast 2025 100,-
 if year == '2025':
