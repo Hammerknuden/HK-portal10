@@ -432,10 +432,9 @@ if year == '2028':
         low_season_price = 930     #2026 950
         single_room = "N"
 
+
 if year == '2026':
-
     if single_room:
-
         high_season_price = 975  #2025 950 ca 3% =985
         low_season_price = 850   #2025 830 ca 4% =865
         single_room = "Y"
@@ -463,9 +462,10 @@ if year == '2026':
         print(high_season_price)
     else:
         st.markdown('FAULT')
-
-    st.markdown(f"**High season** {high_season_price}")
-    st.markdown(f"**Low season** {low_season_price}")
+else:
+    st.markdown('wrong year')
+st.markdown(f"**High season** {high_season_price}")
+st.markdown(f"**Low season** {low_season_price}")
 
 if year == '2027':
     bf_price = 110  #breakfast 2025 100,-
