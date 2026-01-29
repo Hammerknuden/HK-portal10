@@ -415,7 +415,7 @@ if year == '2026':
         print(high_season_price)
     else:
         low_season_price = 950
-        high_seson_price = 1075
+        high_season_price = 1075
         if web == "FM":
             high_season_price = 1075  #2026 1075
             low_season_price = 1075   #2026 1075
@@ -429,8 +429,8 @@ if year == '2026':
             print(low_season_price)
             print(high_season_price)
 
-st.markdown(low_season_price)
-st.markdown(high_season_price)
+    st.markdown(low_season_price)
+    st.markdown(high_season_price)
 
 if year == '2027':
     if single_room:
