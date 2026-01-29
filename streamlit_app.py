@@ -45,7 +45,7 @@ days = checkout_date - checkin_date
 st.text("Skema viser ikke udchecksdagen da den er irelevant i forbindelse med reservation")
 st.markdown(f"**Antal dage denne booking**  {days.days}")
 
-if year == '2027':
+if year == '2026':
 
     if bruger == "Naja" and network == "URL":
 
@@ -161,7 +161,7 @@ if year == '2027':
 
     if bruger == "Finn" and network == "local":
 
-        file_name = "2027_BOOKING 10.xlsx"
+        file_name = "2026_BOOKING 10.xlsx"
         df = pd.read_excel(file_name, sheet_name='book_simp')
         new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
         unique_values = new_data["1-I"].unique()
@@ -214,8 +214,7 @@ if year == '2027':
         print(unique_values)
         st.markdown(f"**Antal ledige rum**  {ledige_rum}")  # "ledige} rum ", {ledige_rum})
     if bruger == "Naja" and network == "local":
-
-        file_name = "2027_BOOKING 10.xlsx"
+        file_name = "2026_BOOKING 10.xlsx"
         df = pd.read_excel(file_name, sheet_name='book_simp')
         new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
         unique_values = new_data["1-I"].unique()
@@ -268,12 +267,12 @@ if year == '2027':
         print(unique_values)
         st.markdown(f"**Antal ledige rum**  {ledige_rum}")  # "ledige} rum ", {ledige_rum})
 
-if year == '2026':
+if year == '2027':
 
     if bruger == "Naja" and network == 'local':
         #df = pd.read_excel(r"C:\Users\naja\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\2025_BOOKING 10.xlsx",
         #                   sheet_name='book_simp')
-        df = pd.read_excel("2026_BOOKING 10.xlsx", sheet_name='book_simp')
+        df = pd.read_excel("2027_BOOKING 10.xlsx", sheet_name='book_simp')
         print(df)
         new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
         unique_values = new_data["1-I"].unique()
@@ -328,7 +327,7 @@ if year == '2026':
 
     if bruger == "Finn" and network == 'local':
         #file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2026_BOOKING 10.xlsx"
-        file_name = "2026_BOOKING 10.xlsx"
+        file_name = "2027_BOOKING 10.xlsx"
         df = pd.read_excel(file_name, sheet_name='book_simp')
         print(df)
         new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
