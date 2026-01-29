@@ -407,7 +407,7 @@ else:
     procent = 0
 
 if year == '2026':
-    if single_room:
+    if single_room and (web == 'bc' or web == 'web'):
         high_season_price = 975  #2026 975
         low_season_price = 850   #2026 850
         single_room = "Y"
@@ -428,6 +428,7 @@ if year == '2026':
             single_room = "N"
             print(low_season_price)
             print(high_season_price)
+
 st.markdown(low_season_price)
 st.markdown(high_season_price)
 
