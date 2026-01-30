@@ -488,8 +488,6 @@ if year == '2028':
     st.markdown(f"**Low season** {low_season_price}")
     st.markdown('year 2028')
 
-else:
-    st.markdown('chcek year')
 
 if year == '2026':
     bf_price = 100  #breakfast 2025 100,-
