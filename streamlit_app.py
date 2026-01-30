@@ -491,13 +491,12 @@ if year == '2028':
 else:
     st.markdown('chcek year')
 
-if year == '2027':
-    bf_price = 110  #breakfast 2025 100,-
-if year == '2025':
-    bf_price = 100
 if year == '2026':
+    bf_price = 100  #breakfast 2025 100,-
+if year == '2027':
     bf_price = 100
-
+if year == '2028':
+    bf_price = 110
 
 
 Sprog = st.selectbox("Sprog - email confirmation dk uk D", options=["DK", "UK", "D"])
