@@ -501,6 +501,7 @@ Sprog = st.selectbox("Sprog - email confirmation dk uk D", options=["DK", "UK", 
 
 breakfast = st.checkbox("Morgenmad")
 breakfast_alt = st.checkbox("begrænset morgenmad  ")
+breakfast_rabat = st.checkbox("Der beregnes også rabat på morgenmad")
 
 if breakfast:
     br_f = int(bf_price * int(num_guests) * int(days.days))
@@ -577,16 +578,27 @@ print(pris)
 prismed = pris + br_f
 formatted_prismed = f"{prismed:.2f}"
 st.markdown(f"**Pris incl breakfast** {formatted_prismed} kr")
+if breakfast_rabat:
+
+    if web == "web":
+        rabat_a = (int(rabat) / 100)
+        rabat_mm = br_f * rabat_a
+        rabat_rm = pris * rabat_a
+        rabat_t = rabat_mm + rabat_rm
+        formatted_rabat_t = f"{rabat_t:.2f}"
+        st.markdown(f"**Rabat** {formatted_rabat_t}kr")
+        pristotal = prismed - rabat_t
+        formatted_pristotal = f"{pristotal:.2f}"
 
 if web == "web":
     rabat_a = (int(rabat) / 100)
-    rabat_mm = br_f * rabat_a
     rabat_rm = pris * rabat_a
-    rabat_t = rabat_mm + rabat_rm
+    rabat_t = rabat_rm
     formatted_rabat_t = f"{rabat_t:.2f}"
     st.markdown(f"**Rabat** {formatted_rabat_t}kr")
     pristotal = prismed - rabat_t
     formatted_pristotal = f"{pristotal:.2f}"
+
 elif web == "FM":
     pris_add_a = (int(FM_add) / 100)
     pris_add_t = (prismed + br_f) * pris_add_a
