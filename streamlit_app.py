@@ -500,7 +500,7 @@ if year == '2028':
 Sprog = st.selectbox("Sprog - email confirmation dk uk D", options=["DK", "UK", "D"])
 
 breakfast = st.checkbox("Morgenmad")
-breakfast_alt = st.checkbox("begrænset morgenmad  ")
+breakfast_alt = st.checkbox("begrænset morgenmad bestilles direkte ved ankomst mod beregning  ")
 breakfast_rabat = st.checkbox("Der beregnes også rabat på morgenmad")
 
 if breakfast:
