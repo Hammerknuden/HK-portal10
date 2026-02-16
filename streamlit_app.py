@@ -597,7 +597,7 @@ if breakfast_rabat and web == "web":
     #    pristotal = prismed + pris_add_t
     #    formatted_pristotal = f"{pristotal:.2f}"
 
-if web == "web":
+elif web == "web":
     rabat_a = (int(rabat) / 100)
     rabat_mm = br_f * rabat_a
     rabat_rm = pris * rabat_a
@@ -618,7 +618,7 @@ else:
     formatted_pristotal = formatted_prismed
 
     print(formatted_pristotal)
-    st.markdown(f"**Den totale pris** {formatted_pristotal}kr")
+st.markdown(f"**Den totale pris** {formatted_pristotal}kr")
 
 name = st.text_input("Navn ")
 fam_name = st.text_input("Efternavn (kun til søgning ellers blank)  ")
