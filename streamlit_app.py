@@ -587,8 +587,7 @@ if breakfast_rabat and web == "web":
         st.markdown(f"**Rabat** {formatted_rabat_t}kr")
         pristotal = prismed - rabat_t
         formatted_pristotal = f"{pristotal:.2f}"
-        print(formatted_pristotal)
-        st.markdown(f"**Den totale pris** {formatted_pristotal}kr")
+
     #elif web == "FM":
     #    pris_add_a = (int(FM_add) / 100)
     #    pris_add_t = (prismed + br_f) * pris_add_a
