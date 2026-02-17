@@ -335,7 +335,7 @@ def data_email_html_template(logo_cid, booking_number, name, checkin_date, check
                 </p>
                 <p>reservation: {checkin_date},{checkout_date},{num_rooms},{num_guests} . </p>
                 <p>
-                Personadata: email; {email_address}, telefon: {telefon}, Spouce: {}, Pris: {formatted_pristotal}
+                Personadata: email; {email_address}, telefon: {telefon}, Spouce: {spouce}, Pris: {formatted_pristotal}
                 </p>
              </body>
         </html>
