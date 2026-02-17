@@ -823,9 +823,9 @@ elif Sprog == "D" and booking_submitted:
                                    formatted_pristotal, text_ank, text_bed, text_free, email_address, telefon)
     st.markdown('tysk email er sendt')
 else:
-    st.markdown('mail er ikke sendt ')
-send_data_email = st.button("Send data")
+    st.markdown('Booking mail er ikke sendt ')
 
+send_data_email = st.button("Send data")
 if send_data_email:
     to_addr = "finnjorg@mail.dk"
     send_data_email(to_addr, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,
