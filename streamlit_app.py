@@ -827,7 +827,7 @@ elif Sprog == "D" and booking_submitted:
 else:
     st.markdown('mail er ikke sendt ')
 
-
+if send_data_email:
     send_data_email(to_addr, confirmation_password, booking_number, checkin_date, checkout_date, num_rooms, num_guests,
                     email_address, telefon, spouce, formatted_pristotal)
     st.markdown("data mail sendt ")
