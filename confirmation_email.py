@@ -311,4 +311,53 @@ def send_german_confirmation_email(to_addr, confirmation_password, name, num_roo
 
     send_email(confirmation_password, email)
 
+def data_email_html_template(logo_cid, booking_number, name, checkin_date, checkout_data, num_rooms, num_guests,
+                               email_address, telefon, spouce, formatted_pristotal):
 
+    return f"""<html>        <html style="display: table; margin: auto;">
+            <head>
+                <meta charset="UTF-8" />
+                <title>Reservationsformular</title>
+                <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+            </head>
+
+            <body style="display: table-cell; vertical-align: left;">
+                <hr>
+                <h1> ********************* </h1> 
+                <h1>   Reservation</h1> 
+                <h1> ********************* </h1>
+
+                <img src ="cid:{logo_cid}" alt=logo width="300"/>
+                </p>
+                <p> 
+                Data mail for reservation{booking_number} <b>{name}</b> 
+                </p>
+                <p>reservation: {checkin_date},{checkout_date},{num_rooms},{num_guests} . </p>
+                <p>
+                Personadata: email; {email_address}, telefon: {telefon}, Spouce: {spouce}, Pris: {formatted_pristotal}
+                </p>
+             </body>
+        </html>
+    """
+
+def send_data_email(to_addr, confirmation_password, booking_number, checkin_date, checkout_date, num_rooms, num_guests,
+                    email_address, telefon, spouce, formatted_pristotal):
+
+
+    logo_cid = make_msgid()
+    html_content = danish_email_html_template(logo_cid[1:-1], booking_number, name, checkin_date, checkout_date,
+                                              num_rooms, num_guests, email_address, telefon, spouce, formatted_pristotal)
+
+    # construct email
+    email = EmailMessage()
+
+    email['Subject'] = Subject + f" #{booking_number}"
+    email['From'] = sender_email
+    email['To'] = to_addr
+    email.set_content("Email client does not support html content")
+    email.add_alternative(html_content, subtype='html')
+
+    with open(logo_path, 'rb') as img:
+        email.get_payload()[0].add_related(img.read(), 'image', 'jpeg', cid=logo_cid)
+
+    send_email(confirmation_password, email)
