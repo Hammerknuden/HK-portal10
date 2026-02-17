@@ -313,7 +313,7 @@ def send_german_confirmation_email(to_addr, confirmation_password, name, num_roo
 
 
 def data_email_html_template(logo_cid, booking_number, name, checkin_date, checkout_date, num_rooms,
-                             num_guests, email_address, telefon, spouce, formatted_pristotal):
+                             num_guests, email_address, telefon, formatted_pristotal):
 
     return f"""<html>        <html style="display: table; margin: auto;">
             <head>
@@ -343,12 +343,12 @@ def data_email_html_template(logo_cid, booking_number, name, checkin_date, check
 
 
 def send_data_email(to_addr, confirmation_password, booking_number, checkin_date, checkout_date, num_rooms, num_guests,
-                    email_address, telefon, spouce, formatted_pristotal):
+                    email_address, telefon, formatted_pristotal):
 
 
     logo_cid = make_msgid()
     html_content = danish_email_html_template(logo_cid[1:-1], booking_number, name, checkin_date, checkout_date,
-                                              num_rooms, num_guests, email_address, telefon, spouce, formatted_pristotal)
+                                              num_rooms, num_guests, email_address, telefon, formatted_pristotal)
 
     # construct email
     email = EmailMessage()
