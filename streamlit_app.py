@@ -809,7 +809,7 @@ data_email = st.button("send data til mailboks")
 if data_email:
     to_addr = {admin_email}
 
-send_data_email = st.button("Bekræft booking")
+send_data_email = st.button("Send data")
 
 if Sprog == "DK" and booking_submitted:
     send_danish_confirmation_email(to_addr, confirmation_password, name, num_rooms, num_guests, booking_number,
