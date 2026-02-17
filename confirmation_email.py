@@ -311,6 +311,7 @@ def send_german_confirmation_email(to_addr, confirmation_password, name, num_roo
 
     send_email(confirmation_password, email)
 
+
 def data_email_html_template(logo_cid, booking_number, name, checkin_date, checkout_date, num_rooms,
                              num_guests, email_address, telefon, spouce, formatted_pristotal):
     return f"""<html>        <html style="display: table; margin: auto;">
