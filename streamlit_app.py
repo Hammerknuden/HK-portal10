@@ -802,11 +802,15 @@ if guest_email:
 else:
     to_addr = [admin_email]
 #to_addr = "finnjorg@mail.dk"
-data_email = st.checkbox("send data til mailboks")
-if data_email:
-    to_addr = {admin_email}
 confirmation_password = st.text_input("Admin kodeord")
 booking_submitted = st.button("Bekræft booking")
+
+data_email = st.button("send data til mailboks")
+if data_email:
+    to_addr = {admin_email}
+
+confirmation_password = st.text_input("Admin kodeord")
+send_data_email = st.button("Bekræft booking")
 
 if Sprog == "DK" and booking_submitted:
     send_danish_confirmation_email(to_addr, confirmation_password, name, num_rooms, num_guests, booking_number,
@@ -826,7 +830,8 @@ elif Sprog == "D" and booking_submitted:
 else:
     st.markdown('mail er ikke sendt ')
 
-if booking_submitted and data_email:
+if data_email:
+
     send_data_email(to_addr, confirmation_password, booking_number, checkin_date, checkout_date, num_rooms, num_guests,
                     email_address, telefon, spouce, formatted_pristotal)
     st.markdown("data mail sendt ")
