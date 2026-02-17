@@ -829,7 +829,7 @@ else:
 
 if send_data_email:
     send_data_email(to_addr, confirmation_password, booking_number, checkin_date, checkout_date, num_rooms, num_guests,
-                    email_address, telefon, spouce, formatted_pristotal)
+                    email_address, telefon, formatted_pristotal)
     st.markdown("data mail sendt ")
 else:
     st.markdown("data mail ikke sendt ")
