@@ -661,7 +661,7 @@ else:
 
 spouse = st.text_input("Spouce  ")
 comments = st.text_input("yderligere info til Dtb  ")
-send_data = st.button("data to excel")
+send_data = st.button("data to excel not in use")
 if send_data and year == '2026':
     if bruger == "Finn":
         some_book_data = ({year}, {booking_number}, {name}, {checkin_date}, {checkout_date}, {now}, {nationalitet},
@@ -803,7 +803,7 @@ else:
     to_addr = [admin_email]
 #to_addr = "finnjorg@mail.dk"
 confirmation_password = st.text_input("Admin kodeord")
-booking_submitted = st.button("Bekræft booking")
+booking_submitted = st.button("Send booking mail")
 
 
 
@@ -825,9 +825,9 @@ elif Sprog == "D" and booking_submitted:
 else:
     st.markdown('Booking mail er ikke sendt ')
 
-send_data_email = st.button("Send data")
+send_data_email = st.button("Send data not in use")
 if send_data_email:
-    to_addr = "finnjorg@mail.dk"
+    to_addr = {admin_email}
     send_data_email(to_addr, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,
                     num_guests, email_address, telefon, formatted_pristotal)
     st.markdown("data mail sendt ")
