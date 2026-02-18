@@ -833,4 +833,3 @@ if send_data_email:
     st.markdown("data mail sendt ")
 else:
     st.markdown("data mail ikke sendt ")
-
