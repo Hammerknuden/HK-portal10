@@ -312,39 +312,57 @@ def send_german_confirmation_email(to_addr, confirmation_password, name, num_roo
     send_email(confirmation_password, email)
 
 
-def data_email_html_template(logo_cid, booking_number, name, checkin_date, checkout_date, num_rooms,
-                             num_guests, email_address, telefon, formatted_pristotal):
+def data_email_html_template(
+        logo_cid,
+        booking_number,
+        name,
+        checkin_date,
+        checkout_date,
+        num_rooms,
+        num_guests,
+        email_address,
+        telefon,
+        formatted_pristotal):
+    return f"""
+    <html>
+        <body style="font-family: Arial, sans-serif;">
 
-    return f"""<html>        <html style="display: table; margin: auto;">
-            <head>
-                <meta charset="UTF-8" />
-                <title>Reservationsformular</title>
-                <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-            </head>
+            <hr>
+            <h2>Reservation</h2>
+            <hr>
 
-            <body style="display: table-cell; vertical-align: left;">
-                <hr>
-                <h1> ********************* </h1> 
-                <h1>   Reservation</h1> 
-                <h1> ********************* </h1>
+            <img src="cid:{logo_cid}" alt="logo" width="300"/>
 
-                <img src ="cid:{logo_cid}" alt=logo width="300"/>
-                </p>
-                <p> 
-                Data mail for reservation{booking_number} <b>{name}</b> 
-                </p>
-                <p>reservation: {checkin_date},{checkout_date},{num_rooms},{num_guests} . </p>
-                <p>
-                Personadata: email; {email_address}, telefon: {telefon}, Spouce: , Pris: {formatted_pristotal}
-                </p>
-             </body>
-        </html>
+            <p>
+                Data mail for reservation <b>{booking_number}</b><br>
+                Navn: <b>{name}</b>
+            </p>
+
+            <p>
+                <b>Ophold:</b><br>
+                Check-in: {checkin_date}<br>
+                Check-out: {checkout_date}<br>
+                Antal værelser: {num_rooms}<br>
+                Antal gæster: {num_guests}
+            </p>
+
+            <p>
+                <b>Kontaktoplysninger:</b><br>
+                Email: {email_address}<br>
+                Telefon: {telefon}
+            </p>
+
+            <p>
+                <b>Total pris:</b> {formatted_pristotal}
+            </p>
+
+        </body>
+    </html>
     """
 
 
 def send_data_email(to_addr, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,
                     num_guests, email_address, telefon, formatted_pristotal):
-
 
     logo_cid = make_msgid()
     html_content = danish_email_html_template(logo_cid[1:-1], booking_number, name, checkin_date, checkout_date,
