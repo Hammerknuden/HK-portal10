@@ -827,9 +827,9 @@ else:
 
 send_data_email = st.button("Send data not in use")
 if send_data_email:
-    to_addr = {admin_email}
+    to_addr = admin_email
     send_data_email(to_addr, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,
-                num_guests, email_address, telefon, formatted_pristotal)
+                    num_guests, email_address, telefon, formatted_pristotal)
     st.markdown("data mail sendt ")
 else:
     st.markdown("data mail ikke sendt ")
