@@ -361,7 +361,7 @@ def data_email_html_template(
     """
 
 
-def send_data_email(to_addr, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,
+def send_data_email(to_addr_data, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,
                     num_guests, email_address, telefon, formatted_pristotal):
 
     logo_cid = make_msgid()
@@ -373,7 +373,7 @@ def send_data_email(to_addr, confirmation_password, booking_number, name, checki
 
     email['Subject'] = Subject + f" #{booking_number}"
     email['From'] = sender_email
-    email['To'] = to_addr
+    email['To'] = to_addr_data
     email.set_content("Email client does not support html content")
     email.add_alternative(html_content, subtype='html')
 
