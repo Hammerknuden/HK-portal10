@@ -365,7 +365,7 @@ def send_data_email(to_addr, confirmation_password, booking_number, name, checki
                     num_guests, email_address, telefon, formatted_pristotal):
 
     logo_cid = make_msgid()
-    html_content = danish_email_html_template(logo_cid[1:-1], booking_number, name, checkin_date, checkout_date,
+    html_content = data_email_html_template(logo_cid[1:-1], booking_number, name, checkin_date, checkout_date,
                                               num_rooms, num_guests, email_address, telefon, formatted_pristotal)
 
     # construct email
