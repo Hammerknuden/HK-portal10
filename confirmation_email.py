@@ -361,7 +361,7 @@ def data_email_html_template(
     """
 
 
-def send_data_email(to_addr, confirmation_password_data, booking_number, name, checkin_date, checkout_date, num_rooms,
+def send_data_email(to_addr, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,
                     num_guests, email_address, telefon, formatted_pristotal):
 
     logo_cid = make_msgid()
@@ -380,4 +380,4 @@ def send_data_email(to_addr, confirmation_password_data, booking_number, name, c
     with open(logo_path, 'rb') as img:
         email.get_payload()[0].add_related(img.read(), 'image', 'jpeg', cid=logo_cid)
 
-    send_email(confirmation_password_data, email)
+    send_email(confirmation_password, email)

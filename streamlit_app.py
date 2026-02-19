@@ -825,11 +825,11 @@ elif Sprog == "D" and booking_submitted:
 else:
     st.markdown('Booking mail er ikke sendt ')
 
-confirmation_password_data = st.text_input("Admin kodeord")
+#confirmation_password_data = st.text_input("Admin kodeord")
 send_data_email = st.button("Send data not in use")
 if send_data_email:
     to_addr = admin_email
-    send_data_email(to_addr, confirmation_password_data, booking_number, name, checkin_date, checkout_date, num_rooms,
+    send_data_email(to_addr, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,
                     num_guests, email_address, telefon, formatted_pristotal)
 
     st.markdown("data mail sendt ")
