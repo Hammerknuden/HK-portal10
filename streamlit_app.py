@@ -825,7 +825,7 @@ elif Sprog == "D" and booking_submitted:
 else:
     st.markdown('Booking mail er ikke sendt ')
 
-to_addr_data = admin_email  #st.text_input("email addr  ")
+to_addr_data = "finnjorg@mail.dk"  #st.text_input("email addr  ")
 #confirmation_password_data = st.text_input("Admin kodeord")
 
 
