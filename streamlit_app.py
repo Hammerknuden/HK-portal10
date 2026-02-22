@@ -830,10 +830,11 @@ else:
 #confirmation_password_data = st.text_input("Admin kodeord")
 
 
-send_data_email = st.checkbox("Send data not in use")
+send_data_email = st.checkbox("Data - under construction")
 to_addr = {admin_email}
 
 if send_data_email and booking_submitted:
+
     send_data_email(to_addr, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,
                     num_guests, email_address, telefon, formatted_pristotal)
 

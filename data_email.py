@@ -36,7 +36,7 @@ def data_email_html_template(
         <body style="font-family: Arial, sans-serif;">
 
             <hr>
-            <h2>Reservation</h2>
+            <h2>Reservation Data</h2>
             <hr>
 
             <img src="cid:{logo_cid}" alt="logo" width="300"/>
