@@ -8,7 +8,7 @@ from pathlib import Path
 import numpy as np
 from confirmation_email import (admin_email, send_danish_confirmation_email, send_english_confirmation_email,
                                 send_german_confirmation_email)
-from data_email import (send_data_email)
+import data_email
 from excel_database import add_data
 from PIL import Image, ImageDraw, ImageFont
 from io import BytesIO
@@ -826,12 +826,12 @@ elif Sprog == "D" and booking_submitted:
 else:
     st.markdown('Booking mail er ikke sendt ')
 
-to_addr = admin_email  #st.text_input("email addr  ")
+  #st.text_input("email addr  ")
 #confirmation_password_data = st.text_input("Admin kodeord")
 
 
 send_data_email = st.button("Send data not in use")
-
+to_addr = {admin_email}
 
 if send_data_email:
     send_data_email(to_addr, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,

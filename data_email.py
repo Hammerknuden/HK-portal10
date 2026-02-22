@@ -19,6 +19,7 @@ def send_email(confirmation_password, email):
         server.login(admin_email, confirmation_password)
         server.send_message(email)
 
+
 def data_email_html_template(
         logo_cid,
         booking_number,
