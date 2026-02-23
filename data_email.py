@@ -43,24 +43,19 @@ def data_email_html_template(
             <img src="cid:{logo_cid}" alt="logo" width="300"/>
 
             <p>
-                Data mail for reservation <b>{booking_number}</b><br>
-                Navn: <b>{name}</b>
+                Reservations Data mail for reservation </b><br>
+                Navn: <b>{booking_number},{name},{checkin_date},{checkout_date}</b>
             </p>
 
             <p>
-                <b>Ophold:</b><br>
-                Check-in: {checkin_date}<br>
-                Check-out: {checkout_date}<br>
-                Antal værelser: {num_rooms}<br>
-                Antal gæster: {num_guests}
+                <b>Antal værelser og gæster:</b><br>
+                Antal værelser: {num_rooms}, {num_guests}<br>
             </p>
 
             <p>
                 <b>Kontaktoplysninger:</b><br>
-                Email: {email_address}<br>
-                Telefon: {telefon}
+                Email: {email_address}, {telefon}<br>
             </p>
-
             <p>
                 <b>Total pris:</b> {formatted_pristotal}
             </p>
