@@ -1,4 +1,3 @@
-import streamlit
 import streamlit as st
 import pandas as pd
 import openpyxl
@@ -8,7 +7,7 @@ from pathlib import Path
 import numpy as np
 from confirmation_email import (admin_email, send_danish_confirmation_email, send_english_confirmation_email,
                                 send_german_confirmation_email)
-from data_email import (send_data_email)
+from data_email import send_data_email
 from excel_database import add_data
 from PIL import Image, ImageDraw, ImageFont
 from io import BytesIO
