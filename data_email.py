@@ -27,6 +27,9 @@ def data_email_html_template(
         name,
         checkin_date,
         checkout_date,
+        now,
+        nationalitet,
+        web,
         num_rooms,
         num_guests,
         email_address,
@@ -44,7 +47,7 @@ def data_email_html_template(
 
             <p>
                 Reservations Data mail for reservation </b><br>
-                Navn:{booking_number},{name},{checkin_date},{checkout_date}
+                Navn:{booking_number},{name},{checkin_date},{checkout_date},{now},{nationalitet},{web}
             </p>
 
             <p>
@@ -66,11 +69,12 @@ def data_email_html_template(
 
 
 def send_data_email(to_addr_1, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,
-                    num_guests, email_address, telefon, formatted_pristotal):
+                    now, nationalitet, web, num_guests, email_address, telefon, formatted_pristotal):
 
     logo_cid = make_msgid()
     html_content = data_email_html_template(logo_cid[1:-1], booking_number, name, checkin_date, checkout_date,
-                                            num_rooms, num_guests, email_address, telefon, formatted_pristotal)
+                                            now, nationalitet, web, num_rooms, num_guests, email_address, telefon,
+                                            formatted_pristotal)
 
     # construct email
     email = EmailMessage()
