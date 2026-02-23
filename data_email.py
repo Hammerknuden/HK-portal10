@@ -4,11 +4,11 @@ import ssl
 from email.utils import make_msgid
 from pathlib import Path
 
-port = 587 #587
-smtp_server = 'send.one.com'  #'asmtp.yousee.dk'
-Subject = "Hammerknuden Reservation"
-sender_email = 'reservation@hammerknuden.dk' #'Hkreservation@mail.dk'
-admin_email = 'reservation@hammerknuden.dk' #'Hkreservation@mail.dk'  #'reservation@hammerknuden.dk'
+port = 587
+smtp_server = 'send.one.com'
+Subject = "Hammerknuden reservations data"
+sender_email = 'reservation@hammerknuden.dk'
+admin_email = 'reservation@hammerknuden.dk'
 logo_path = Path("logo2.jpg")
 
 
@@ -47,7 +47,8 @@ def data_email_html_template(
 
             <p>
                 Reservations Data mail for reservation </b><br>
-                Navn:{booking_number},{name},{checkin_date},{checkout_date},{now},{nationalitet},{web}
+                Booknr: {booking_number},{name},{checkin_date},{checkout_date},{now},<br>
+                {nationalitet},{web}
             </p>
 
             <p>
