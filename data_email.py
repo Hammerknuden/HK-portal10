@@ -44,7 +44,7 @@ def data_email_html_template(
 
             <p>
                 Reservations Data mail for reservation </b><br>
-                Navn: <b>{booking_number},{name},{checkin_date},{checkout_date}</b>
+                Navn:{booking_number},{name},{checkin_date},{checkout_date}
             </p>
 
             <p>
