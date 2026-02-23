@@ -87,6 +87,6 @@ def send_data_email(to_addr_1, confirmation_password, booking_number, name, chec
     email.add_alternative(html_content, subtype='html')
 
     with open(logo_path, 'rb') as img:
-        email.get_payload()[0].add_related(img.read(), 'image', 'jpeg', cid=logo_cid)
+        email.get_payload()[1].add_related(img.read(), maintype='image', subtype='jpeg', cid=logo_cid)
 
     send_email(confirmation_password, email)
