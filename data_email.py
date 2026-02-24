@@ -20,6 +20,9 @@ def send_email(confirmation_password, email):
         server.login(admin_email, confirmation_password)
         server.send_message(email)
 
+#excel database
+#booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng, procent,
+             #num_rooms, num_guests, email_address, telefon, spouse, single_room, BF, pristotal, known, comments,
 
 def data_email_html_template(
         logo_cid,
@@ -48,17 +51,17 @@ def data_email_html_template(
             <p>
                 Reservations Data mail for reservation </b><br>
                 Booknr: {booking_number} <br>
-                {name},{checkin_date},{checkout_date},{now},{nationalitet},{web}<br>
+                {name};{checkin_date};{checkout_date};{now};{nationalitet};{web}<br>
             </p>
 
             <p>
                 <b>Antal værelser og gæster:</b><br>
-                Antal værelser: {num_rooms}, {num_guests}<br>
+                Antal værelser: {num_rooms};{num_guests}<br>
             </p>
 
             <p>
                 <b>Kontaktoplysninger:</b><br>
-                Email: {email_address}, {telefon}<br>
+                Email: {email_address}; {telefon}<br>
             </p>
             <p>
                 <b>Total pris:</b> {formatted_pristotal}
