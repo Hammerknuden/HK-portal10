@@ -396,6 +396,7 @@ else:
 
 num_rooms = st.number_input("Antal rum", value=1, step=1)
 web = st.selectbox("booking via web bc eller FM folkemøde ( ikke mulighed for enk rum)", options=["web", "bc", "FM"])
+ankomst = st.text_input("Angiv ankomsts tidspunkt ")
 seng = st.text_input(" type seng DB, ENK, OPCH, OPIN ")
 if web == "web":
     rabat = st.number_input(" rabat i procent ", value=10, step=1)

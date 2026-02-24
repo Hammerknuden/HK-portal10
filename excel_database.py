@@ -5,13 +5,13 @@ import openpyxl
 
 
 #if year == '2026':
-def add_data(year, book_data, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng, procent,
+def add_data(year, book_data, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, ankomst, seng, procent,
              num_rooms, num_guests, email_address, telefon, spouse, single_room, BF, pristotal, known, comments,
              excel_path='output.xlsx'):  #http://bonneviedisk.de6.quickconnect.to/volume1/Hammerknuden data/output26.xlsx'):
 
     book_data = {'book nr': [booking_number], 'navn': [name], 'Checkin': [checkin_date],
                  'checkout': [checkout_date], 'booking dato': [now], 'nation': [nationalitet], 'web': [web],
-                 'ankomst': '', 'bed': [seng], 'rabat': [procent], 'antal værelser': [num_rooms],
+                 'ankomst': {ankomst}, 'bed': [seng], 'rabat': [procent], 'antal værelser': [num_rooms],
                  'nr gæst': [num_guests], 'Email': [email_address], 'telefon': [telefon], 'Spouse': [spouse],
                  'enkelt': [single_room], 'morgenmad': [BF], 'pris ialt': [pristotal], 'known': [known], 'Comments':
                  [comments]}
@@ -23,7 +23,7 @@ def add_data(year, book_data, booking_number, name, checkin_date, checkout_date,
         pd.DataFrame(book_data).to_excel(writer, sheet_name='book', startrow=rek, startcol=0, index=False, header=False)
         book_data = {'book nr': [booking_number], 'navn': [name], 'Checkin': [checkin_date],
                      'checkout': [checkout_date], 'booking dato': [now], 'nation': [nationalitet], 'web': [web],
-                     'ankomst': '', 'bed': [seng], 'rabat': [procent], 'antal værelser': [num_rooms],
+                     'ankomst': {ankomst}, 'bed': [seng], 'rabat': [procent], 'antal værelser': [num_rooms],
                      'nr gæst': [num_guests], 'Email': [email_address], 'telefon': [telefon], 'Spouse': [spouse],
                      'enkelt': [single_room], 'morgenmad': [BF], 'pris ialt': [pristotal], 'known': [known]}
 
@@ -31,12 +31,12 @@ def add_data(year, book_data, booking_number, name, checkin_date, checkout_date,
 
 #if year == '2027':
 
-#    def add_data(book_data, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng, rabat,
+#    def add_data(book_data, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, ankomst, seng, rabat,
 #                num_rooms, num_guests, email_address, telefon, single_room, breakfast, pristotal, known,
 #                excel_path='output.xlsx', sheet_name='book'):
 
 #        book_data = {'book nr': [booking_number], 'navn': [name], 'Checkin': [checkin_date],                     'checkout': [checkout_date], 'booking dato': [now], 'nation': [nationalitet], 'web': [web],
-#                    'ankomst': '', 'bed': [seng], 'rabat': [rabat], 'antal værelser': [num_rooms],
+#                    'ankomst': {ankomst}, 'bed': [seng], 'rabat': [rabat], 'antal værelser': [num_rooms],
 #                    'nr gæst': [num_guests], 'Email': [email_address], 'telefon': [telefon], 'Spouse': '',
 #                    'enkelt': [single_room], 'morgenmad': [breakfast], 'pris ialt': [pristotal], 'known': [known]}
 
