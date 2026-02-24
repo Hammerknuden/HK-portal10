@@ -34,6 +34,8 @@ def data_email_html_template(
         nationalitet,
         web,
         ankomst,
+        seng,
+        procent,
         num_rooms,
         num_guests,
         email_address,
@@ -53,11 +55,11 @@ def data_email_html_template(
                 Reservations Data mail for reservation </b><br>
                 Booknr: {booking_number} <br>
                 {name};{checkin_date};{checkout_date};{now};{nationalitet};{web};{ankomst}<br>
+                {seng};{procent};{num_rooms};{num_guests}
             </p>
 
             <p>
-                <b>Antal værelser og gæster:</b><br>
-                Antal værelser: {num_rooms};{num_guests}<br>
+                Antal værelser: {num_rooms} antal gæster {num_guests}<br>
             </p>
 
             <p>
@@ -74,11 +76,11 @@ def data_email_html_template(
 
 
 def send_data_email(to_addr_1, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,
-                    now, nationalitet, web, ankomst, num_guests, email_address, telefon, formatted_pristotal):
+                    now, nationalitet, web, ankomst, seng, procent, num_guests, email_address, telefon, formatted_pristotal):
 
     logo_cid = make_msgid()
     html_content = data_email_html_template(logo_cid[1:-1], booking_number, name, checkin_date, checkout_date,
-                                            now, nationalitet, web, ankomst, num_rooms, num_guests, email_address, telefon,
+                                            now, nationalitet, web, ankomst, seng, procent, num_rooms, num_guests, email_address, telefon,
                                             formatted_pristotal)
 
     # construct email
