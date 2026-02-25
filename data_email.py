@@ -5,6 +5,8 @@ from email.utils import make_msgid
 from pathlib import Path
 from io import BytesIO
 import pandas as pd
+from excel_database import df1
+
 
 port = 587
 smtp_server = 'send.one.com'
@@ -84,6 +86,7 @@ def send_data_email(to_addr_1, confirmation_password, booking_number, name, chec
     html_content = data_email_html_template(logo_cid[1:-1], booking_number, name, checkin_date, checkout_date,
                                             now, nationalitet, web, ankomst, seng, procent, num_rooms, num_guests, email_address, telefon,
                                             formatted_pristotal)
+    print(df1.head())
 
     # construct email
     email = EmailMessage()
