@@ -689,7 +689,7 @@ if send_data and year == '2027':
                           {single_room}, {breakfast}, {formatted_pristotal}, {known})
         add_data(some_book_data, year, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng,
                  rabat, num_rooms, num_guests, email_address, telefon, spouse, single_room, breakfast,
-                 formatted_pristotal, known, comments, excel_path="output.xlsx", sheet_name="book")
+                 formatted_pristotal, known, comments, excel_output=excel_buffer, sheet_name="book")
                  #'https://docs.google.com/spreadsheets/d/145-hYZvfkUMGAHI8fP_M6xNVXN-6fpHI/edit?usp=drive_link&ouid=113417285199087461988&rtpof=true&sd=true')
                  #excel_path=r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2025 output.xlsx")
     if bruger == "Naja":

@@ -3,7 +3,7 @@ from email.message import EmailMessage
 import ssl
 from email.utils import make_msgid
 from pathlib import Path
-
+from io import BytesIO
 import pandas as pd
 
 port = 587
