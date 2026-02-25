@@ -2,7 +2,9 @@ import pandas as pd
 from pathlib import Path
 import streamlit
 import openpyxl
+from io import BytesIO
 
+excel_buffer = BytesIO
 
 #if year == '2026':
 def add_data(year, book_data, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, ankomst, seng, procent,
@@ -19,8 +21,8 @@ def add_data(year, book_data, booking_number, name, checkin_date, checkout_date,
     print(df1)
     rek = int(booking_number)
     print(rek)
-    with pd.ExcelWriter(excel_path, mode='a', if_sheet_exists="overlay") as writer:
-        pd.DataFrame(book_data).to_excel(writer, sheet_name='book', startrow=rek, startcol=0, index=False, header=False)
+    with pd.ExcelWriter(excel_buffer, engine='xlsxwriter') as writer:
+        df1.to_excel(writer, sheet_name='book', index=False) #pd.DataFrame(book_data).to_excel(writer, sheet_name='book', startrow=rek, startcol=0, index=False, header=False)
         book_data = {'book nr': [booking_number], 'navn': [name], 'Checkin': [checkin_date],
                      'checkout': [checkout_date], 'booking dato': [now], 'nation': [nationalitet], 'web': [web],
                      'ankomst': {ankomst}, 'bed': [seng], 'rabat': [procent], 'antal værelser': [num_rooms],

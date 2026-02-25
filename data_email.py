@@ -4,6 +4,8 @@ import ssl
 from email.utils import make_msgid
 from pathlib import Path
 
+import pandas as pd
+
 port = 587
 smtp_server = 'send.one.com'
 Subject = "Hammerknuden reservations data"
@@ -91,8 +93,15 @@ def send_data_email(to_addr_1, confirmation_password, booking_number, name, chec
     email['To'] = to_addr_1
     email.set_content("Email client does not support html content")
     email.add_alternative(html_content, subtype='html')
-
-    with open(logo_path, 'rb') as img:
+    with (open(logo_path, 'rb') as img):
         email.get_payload()[1].add_related(img.read(), maintype='image', subtype='jpeg', cid=logo_cid)
+    excel_buffer = BytesIO
+    with pd.ExcelWriter(excel_buffer, engine='xlsxwriter') as writer:
+        df.to_excel(writer, sheet_name='book', index=False)
+
+    excel_buffer.seek(0)
+    email.add_attachment(excel_buffer.read(), maintype='application',
+                         subtype='vnd.openxmlformats-officedocument.spredsheetml.sheet',
+                         filename=f'booking_{booking_number}.xlsx')
 
     send_email(confirmation_password, email)
