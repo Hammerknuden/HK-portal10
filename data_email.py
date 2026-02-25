@@ -5,7 +5,7 @@ from email.utils import make_msgid
 from pathlib import Path
 from io import BytesIO
 import pandas as pd
-from excel_database import df1
+
 
 
 port = 587
