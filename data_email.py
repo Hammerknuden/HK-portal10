@@ -15,8 +15,6 @@ sender_email = 'reservation@hammerknuden.dk'
 admin_email = 'reservation@hammerknuden.dk'
 logo_path = Path("logo2.jpg")
 
-excel_buffer = BytesIO()
-
 
 def add_data(year, book_data, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, ankomst, seng,
              procent, num_rooms, num_guests, email_address, telefon, spouse, single_room, BF, pristotal, known,
@@ -29,7 +27,6 @@ def add_data(year, book_data, booking_number, name, checkin_date, checkout_date,
                  'Comments': [comments]}
     df1 = pd.DataFrame(book_data)
     return df1
-    print(df1)
     rek = int(booking_number)
     print(rek)
 
@@ -118,6 +115,7 @@ def send_data_email(to_addr_1, confirmation_password, booking_number, name, chec
 
     # construct email
     email = EmailMessage()
+    excel_buffer = BytesIO()
 
     email['Subject'] = Subject + f" #{booking_number}"
     email['From'] = sender_email
