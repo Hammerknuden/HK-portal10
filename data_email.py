@@ -8,15 +8,14 @@ import pandas as pd
 import openpyxl
 
 
-excel_buffer = BytesIO
-
-
 port = 587
 smtp_server = 'send.one.com'
 Subject = "Hammerknuden reservations data"
 sender_email = 'reservation@hammerknuden.dk'
 admin_email = 'reservation@hammerknuden.dk'
 logo_path = Path("logo2.jpg")
+
+excel_buffer = BytesIO()
 
 
 def add_data(year, book_data, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, ankomst, seng,
@@ -26,20 +25,22 @@ def add_data(year, book_data, booking_number, name, checkin_date, checkout_date,
                  'checkout': [checkout_date], 'booking dato': [now], 'nation': [nationalitet], 'web': [web],
                  'ankomst': {ankomst}, 'bed': [seng], 'rabat': [procent], 'antal værelser': [num_rooms],
                  'nr gæst': [num_guests], 'Email': [email_address], 'telefon': [telefon], 'Spouse': [spouse],
-                 'enkelt': [single_room], 'morgenmad': [BF], 'pris ialt': [pristotal], 'known': [known], 'Comments':
-                     [comments]}
+                 'enkelt': [single_room], 'morgenmad': [BF], 'pris ialt': [pristotal], 'known': [known],
+                 'Comments': [comments]}
     df1 = pd.DataFrame(book_data)
+    return df1
     print(df1)
     rek = int(booking_number)
     print(rek)
+
     with pd.ExcelWriter(excel_buffer, engine='xlsxwriter') as writer:
-        df1.to_excel(writer, sheet_name='book',
-                     index=False)  # pd.DataFrame(book_data).to_excel(writer, sheet_name='book', startrow=rek, startcol=0, index=False, header=False)
+        df1.to_excel(writer, sheet_name='book', index=False)
+
         book_data = {'book nr': [booking_number], 'navn': [name], 'Checkin': [checkin_date],
-                     'checkout': [checkout_date], 'booking dato': [now], 'nation': [nationalitet], 'web': [web],
-                     'ankomst': {ankomst}, 'bed': [seng], 'rabat': [procent], 'antal værelser': [num_rooms],
-                     'nr gæst': [num_guests], 'Email': [email_address], 'telefon': [telefon], 'Spouse': [spouse],
-                     'enkelt': [single_room], 'morgenmad': [BF], 'pris ialt': [pristotal], 'known': [known]}
+                    'checkout': [checkout_date], 'booking dato': [now], 'nation': [nationalitet], 'web': [web],
+                    'ankomst': {ankomst}, 'bed': [seng], 'rabat': [procent], 'antal værelser': [num_rooms],
+                    'nr gæst': [num_guests], 'Email': [email_address], 'telefon': [telefon], 'Spouse': [spouse],
+                    'enkelt': [single_room], 'morgenmad': [BF], 'pris ialt': [pristotal], 'known': [known]}
 
 
 def send_email(confirmation_password, email):
@@ -106,12 +107,13 @@ def data_email_html_template(
 
 
 def send_data_email(to_addr_1, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,
-                    now, nationalitet, web, ankomst, seng, procent, num_guests, email_address, telefon, formatted_pristotal):
+                    now, nationalitet, web, ankomst, seng, procent, num_guests, email_address, telefon,
+                    formatted_pristotal, df1):
 
     logo_cid = make_msgid()
     html_content = data_email_html_template(logo_cid[1:-1], booking_number, name, checkin_date, checkout_date,
                                             now, nationalitet, web, ankomst, seng, procent, num_rooms, num_guests, email_address, telefon,
-                                            formatted_pristotal)
+                                            formatted_pristotal, df1)
     print(df1.head())
 
     # construct email
@@ -127,10 +129,9 @@ def send_data_email(to_addr_1, confirmation_password, booking_number, name, chec
     excel_buffer = BytesIO()
     with pd.ExcelWriter(excel_buffer, engine='xlsxwriter') as writer:
         df1.to_excel(writer, sheet_name='book', index=False)
-
-    excel_buffer.seek(0)
-    email.add_attachment(excel_buffer.read(), maintype='application',
-                         subtype='vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                         filename=f'booking_{booking_number}.xlsx')
+        excel_buffer.seek(0)
+        email.add_attachment(excel_buffer.read(), maintype='application',
+                            subtype='vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                            filename=f'booking_{booking_number}.xlsx')
 
     send_email(confirmation_password, email)
