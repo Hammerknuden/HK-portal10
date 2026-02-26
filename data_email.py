@@ -35,7 +35,7 @@ def add_data(year, book_data, booking_number, name, checkin_date, checkout_date,
 
         book_data = {'book nr': [booking_number], 'navn': [name], 'Checkin': [checkin_date],
                     'checkout': [checkout_date], 'booking dato': [now], 'nation': [nationalitet], 'web': [web],
-                    'ankomst': {ankomst}, 'bed': [seng], 'rabat': [procent], 'antal værelser': [num_rooms],
+                    'ankomst': ' ', 'bed': [seng], 'rabat': [procent], 'antal værelser': [num_rooms],
                     'nr gæst': [num_guests], 'Email': [email_address], 'telefon': [telefon], 'Spouse': [spouse],
                     'enkelt': [single_room], 'morgenmad': [BF], 'pris ialt': [pristotal], 'known': [known]}
 
@@ -48,10 +48,6 @@ def send_email(confirmation_password, email):
         server.login(admin_email, confirmation_password)
         server.send_message(email)
 
-#excel database
-#booking_number, name, checkin_date, checkout_date, now, nationalitet, web, seng, procent,
-             #num_rooms, num_guests, email_address, telefon, spouse, single_room, BF, pristotal, known, comments,
-
 def data_email_html_template(
         logo_cid,
         booking_number,
@@ -61,7 +57,6 @@ def data_email_html_template(
         now,
         nationalitet,
         web,
-        ankomst,
         seng,
         procent,
         num_rooms,
@@ -82,7 +77,7 @@ def data_email_html_template(
             <p>
                 Reservations Data mail for reservation </b><br>
                 Booknr: {booking_number} <br>
-                {name};{checkin_date};{checkout_date};{now};{nationalitet};{web};{ankomst}<br>
+                {name};{checkin_date};{checkout_date};{now};{nationalitet};{web};<br>
                 {seng};{procent};{num_rooms};{num_guests}
             </p>
 
@@ -104,13 +99,13 @@ def data_email_html_template(
 
 
 def send_data_email(to_addr_1, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,
-                    now, nationalitet, web, ankomst, seng, procent, num_guests, email_address, telefon,
+                    now, nationalitet, web, seng, procent, num_guests, email_address, telefon,
                     formatted_pristotal, df1):
 
     logo_cid = make_msgid()
     html_content = data_email_html_template(logo_cid[1:-1], booking_number, name, checkin_date, checkout_date,
-                                            now, nationalitet, web, ankomst, seng, procent, num_rooms, num_guests, email_address, telefon,
-                                            formatted_pristotal, df1)
+                                            now, nationalitet, web, seng, procent, num_rooms, num_guests, email_address, telefon,
+                                            formatted_pristotal)
     print(df1.head())
 
     # construct email
@@ -124,10 +119,13 @@ def send_data_email(to_addr_1, confirmation_password, booking_number, name, chec
     email.add_alternative(html_content, subtype='html')
     with (open(logo_path, 'rb') as img):
         email.get_payload()[1].add_related(img.read(), maintype='image', subtype='jpeg', cid=logo_cid)
-        excel_buffer = BytesIO()
+
+    excel_buffer = BytesIO()
     with pd.ExcelWriter(excel_buffer, engine='xlsxwriter') as writer:
         df1.to_excel(writer, sheet_name='book', index=False)
+
         excel_buffer.seek(0)
+
         email.add_attachment(excel_buffer.read(), maintype='application',
                             subtype='vnd.openxmlformats-officedocument.spreadsheetml.sheet',
                             filename=f'booking_{booking_number}.xlsx')
