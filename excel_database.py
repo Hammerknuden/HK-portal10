@@ -4,9 +4,9 @@ import streamlit
 import openpyxl
 from io import BytesIO
 
+
 excel_buffer = BytesIO
 
-#if year == '2026':
 
 def add_data(year, book_data, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, ankomst, seng,
              procent, num_rooms, num_guests, email_address, telefon, spouse, single_room, BF, pristotal, known,
