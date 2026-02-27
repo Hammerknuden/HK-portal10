@@ -15,27 +15,45 @@ sender_email = 'reservation@hammerknuden.dk'
 admin_email = 'reservation@hammerknuden.dk'
 logo_path = Path("logo2.jpg")
 
+def add_data(year, booking_number, name, checkin_date, checkout_date, now,
+             nationalitet, web, ankomst, seng, procent, num_rooms,
+             num_guests, email_address, telefon, spouse, single_room,
+             BF, pristotal, known, comments):
 
-def add_data(year, book_data, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, ankomst, seng,
-             procent, num_rooms, num_guests, email_address, telefon, spouse, single_room, BF, pristotal, known,
-             comments, excel_output=None, sheet_name='book'):
-    book_data = {'book nr': [booking_number], 'navn': [name], 'Checkin': [checkin_date],
-                 'checkout': [checkout_date], 'booking dato': [now], 'nation': [nationalitet], 'web': [web],
-                 'ankomst': {ankomst}, 'bed': [seng], 'rabat': [procent], 'antal værelser': [num_rooms],
-                 'nr gæst': [num_guests], 'Email': [email_address], 'telefon': [telefon], 'Spouse': [spouse],
-                 'enkelt': [single_room], 'morgenmad': [BF], 'pris ialt': [pristotal], 'known': [known],
-                 'Comments': [comments]}
+    book_data = {
+        'book nr': [booking_number],
+        'navn': [name],
+        'Checkin': [checkin_date],
+        'checkout': [checkout_date],
+        'booking dato': [now],
+        'nation': [nationalitet],
+        'web': [web],
+        'ankomst': [ankomst],
+        'bed': [seng],
+        'rabat': [procent],
+        'antal værelser': [num_rooms],
+        'nr gæst': [num_guests],
+        'Email': [email_address],
+        'telefon': [telefon],
+        'Spouse': [spouse],
+        'enkelt': [single_room],
+        'morgenmad': [BF],
+        'pris ialt': [pristotal],
+        'known': [known],
+        'Comments': [comments]
+    }
+
     df1 = pd.DataFrame(book_data)
-    #return df1
+
     excel_buffer = BytesIO()
+
     with pd.ExcelWriter(excel_buffer, engine='xlsxwriter') as writer:
         df1.to_excel(writer, sheet_name='book', index=False)
-        book_data = {'book nr': [booking_number], 'navn': [name], 'Checkin': [checkin_date],
-                    'checkout': [checkout_date], 'booking dato': [now], 'nation': [nationalitet], 'web': [web],
-                    'ankomst': ' ', 'bed': [seng], 'rabat': [procent], 'antal værelser': [num_rooms],
-                    'nr gæst': [num_guests], 'Email': [email_address], 'telefon': [telefon], 'Spouse': [spouse],
-                    'enkelt': [single_room], 'morgenmad': [BF], 'pris ialt': [pristotal], 'known': [known]}
-    return df1
+
+    excel_buffer.seek(0)  # VIGTIGT!
+
+    return excel_buffer
+
 
 def send_email(confirmation_password, email):
     context = ssl.create_default_context()
