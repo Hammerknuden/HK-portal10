@@ -26,17 +26,16 @@ def add_data(year, book_data, booking_number, name, checkin_date, checkout_date,
                  'enkelt': [single_room], 'morgenmad': [BF], 'pris ialt': [pristotal], 'known': [known],
                  'Comments': [comments]}
     df1 = pd.DataFrame(book_data)
-    return df1
-
+    #return df1
+    excel_buffer = BytesIO()
     with pd.ExcelWriter(excel_buffer, engine='xlsxwriter') as writer:
         df1.to_excel(writer, sheet_name='book', index=False)
-
         book_data = {'book nr': [booking_number], 'navn': [name], 'Checkin': [checkin_date],
                     'checkout': [checkout_date], 'booking dato': [now], 'nation': [nationalitet], 'web': [web],
                     'ankomst': ' ', 'bed': [seng], 'rabat': [procent], 'antal værelser': [num_rooms],
                     'nr gæst': [num_guests], 'Email': [email_address], 'telefon': [telefon], 'Spouse': [spouse],
                     'enkelt': [single_room], 'morgenmad': [BF], 'pris ialt': [pristotal], 'known': [known]}
-
+    return df1
 
 def send_email(confirmation_password, email):
     context = ssl.create_default_context()
@@ -108,7 +107,7 @@ def send_data_email(to_addr_1, confirmation_password, booking_number, name, chec
 
     # construct email
     email = EmailMessage()
-    excel_buffer = BytesIO()
+    #excel_buffer = BytesIO()
 
     email['Subject'] = Subject + f" #{booking_number}"
     email['From'] = sender_email
