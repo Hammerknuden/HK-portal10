@@ -836,7 +836,7 @@ to_addr_1 = admin_email
 if send_data and booking_submitted:
     send_data_email(to_addr_1, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,
                     now, nationalitet, web, ankomst, seng, procent, num_guests, email_address, telefon,
-                    formatted_pristotal)
+                    formatted_pristotal, df1)
                     #df1
     st.markdown("data mail sendt ")
 else:
