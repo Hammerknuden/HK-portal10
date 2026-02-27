@@ -27,8 +27,6 @@ def add_data(year, book_data, booking_number, name, checkin_date, checkout_date,
                  'Comments': [comments]}
     df1 = pd.DataFrame(book_data)
     return df1
-    rek = int(booking_number)
-    print(rek)
 
     with pd.ExcelWriter(excel_buffer, engine='xlsxwriter') as writer:
         df1.to_excel(writer, sheet_name='book', index=False)
