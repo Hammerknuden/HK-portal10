@@ -849,6 +849,8 @@ if send_data and booking_submitted:
                     formatted_pristotal, excel_file)
 
     st.markdown("data mail sendt")
-
+#def send_data_email(to_addr_1, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,
+#                    now, nationalitet, web, seng, procent, num_guests, email_address, telefon,
+#                    formatted_pristotal, df1):
 else:
     st.markdown("data mail ikke sendt ")
