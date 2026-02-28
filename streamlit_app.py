@@ -840,7 +840,7 @@ if send_data and booking_submitted:
                           ankomst, seng, procent, num_rooms,
                           num_guests, email_address, telefon,
                           spouse, single_room, BF,
-                          formatted_pristotal, known)
+                          formatted_pristotal, known, comments)
 
     send_data_email(to_addr_1, confirmation_password, booking_number, name,
                     checkin_date, checkout_date, num_rooms, now,
