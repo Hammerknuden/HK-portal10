@@ -78,7 +78,9 @@ def data_email_html_template(
         num_guests,
         email_address,
         telefon,
-        formatted_pristotal):
+        formatted_pristotal,
+        comments):
+
     return f"""
     <html>
         <body style="font-family: Arial, sans-serif;">
