@@ -578,7 +578,7 @@ st.markdown(f"**Værelsespris** {pris:.2f}kr")
 print(pris)
 prismed = pris + br_f
 formatted_prismed = f"{prismed:.2f}kr"
-st.markdown(f"**Pris incl breakfast** {formatted_prismed} kr")
+st.markdown(f"**Pris incl breakfast** {formatted_prismed:.2f} kr") #rettet se virkning 1mar26
 if breakfast_rabat and web == "web":
 
         rabat_a = (int(rabat) / 100)
@@ -588,14 +588,6 @@ if breakfast_rabat and web == "web":
         st.markdown(f"**Rabat** {formatted_rabat_t}kr")
         pristotal = prismed - rabat_t
         formatted_pristotal = f"{pristotal:.2f}"
-
-    #elif web == "FM":
-    #    pris_add_a = (int(FM_add) / 100)
-    #    pris_add_t = (prismed + br_f) * pris_add_a
-    #    formatted_pris_add_t = f"{pris_add_t:.2f}"
-    #    st.markdown(f"**Tiilæg** {formatted_pris_add_t}kr")
-    #    pristotal = prismed + pris_add_t
-    #    formatted_pristotal = f"{pristotal:.2f}"
 
 elif web == "web":
     rabat_a = (int(rabat) / 100)
@@ -849,8 +841,5 @@ if send_data and booking_submitted:
                     formatted_pristotal, excel_file)
 
     st.markdown("data mail sendt")
-#def send_data_email(to_addr_1, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,
-#                    now, nationalitet, web, seng, procent, num_guests, email_address, telefon,
-#                    formatted_pristotal, df1):
 else:
     st.markdown("data mail ikke sendt ")
