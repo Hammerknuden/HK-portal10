@@ -91,7 +91,7 @@ def data_email_html_template(
             <img src="cid:{logo_cid}" alt="logo" width="300"/>
 
             <p>
-                Reservations Data mail for reservation </b><br>
+                Reservations Data mail for reservation <br>
                 Booknr: {booking_number} <br>
                 {name};{checkin_date};{checkout_date};{now};{nationalitet};{web};<br>
                 {seng};{procent};{num_rooms};{num_guests}
@@ -116,17 +116,15 @@ def data_email_html_template(
 
 def send_data_email(to_addr_1, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,
                     now, nationalitet, web, ankomst, seng, procent, num_guests, email_address, telefon,
-                    formatted_pristotal, df1):
+                    formatted_pristotal, excel_buffer):
 
     logo_cid = make_msgid()
     html_content = data_email_html_template(logo_cid[1:-1], booking_number, name, checkin_date, checkout_date,
-                                            now, nationalitet, web, ankomst, seng, procent, num_rooms, num_guests, email_address, telefon,
-                                            formatted_pristotal)
-    #print(df1.head())
+                                            now, nationalitet, web, ankomst, seng, procent, num_rooms, num_guests,
+                                            email_address, telefon, formatted_pristotal)
 
     # construct email
     email = EmailMessage()
-    #excel_buffer = BytesIO()
 
     email['Subject'] = Subject + f" #{booking_number}"
     email['From'] = sender_email
@@ -137,13 +135,15 @@ def send_data_email(to_addr_1, confirmation_password, booking_number, name, chec
         email.get_payload()[1].add_related(img.read(), maintype='image', subtype='jpeg', cid=logo_cid)
 
     excel_buffer = BytesIO()
-    with pd.ExcelWriter(excel_buffer, engine='xlsxwriter') as writer:
-        df1.to_excel(writer, sheet_name='book', index=False)
+    #with pd.ExcelWriter(excel_buffer, engine='xlsxwriter') as writer:
+    #    df1.to_excel(writer, sheet_name='book', index=False)
+    excel_buffer.seek(0)
 
-        excel_buffer.seek(0)
 
-        email.add_attachment(excel_buffer.read(), maintype='application',
-                            subtype='vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                            filename=f'booking_{booking_number}.xlsx')
+    email.add_attachment(
+        excel_buffer.read(),
+        maintype='application',
+        subtype='vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        filename=f'booking_{booking_number}.xlsx')
 
     send_email(confirmation_password, email)
