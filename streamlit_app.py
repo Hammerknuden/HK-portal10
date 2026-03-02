@@ -841,5 +841,6 @@ if send_data and booking_submitted:
                     formatted_pristotal, excel_file)
 
     st.markdown("data mail sendt")
+    print(type(excel_file))
 else:
     st.markdown("data mail ikke sendt ")

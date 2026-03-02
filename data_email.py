@@ -134,11 +134,7 @@ def send_data_email(to_addr_1, confirmation_password, booking_number, name, chec
     with (open(logo_path, 'rb') as img):
         email.get_payload()[1].add_related(img.read(), maintype='image', subtype='jpeg', cid=logo_cid)
 
-    excel_buffer = BytesIO()
-    #with pd.ExcelWriter(excel_buffer, engine='xlsxwriter') as writer:
-    #    df1.to_excel(writer, sheet_name='book', index=False)
     excel_buffer.seek(0)
-
 
     email.add_attachment(
         excel_buffer.read(),
