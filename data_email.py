@@ -15,10 +15,10 @@ sender_email = 'reservation@hammerknuden.dk'
 admin_email = 'reservation@hammerknuden.dk'
 logo_path = Path("logo2.jpg")
 
-def add_data(year, booking_number, name, checkin_date, checkout_date, now,
-             nationalitet, web, ankomst, seng, procent, num_rooms,
-             num_guests, email_address, telefon, spouse, single_room,
-             BF, pristotal, known, comments):
+def add_data(year, booking_number=None, name=None, checkin_date=None, checkout_date=None, now=None,
+             nationalitet=None, web=None, ankomst=None, seng=None, procent=None, num_rooms=None,
+             num_guests=None, email_address=None, telefon=None, spouse=None, single_room=None,
+             BF=None, pristotal=None, known=None, comments=None):
 
     book_data = {
         'book nr': [booking_number],
