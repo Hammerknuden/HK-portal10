@@ -39,7 +39,7 @@ def add_data(year, booking_number=None, name=None, checkin_date=None, checkout_d
         'Spouse': [spouse],
         'enkelt': [single_room],
         'morgenmad': [BF],
-        'pris ialt': [pristotal],
+        'pris ialt': [formatted_pristotal],
         'known': [known],
         'Comments': [comments]
     }
