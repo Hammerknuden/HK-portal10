@@ -64,6 +64,7 @@ def send_email(confirmation_password, email):
         server.login(admin_email, confirmation_password)
         server.send_message(email)
 
+
 def data_email_html_template(
         logo_cid,
         booking_number,
@@ -116,12 +117,12 @@ def data_email_html_template(
 
 
 def send_data_email(to_addr_1, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,
-                    now, nationalitet, web, ankomst, seng, procent, num_guests, email_address, telefon,
+                    now, nationalitet, web, seng, procent, num_guests, email_address, telefon,
                     formatted_pristotal, excel_buffer):
 
     logo_cid = make_msgid()
     html_content = data_email_html_template(logo_cid[1:-1], booking_number, name, checkin_date, checkout_date,
-                                            now, nationalitet, web, ankomst, seng, procent, num_rooms, num_guests,
+                                            now, nationalitet, web, seng, procent, num_rooms, num_guests,
                                             email_address, telefon, formatted_pristotal)
 
     # construct email

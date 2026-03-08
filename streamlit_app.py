@@ -827,12 +827,12 @@ to_addr_1 = admin_email
 
 if send_data and booking_submitted:
 
-    excel_file = add_data(year, booking_number, name, checkin_date,
-                          checkout_date, now, nationalitet, web,
-                          ankomst, seng, procent, num_rooms,
-                          num_guests, email_address, telefon,
-                          spouse, single_room, BF,
-                          formatted_pristotal, known, comments)
+    excel_file = add_data(year=year, booking_number=booking_number, name=name, checkin_date=checkin_date,
+                          checkout_date=checkout_date, now=now, nationalitet=nationalitet, web=web,
+                          ankomst=ankomst, seng=seng, procent=procent, num_rooms=num_rooms,
+                          num_guests=num_guests, email_address=email_address, telefon=telefon,
+                          spouse=spouse, single_room=single_room, BF=BF,
+                          formatted_pristotal=formatted_pristotal, known=known, comments=comments)
 
     send_data_email(to_addr_1, confirmation_password, booking_number, name,
                     checkin_date, checkout_date, num_rooms, now,
