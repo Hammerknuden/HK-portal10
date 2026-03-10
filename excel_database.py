@@ -5,10 +5,10 @@ import openpyxl
 from io import BytesIO
 
 
-excel_buffer = BytesIO
+#excel_buffer = BytesIO
 
 
-def add_data(year, book_data, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, ankomst, seng,
+#def add_data(year, book_data, booking_number, name, checkin_date, checkout_date, now, nationalitet, web, ankomst, seng,
              procent, num_rooms, num_guests, email_address, telefon, spouse, single_room, BF, pristotal, known,
              comments, excel_output=None, sheet_name='book'):
 
