@@ -58,7 +58,7 @@ def danish_email_html_template(logo_cid, name, num_rooms, num_guests, booking_nu
             <table>
                 <tr>
                     <td>{text_bf}</td>
-                    <td><span style="float:right;"> -- </style></td>
+                    <td style="text-align:right;"> -- </td>
                 </tr>
                 <tr>
                     <td>Prisen på opholdet er</td>
@@ -66,11 +66,11 @@ def danish_email_html_template(logo_cid, name, num_rooms, num_guests, booking_nu
                 </tr>
                 <tr>
                     <td>{text_web}</td>
-                    <td><span style="float:right;">{formatted_justering} </span></td>
+                    <td style="text-align:right;">{formatted_justering} </td>
                 </tr>
                 <tr>
                     <td>Endelig pris afregnes under opholdet.</td>
-                    <td><span style="float:right;">{formatted_pristotal} kr</span></td>
+                    <td> style="text-align:right;">{formatted_pristotal} kr</td>
                 </tr>
                 <hr>
                 <tr>
