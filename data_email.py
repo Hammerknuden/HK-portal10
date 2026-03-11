@@ -96,7 +96,9 @@ def data_email_html_template(
             <p>
                 Reservations Data mail for reservation <br>
                 Booknr: {booking_number} <br>
-                {name};{checkin_date};{checkout_date};{now};{nationalitet};{web};<br>
+                Navn:<b>{name}</b><br>
+                Fra Dato:{checkin_date};Til Dato{checkout_date}<br>
+                Booking dato {now}, Nationalitet {nationalitet}, Booking metode {web};<br>
                 {seng};{procent};{num_rooms};{num_guests}
             </p>
 
