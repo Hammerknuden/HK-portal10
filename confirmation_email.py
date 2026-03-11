@@ -62,7 +62,7 @@ def danish_email_html_template(logo_cid, name, num_rooms, num_guests, booking_nu
                 </tr>
                 <tr>
                     <td>Prisen på opholdet er</td>
-                    <td><span style="float:right;">{formatted_prismed} kr</span></td>
+                    <td style="text-align:right;">{formatted_prismed} kr</td>
                 </tr>
                 <tr>
                     <td>{text_web}</td>
