@@ -74,6 +74,7 @@ def data_email_html_template(
         now,
         nationalitet,
         web,
+        ankomst,
         seng,
         procent,
         num_rooms,
