@@ -66,11 +66,11 @@ def danish_email_html_template(logo_cid, name, num_rooms, num_guests, booking_nu
                 </tr>
                 <tr>
                     <td>{text_web}</td>
-                    <td style="text-align:right;">{formatted_justering} </td>
+                    <td style="text-align:right;">{formatted_justering}  </td>
                 </tr>
                 <tr>
                     <td>Endelig pris afregnes under opholdet.</td>
-                    <td> style="text-align:right;">{formatted_pristotal} kr</td>
+                    <td style="text-align:right;">{formatted_pristotal} kr</td>
                 </tr>
                 <hr>
                 <tr>
