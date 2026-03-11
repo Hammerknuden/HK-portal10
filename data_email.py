@@ -10,7 +10,7 @@ import openpyxl
 
 port = 587
 smtp_server = 'send.one.com'
-Subject = "Hammerknuden reservations data"
+Subject = "HK reservations data"
 sender_email = 'reservation@hammerknuden.dk'
 admin_email = 'reservation@hammerknuden.dk'
 logo_path = Path("logo2.jpg")
@@ -94,7 +94,7 @@ def data_email_html_template(
             <img src="cid:{logo_cid}" alt="logo" width="300"/>
 
             <p>
-                Reservations Data mail for reservation <br>
+                Data mail for reservation <br>
                 Booknr: {booking_number} <br>
                 Navn:<b>{name}</b><br>
                 Fra Dato:{checkin_date};Til Dato{checkout_date}<br>
