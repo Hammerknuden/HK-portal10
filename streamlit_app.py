@@ -838,5 +838,6 @@ if send_data and booking_submitted:
 
     st.markdown("data mail sendt")
     print(type(excel_file))
+
 else:
     st.markdown("data mail ikke sendt ")
