@@ -8,7 +8,6 @@ import numpy as np
 from confirmation_email import (admin_email, send_danish_confirmation_email, send_english_confirmation_email,
                                 send_german_confirmation_email)
 from data_email import (add_data, send_data_email)
-#from excel_database import add_data
 from PIL import Image, ImageDraw, ImageFont
 from io import BytesIO
 import base64
@@ -817,9 +816,6 @@ elif Sprog == "D" and booking_submitted:
     st.markdown('tysk email er sendt')
 else:
     st.markdown('Booking mail er ikke sendt ')
-
-  #st.text_input("email addr  ")
-#confirmation_password_data = st.text_input("Admin kodeord")
 
 
 send_data = st.checkbox("Data - mail til admin")
