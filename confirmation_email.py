@@ -156,7 +156,7 @@ def english_email_html_template(logo_cid, name, num_rooms, num_guests, booking_n
             <table>
                 <tr>
                     <td>{text_bf}</td>
-                    <td style="text-align:right;> -- </td>
+                    <td style="text-align:right;"> -- </td>
                 </tr>
                 <tr> 
                     <td>The price is.. </td>
