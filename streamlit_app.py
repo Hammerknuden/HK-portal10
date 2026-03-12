@@ -577,7 +577,7 @@ st.markdown(f"**Værelsespris** {pris:.2f} kr")
 print(pris)
 
 prismed = pris + br_f
-formatted_prismed = f"{prismed:.2f}"
+formatted_prismed = f"{prismed:.2f}".replace(".",",")
 st.markdown(f"**Pris incl breakfast** {formatted_prismed} kr ")
 if breakfast_rabat and web == "web":
 
