@@ -164,7 +164,7 @@ def english_email_html_template(logo_cid, name, num_rooms, num_guests, booking_n
                 </tr>
                 <tr>
                     <td>{text_web}..</td>
-                    <td style="text-align:right;"{formatted_justering} kr </td>
+                    <td style="text-align:right;">{formatted_justering} kr </td>
                 </tr>
                 <tr>
                     <td>Total price to be settled during stay....</td>
