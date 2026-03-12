@@ -575,6 +575,7 @@ else:
 
 st.markdown(f"**Værelsespris** {pris:.2f} kr")
 print(pris)
+
 prismed = pris + br_f
 formatted_prismed = f"{prismed:.2f}"
 st.markdown(f"**Pris incl breakfast** {formatted_prismed}")
@@ -584,7 +585,7 @@ if breakfast_rabat and web == "web":
         rabat_rm = pris * rabat_a
         rabat_t = rabat_rm
         formatted_rabat_t = f"{rabat_t:.2f}"
-        st.markdown(f"**Rabat** {formatted_rabat_t}kr")
+        st.markdown(f"**Rabat** {formatted_rabat_t} kr")
         pristotal = prismed - rabat_t
         formatted_pristotal = f"{pristotal:.2f}"
 
@@ -602,7 +603,7 @@ elif web == "FM":
     pris_add_a = (int(FM_add) / 100)
     pris_add_t = (prismed + br_f) * pris_add_a
     formatted_pris_add_t = f"{pris_add_t:.2f}"
-    st.markdown(f"**Tiilæg** {formatted_pris_add_t}kr")
+    st.markdown(f"**Tiilæg** {formatted_pris_add_t} kr")
     pristotal = prismed + pris_add_t
     formatted_pristotal = f"{pristotal:.2f}"
 else:
@@ -764,12 +765,12 @@ else:
 if web == "web" and Sprog == "DK":
     text_web = "Rabat i forbindelse med opholdet er"
     justering = rabat_t
-    formatted_justering = f"{justering:.2f}kr"
+    formatted_justering = f"{justering:.2f}"
     print(formatted_justering)
 elif web == "FM" and Sprog == "DK":
     text_web = "Evt tillæg i forbindelse med denne booking"
     justering = pris_add_t
-    formatted_justering = f"{justering:.2f} kr"
+    formatted_justering = f"{justering:.2f}"
     print(formatted_justering)
     depositum = pristotal * 0.5
     st.markdown(f"** depositum 50% ** {depositum:.2f}")
@@ -778,11 +779,11 @@ elif web == "FM" and Sprog == "DK":
 elif web == "web" and Sprog == "UK":
     text_web = "Any discount in connection with this booking is."
     justering = rabat_t
-    formatted_justering = f"{justering:.2f} kr."
+    formatted_justering = f"{justering:.2f}"
 elif web == "web" and Sprog == "D":
     text_web = f"Der Rabatt im Zusammenhang mit dieser Buchung beträgt."
     justering = rabat_t
-    formatted_justering = f"{justering:.2f} kr"
+    formatted_justering = f"{justering:.2f}"
 else:
     text_web = " - "
     formatted_justering = " - "
