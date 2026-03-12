@@ -62,15 +62,15 @@ def danish_email_html_template(logo_cid, name, num_rooms, num_guests, booking_nu
                 </tr>
                 <tr>
                     <td>Prisen på opholdet er</td>
-                    <td style="text-align:right;">{formatted_prismed} kr</td>
+                    <td style="text-align:right;">{formatted_prismed} kr </td>
                 </tr>
                 <tr>
                     <td>{text_web}</td>
-                    <td style="text-align:right;">{formatted_justering}  </td>
+                    <td style="text-align:right;">{formatted_justering} kr </td>
                 </tr>
                 <tr>
                     <td>Endelig pris afregnes under opholdet.</td>
-                    <td style="text-align:right;">{formatted_pristotal} kr</td>
+                    <td style="text-align:right;">{formatted_pristotal} kr </td>
                 </tr>
                 <hr>
                 <tr>
@@ -156,19 +156,19 @@ def english_email_html_template(logo_cid, name, num_rooms, num_guests, booking_n
             <table>
                 <tr>
                     <td>{text_bf}</td>
-                    <td><span style=float:right> -- </style></td>
+                    <td style="text-align:right;> -- </td>
                 </tr>
                 <tr> 
                     <td>The price is.. </td>
-                    <td><span style=float:right>{formatted_prismed}kr</span></td>
+                    <td style="text-align:right;">{formatted_prismed} kr </td>
                 </tr>
                 <tr>
                     <td>{text_web}..</td>
-                    <td><span style=float:right>{formatted_justering}</span></td>
+                    <td style="text-align:right;"{formatted_justering} kr </td>
                 </tr>
                 <tr>
                     <td>Total price to be settled during stay....</td>
-                    <td><span style=float:right>{formatted_pristotal} kr</span></td>
+                    <td style="text-align:right;">{formatted_pristotal} kr </td>
                 </tr>
                 <hr>
                 <tr>
@@ -251,15 +251,15 @@ def german_email_html_template(logo_cid, name, num_rooms, num_guests, booking_nu
             <table>
                 <tr>
                     <td>{text_bf}</td>
-                    <td><span style=float:right> -- </style></td>
+                    <td style="text-align:right;"> -- </td>
                 </tr>
                 <tr>
                     <td>Der Preis für den Aufenthalt beträgt</td>
-                    <td><span style=float:right>{formatted_prismed}</span></td>
+                    <td style="text-align:right;">{formatted_prismed} kr </td>
                 </tr>
                 <tr>
                     <td>{text_web}.</td>
-                    <td><span style=float:right>{formatted_justering}</span></td>
+                    <td style="text-align:right;">{formatted_justering} kr </td>
                 </tr>
                 <tr>
                     <td>Der Endpreis wird während des Aufenthalts abgerechnet.</td>

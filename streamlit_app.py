@@ -573,11 +573,11 @@ else:
     if mixbooking_end:
         pris = (high_season_price * (int(mixend.days)) + (int(mixend_b.days) * low_season_price)) * int(num_rooms)
 
-st.markdown(f"**Værelsespris** {pris:.2f}kr")
+st.markdown(f"**Værelsespris** {pris:.2f} kr")
 print(pris)
 prismed = pris + br_f
-formatted_prismed = f"{prismed:.2f} kr"
-st.markdown(f"**Pris incl breakfast** {formatted_prismed} kr")
+formatted_prismed = f"{prismed:.2f}"
+st.markdown(f"**Pris incl breakfast** {formatted_prismed}")
 if breakfast_rabat and web == "web":
 
         rabat_a = (int(rabat) / 100)
