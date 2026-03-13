@@ -48,7 +48,7 @@ def add_data(year=None, booking_number=None, name=None, checkin_date=None, check
 
     excel_buffer = BytesIO()
 
-    with pd.ExcelWriter(excel_buffer, engine='xlsxwriter',  datetime_format="dd-mm-yy") as writer:
+    with pd.ExcelWriter(excel_buffer, engine='xlsxwriter',  datetime_format="dd-mm-yyyy") as writer:
         df1.to_excel(writer, sheet_name='book', index=False)
 
     excel_buffer.seek(0)  # VIGTIGT!
