@@ -543,7 +543,7 @@ if year == '2025':
 if year == '2026':
     high_season_start = datetime.strptime("28-06-26", _format := "%d-%m-%y").date()
     high_season_end = datetime.strptime("15-08-26", _format := "%d-%m-%y").date()
-    st.markdown(f"**Højsæson starter** {high_season_start}", _format := "%d-%m-%y").date()
+    st.markdown(f"**Højsæson starter** {high_season_start}")
     st.markdown(f"**Højsæson slutter** {high_season_end}")
 
 days = checkout_date - checkin_date
