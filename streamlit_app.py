@@ -158,7 +158,7 @@ if year == '2026':
         st.markdown(f"**Antal ledige rum**  {ledige_rum}")  # "ledige} rum ", {ledige_rum})
         print(df)
 
-    if bruger == "Finn" and network == "local":
+    if bruger == "Finn" and network == "local":   #this one in use
 
         file_name = "2026_BOOKING 10.xlsx"
         df = pd.read_excel(file_name, sheet_name='book_simp')
@@ -212,7 +212,8 @@ if year == '2026':
         ledige_rum = ledige_rum_1 + ledige_rum_2 + ledige_rum_3 + ledige_rum_4 + ledige_rum_5
         print(unique_values)
         st.markdown(f"**Antal ledige rum**  {ledige_rum}")  # "ledige} rum ", {ledige_rum})
-    if bruger == "Naja" and network == "local":
+
+    if bruger == "Naja" and network == "local":    # not in use for now
         file_name = "2026_BOOKING 10.xlsx"
         df = pd.read_excel(file_name, sheet_name='book_simp')
         new_data = df[(df['dato'].dt.date >= checkin_date) & (df['dato'].dt.date < checkout_date)]
@@ -268,7 +269,7 @@ if year == '2026':
 
 if year == '2027':
 
-    if bruger == "Naja" and network == 'local':
+    if bruger == "Naja" and network == 'local':  #not in use for now
         #df = pd.read_excel(r"C:\Users\naja\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\2025_BOOKING 10.xlsx",
         #                   sheet_name='book_simp')
         df = pd.read_excel("2027_BOOKING 10.xlsx", sheet_name='book_simp')
@@ -324,7 +325,7 @@ if year == '2027':
         print(unique_values)
         st.markdown(f"**Antal ledige rum**  {ledige_rum}")  # "ledige} rum ", {ledige_rum})
 
-    if bruger == "Finn" and network == 'local':
+    if bruger == "Finn" and network == 'local': #in use for 2027
         #file_name = r"C:\Users\finnj\OneDrive\DELE MAPPE NAJA\HAMMERKNUDEN\BOOKING\filer\2026_BOOKING 10.xlsx"
         file_name = "2027_BOOKING 10.xlsx"
         df = pd.read_excel(file_name, sheet_name='book_simp')
@@ -395,8 +396,8 @@ else:
 
 num_rooms = st.number_input("Antal rum", value=1, step=1)
 web = st.selectbox("booking via web bc eller FM folkemøde ( ikke mulighed for enk rum)", options=["web", "bc", "FM"])
-ankomst = st.text_input("Angiv ankomsts tidspunkt ")
-seng = st.text_input(" type seng DB, ENK, OPCH, OPIN ")
+ankomst = st.text_input("Angiv ankomsts tidspunkt hvis haves ")
+seng = st.text_input(" type seng Doob, Sing, OPCH, OPIN ")
 if web == "web":
     rabat = st.number_input(" rabat i procent ", value=10, step=1)
     procent = rabat
@@ -537,9 +538,11 @@ if year == '2027':
     high_season_end = datetime.strptime("17-08-27", _format := "%d-%m-%y").date()
     st.markdown(f"**Højsæson starter** {high_season_start}")
     st.markdown(f"**Højsæson slutter** {high_season_end}")
-if year == '2025':
+if year == '2028':
     high_season_start = datetime.strptime("29-06-25", _format := "%d-%m-%y").date()
     high_season_end = datetime.strptime("26-08-25", _format := "%d-%m-%y").date()
+    st.markdown(f"**Højsæson starter** {high_season_start}")
+    st.markdown(f"**Højsæson slutter** {high_season_end}")
 if year == '2026':
     high_season_start = datetime.strptime("28-06-26", _format := "%d-%m-%y").date()
     high_season_end = datetime.strptime("15-08-26", _format := "%d-%m-%y").date()
@@ -561,6 +564,7 @@ mixearly = checkout_date - high_season_start
 mixearly_b = high_season_start - checkin_date
 mixend = high_season_end - checkin_date
 mixend_b = checkout_date - high_season_end
+
 if web == "FM":
     pris = (high_season_price * int(days.days)) * int(num_rooms)
 else:
@@ -577,7 +581,10 @@ st.markdown(f"**Værelsespris** {pris:.2f} kr")
 print(pris)
 
 prismed = pris + br_f
+
 formatted_prismed = f"{prismed:.2f}".replace(".",",")
+print(formatted_prismed)
+
 st.markdown(f"**Pris incl breakfast** {formatted_prismed} kr ")
 if breakfast_rabat and web == "web":
 
