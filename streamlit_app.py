@@ -581,11 +581,11 @@ st.markdown(f"**Værelsespris** {pris:.2f} kr")
 print(pris)
 
 prismed = pris + br_f
+prismed = float(prismed)
+#formatted_prismed = f"{prismed:.2f}".replace(".",",")
+st.markdown(f"**Pris incl breakfast** {prismed:.2f}".replace(".", ","))
+print(prismed)
 
-formatted_prismed = f"{prismed:.2f}".replace(".",",")
-print(formatted_prismed)
-
-#st.markdown(f"**Pris incl breakfast** {formatted_prismed} kr ")
 if breakfast_rabat and web == "web":
 
         rabat_a = (int(rabat) / 100)
