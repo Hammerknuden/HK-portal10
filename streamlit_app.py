@@ -588,14 +588,14 @@ print(prismed)
 
 if breakfast_rabat and web == "web":
 
-        formatted_prismed = f"{prismed:.2f}".replace(".",",")
-        rabat_a = (int(rabat) / 100)
-        rabat_rm = pris * rabat_a
-        rabat_t = rabat_rm
-        formatted_rabat_t = f"{rabat_t:.2f}"
-        st.markdown(f"**Rabat** {formatted_rabat_t} kr".replace(".",","))
-        pristotal = prismed - rabat_t
-        formatted_pristotal = f"{pristotal:.2f}".replace(".",",")
+    formatted_prismed = f"{prismed:.2f}".replace(".",",")
+    rabat_a = (int(rabat) / 100)
+    rabat_rm = pris * rabat_a
+    rabat_t = rabat_rm
+    formatted_rabat_t = f"{rabat_t:.2f}"
+    st.markdown(f"**Rabat** {formatted_rabat_t} kr".replace(".",","))
+    pristotal = prismed - rabat_t
+    formatted_pristotal = f"{pristotal:.2f}".replace(".",",")
 
 elif web == "web":
     formatted_prismed = f"{prismed:.2f}".replace(".",",")
