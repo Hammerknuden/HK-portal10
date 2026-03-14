@@ -595,7 +595,7 @@ if breakfast_rabat and web == "web":
         formatted_rabat_t = f"{rabat_t:.2f}"
         st.markdown(f"**Rabat** {formatted_rabat_t} kr".replace(".",","))
         pristotal = prismed - rabat_t
-        formatted_pristotal = f"{pristotal:.2f}"
+        formatted_pristotal = f"{pristotal:.2f}".replace(".",",")
 
 elif web == "web":
     formatted_prismed = f"{prismed:.2f}".replace(".",",")
@@ -606,7 +606,7 @@ elif web == "web":
     formatted_rabat_t = f"{rabat_t:.2f}"
     st.markdown(f"**Rabat** {formatted_rabat_t}kr".replace(".",","))
     pristotal = prismed - rabat_t
-    formatted_pristotal = f"{pristotal:.2f}"
+    formatted_pristotal = f"{pristotal:.2f}".replace(".",",")
 
 elif web == "FM":
     formatted_prismed = f"{prismed:.2f}".replace(".",",")
@@ -615,7 +615,7 @@ elif web == "FM":
     formatted_pris_add_t = f"{pris_add_t:.2f}"
     st.markdown(f"**Tiilæg** {formatted_pris_add_t} kr".replace(".",","))
     pristotal = prismed + pris_add_t
-    formatted_pristotal = f"{pristotal:.2f}"
+    formatted_pristotal = f"{pristotal:.2f}".replace(".",",")
 else:
     formatted_prismed = f"{prismed:.2f}".replace(".",",")
     formatted_pristotal = formatted_prismed
