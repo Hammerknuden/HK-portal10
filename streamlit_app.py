@@ -588,6 +588,7 @@ print(prismed)
 
 if breakfast_rabat and web == "web":
 
+        formatted_prismed = f"{prismed:.2f}".replace(".",",")
         rabat_a = (int(rabat) / 100)
         rabat_rm = pris * rabat_a
         rabat_t = rabat_rm
@@ -597,6 +598,7 @@ if breakfast_rabat and web == "web":
         formatted_pristotal = f"{pristotal:.2f}"
 
 elif web == "web":
+    formatted_prismed = f"{prismed:.2f}".replace(".",",")
     rabat_a = (int(rabat) / 100)
     rabat_mm = br_f * rabat_a
     rabat_rm = pris * rabat_a
@@ -607,6 +609,7 @@ elif web == "web":
     formatted_pristotal = f"{pristotal:.2f}"
 
 elif web == "FM":
+    formatted_prismed = f"{prismed:.2f}".replace(".",",")
     pris_add_a = (int(FM_add) / 100)
     pris_add_t = (prismed + br_f) * pris_add_a
     formatted_pris_add_t = f"{pris_add_t:.2f}"
@@ -614,6 +617,7 @@ elif web == "FM":
     pristotal = prismed + pris_add_t
     formatted_pristotal = f"{pristotal:.2f}"
 else:
+    formatted_prismed = f"{prismed:.2f}".replace(".",",")
     formatted_pristotal = formatted_prismed
 
     print(formatted_pristotal)
