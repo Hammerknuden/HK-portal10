@@ -593,7 +593,7 @@ if breakfast_rabat and web == "web":
         rabat_rm = pris * rabat_a
         rabat_t = rabat_rm
         formatted_rabat_t = f"{rabat_t:.2f}"
-        st.markdown(f"**Rabat** {formatted_rabat_t} kr")
+        st.markdown(f"**Rabat** {formatted_rabat_t} kr".replace(".",","))
         pristotal = prismed - rabat_t
         formatted_pristotal = f"{pristotal:.2f}"
 
@@ -604,7 +604,7 @@ elif web == "web":
     rabat_rm = pris * rabat_a
     rabat_t = rabat_mm + rabat_rm
     formatted_rabat_t = f"{rabat_t:.2f}"
-    st.markdown(f"**Rabat** {formatted_rabat_t}kr")
+    st.markdown(f"**Rabat** {formatted_rabat_t}kr".replace(".",","))
     pristotal = prismed - rabat_t
     formatted_pristotal = f"{pristotal:.2f}"
 
@@ -613,7 +613,7 @@ elif web == "FM":
     pris_add_a = (int(FM_add) / 100)
     pris_add_t = (prismed + br_f) * pris_add_a
     formatted_pris_add_t = f"{pris_add_t:.2f}"
-    st.markdown(f"**Tiilæg** {formatted_pris_add_t} kr")
+    st.markdown(f"**Tiilæg** {formatted_pris_add_t} kr".replace(".",","))
     pristotal = prismed + pris_add_t
     formatted_pristotal = f"{pristotal:.2f}"
 else:
@@ -621,7 +621,7 @@ else:
     formatted_pristotal = formatted_prismed
 
     print(formatted_pristotal)
-st.markdown(f"**Den totale pris** {formatted_pristotal}kr")
+st.markdown(f"**Den totale pris** {formatted_pristotal}kr".replace(".",","))
 
 name = st.text_input("Navn ")
 fam_name = st.text_input("Efternavn (kun til søgning ellers blank)  ")
