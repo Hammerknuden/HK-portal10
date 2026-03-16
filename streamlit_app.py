@@ -777,12 +777,12 @@ else:
 if web == "web" and Sprog == "DK":
     text_web = "Rabat i forbindelse med opholdet er"
     justering = rabat_t
-    formatted_justering = f"{justering:.2f}"
+    formatted_justering = f"{justering:.2f}".replace(".", ",")
     print(formatted_justering)
 elif web == "FM" and Sprog == "DK":
     text_web = "Evt tillæg i forbindelse med denne booking"
     justering = pris_add_t
-    formatted_justering = f"{justering:.2f}"
+    formatted_justering = f"{justering:.2f}".replace(".", ",")
     print(formatted_justering)
     depositum = pristotal * 0.5
     st.markdown(f"** depositum 50% ** {depositum:.2f}")
@@ -791,11 +791,11 @@ elif web == "FM" and Sprog == "DK":
 elif web == "web" and Sprog == "UK":
     text_web = "Any discount in connection with this booking is."
     justering = rabat_t
-    formatted_justering = f"{justering:.2f}"
+    formatted_justering = f"{justering:.2f}".replace(".", ",")
 elif web == "web" and Sprog == "D":
     text_web = f"Der Rabatt im Zusammenhang mit dieser Buchung beträgt."
     justering = rabat_t
-    formatted_justering = f"{justering:.2f}"
+    formatted_justering = f"{justering:.2f}".replace(".", ",")
 else:
     text_web = " - "
     formatted_justering = " - "
