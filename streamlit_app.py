@@ -612,7 +612,8 @@ elif web == "web":
     st.markdown(f"**Rabat** {formatted_rabat_t}kr".replace(".",","))
     pristotal = prismed - rabat_t
     formatted_pristotal = f"{pristotal:.2f}".replace(".",",")
-
+    print("formatted_prismed:", formatted_prismed)
+    print("type:", type(formatted_prismed))
 elif web == "FM":
     formatted_prismed = f"{prismed:.2f}".replace(".",",")
     pris_add_a = (int(FM_add) / 100)
