@@ -99,7 +99,7 @@ def data_email_html_template(
                 Navn:<b>{name}</b><br>
                 Fra Dato:{checkin_date};Til Dato{checkout_date}<br>
                 Booking dato {now}, Nationalitet {nationalitet}, Booking metode {web};<br>
-                Senge type "if knowb"{seng}; Rabat ved booking {procent};
+                Senge type {seng}; Rabat ved booking {procent};
             </p>
 
             <p>
@@ -111,7 +111,7 @@ def data_email_html_template(
                 Email: {email_address}; {telefon}<br>
             </p>
             <p>
-                <b>Total pris:</b> {formatted_pristotal}
+                <b>Total pris:</b> {formatted_pristotal} kr
             </p>
 
         </body>
