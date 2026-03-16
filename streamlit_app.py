@@ -581,10 +581,14 @@ else:
 st.markdown(f"**Værelsespris** {pris:.2f} kr".replace(".", ","))
 print(pris)
 
-prismed = pris + br_f
-prismed = float(prismed)
-#formatted_prismed = f"{prismed:.2f}".replace(".",",")
-st.markdown(f"**Pris incl breakfast** {prismed:.2f} kr".replace(".", ","))
+
+def dkk(value):
+    return f"{value:.2f}".replace(".",",")
+
+
+prismed = float(pris + br_f)
+formatted_prismed = dkk(prismed)
+st.markdown(f"**Pris incl breakfast** {formatted_prismed} kr")
 print(prismed)
 
 if breakfast_rabat and web == "web":
