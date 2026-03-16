@@ -36,8 +36,8 @@ now = st.date_input("booking dato")
 booking_number = st.text_input("booking nummer ")
 
 
-checkin_date = st.date_input("Checkin dato", _format := "%d-%m-%y").date()
-checkout_date = st.date_input("Checkout dato", _format := "%d-%m-%y").date()
+checkin_date = st.date_input("Checkin dato"), #_format := "%d-%m-%y").date()
+checkout_date = st.date_input("Checkout dato") #, _format := "%d-%m-%y").date()
 single_room = st.checkbox("Enkeltværelse")
 
 days = checkout_date - checkin_date
