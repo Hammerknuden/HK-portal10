@@ -837,7 +837,11 @@ else:
 
 
 send_data = st.checkbox("Data - mail til admin")
-to_addr_1 = admin_email
+additional_mail = st.checkbox("data til admin@hammerknuden.dk  ")
+if send_data:
+    to_addr_1 = admin_email
+if send_data and additional_mail:
+    to_addr_1 = admin_email, "admin@hammerknuden.dk"
 
 if send_data and booking_submitted:
 
