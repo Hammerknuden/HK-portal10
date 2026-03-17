@@ -841,7 +841,8 @@ additional_mail = st.checkbox("data til admin@hammerknuden.dk  ")
 if send_data:
     to_addr_1 = admin_email
 if send_data and additional_mail:
-    to_addr_1 = admin_email, "admin@hammerknuden.dk"
+    add_mail = st.text_input("enter additional mail")
+    to_addr_1 = {admin_email, add_mail}
 
 if send_data and booking_submitted:
 
