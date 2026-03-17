@@ -837,7 +837,7 @@ else:
 
 
 send_data = st.checkbox("Data - mail til admin")
-additional_mail = st.checkbox("data til admin@hammerknuden.dk  ")
+additional_mail = st.checkbox("fleksibel mail address  ")
 if send_data:
     to_addr_1 = admin_email
 if send_data and additional_mail:
