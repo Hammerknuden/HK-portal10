@@ -43,8 +43,11 @@ def add_data(year=None, booking_number=None, name=None, checkin_date=None, check
         'known': [known],
         'Comments': [comments]
     }
-
     df1 = pd.DataFrame(book_data)
+
+    df1['Checkin'] = pd.to_datetime(df1['Checkin'], errors='coerce')
+    df1['checkout'] = pd.to_datetime(df1['checkout'], errors='coerce')
+    df1['booking dato'] = pd.to_datetime(df1['booking dato'], errors='coerce')
 
     excel_buffer = BytesIO()
 
