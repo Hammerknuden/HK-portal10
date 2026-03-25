@@ -102,10 +102,12 @@ def data_email_html_template(
                 Data mail for reservation <br>
                 Booknr: {booking_number} <br>
                 Navn:<b>{name}</b><br>
-                Fra Dato:{checkin_date} ..............Til Dato{checkout_date}<br>
-                Booking dato {now}, Nationalitet..... {nationalitet} <br>
-                Booking metode {web};<br>
-                Senge type {seng}; Rabat ved booking {procent};
+                Fra Dato:**{checkin_date}**, Til Dato**{checkout_date}**<br><br>
+                Booking dato {now}, <br>
+                Nationalitet** {nationalitet} **<br>
+                Booking metode **{web}** <br>
+                Senge type {seng} <br> 
+                Rabat ved booking {procent};
             </p>
 
             <p>
