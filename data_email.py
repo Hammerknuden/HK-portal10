@@ -48,6 +48,8 @@ def add_data(year=None, booking_number=None, name=None, checkin_date=None, check
     df1['Checkin'] = pd.to_datetime(df1['Checkin'], errors='coerce')
     df1['checkout'] = pd.to_datetime(df1['checkout'], errors='coerce')
     df1['booking dato'] = pd.to_datetime(df1['booking dato'], errors='coerce')
+    df1['book nr'] = df1['book nr'].str.replace(',', '.').astype(float)
+    df1['pris ialt'] = df1['pris ialt'].str.replace(',', '.').astype(float)
 
     excel_buffer = BytesIO()
 
