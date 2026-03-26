@@ -401,12 +401,12 @@ ankomst = st.text_input("Angiv ankomsts tidspunkt hvis haves ")
 seng = st.text_input(" type seng Doob, Sing, OPCH, OPIN ")
 if web == "web":
     rabat = st.number_input(" rabat i procent ", value=10, step=1)
-    procent = rabat / 100
+    procent_v = rabat / 100
 if web == "FM":
     FM_add = st.number_input(" Folkemøde tillæg i procent ", value=0, step=5)
-    procent = FM_add / 100
+    procent_v = FM_add / 100
 else:
-    procent = 0
+    procent_v = 0
 
 if year == '2026':
     if single_room and (web == 'bc' or web == 'web'):
