@@ -401,12 +401,12 @@ ankomst = st.text_input("Angiv ankomsts tidspunkt hvis haves ")
 seng = st.text_input(" type seng Doob, Sing, OPCH, OPIN ")
 if web == "web":
     rabat = st.number_input(" rabat i procent ", value=10, step=1)
-    procent_v = rabat / 100
+    procent = rabat / 100
 if web == "FM":
     FM_add = st.number_input(" Folkemøde tillæg i procent ", value=0, step=5)
-    procent_v = FM_add / 100
+    procent = FM_add / 100
 else:
-    procent_v = 0
+    procent = 0
 
 if year == '2026':
     if single_room and (web == 'bc' or web == 'web'):
@@ -848,7 +848,7 @@ if send_data and booking_submitted:
 
     excel_file = add_data(year=year, booking_number=booking_number, name=name, checkin_date=checkin_date,
                           checkout_date=checkout_date, now=now, nationalitet=nationalitet, web=web,
-                          ankomst=ankomst, seng=seng, procent_v=procent_v, num_rooms=num_rooms,
+                          ankomst=ankomst, seng=seng, procent=procent, num_rooms=num_rooms,
                           num_guests=num_guests, email_address=email_address, telefon=telefon,
                           spouse=spouse, single_room=single_room, BF=BF,
                           formatted_pristotal=formatted_pristotal, known=known, comments=comments)

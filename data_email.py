@@ -17,7 +17,7 @@ logo_path = Path("logo2.jpg")
 
 
 def add_data(year=None, booking_number=None, name=None, checkin_date=None, checkout_date=None, now=None,
-             nationalitet=None, web=None, ankomst=None, seng=None, procent_v=None, num_rooms=None,
+             nationalitet=None, web=None, ankomst=None, seng=None, procent=None, num_rooms=None,
              num_guests=None, email_address=None, telefon=None, spouse=None, single_room=None,
              BF=None, formatted_pristotal=None, known=None, comments=None):
 
@@ -31,7 +31,7 @@ def add_data(year=None, booking_number=None, name=None, checkin_date=None, check
         'web': [web],
         'ankomst': [ankomst],
         'bed': [seng],
-        'rabat': [procent_v],
+        'rabat': [procent],
         'antal værelser': [num_rooms],
         'nr gæst': [num_guests],
         'Email': [email_address],
@@ -81,7 +81,7 @@ def data_email_html_template(
         web,
         ankomst,
         seng,
-        procent_v,
+        procent,
         num_rooms,
         num_guests,
         email_address,
@@ -107,7 +107,7 @@ def data_email_html_template(
                 Nationalitet** {nationalitet} **<br>
                 Booking metode **{web}** <br>
                 Senge type {seng} <br> 
-                Rabat ved booking {procent_v};
+                Rabat ved booking {procent};
             </p>
 
             <p>
@@ -128,12 +128,12 @@ def data_email_html_template(
 
 
 def send_data_email(to_addr_1, confirmation_password, booking_number, name, checkin_date, checkout_date, num_rooms,
-                    now, nationalitet, web, ankomst, seng, procent_v, num_guests, email_address, telefon,
+                    now, nationalitet, web, ankomst, seng, procent, num_guests, email_address, telefon,
                     formatted_pristotal, excel_buffer):
 
     logo_cid = make_msgid()
     html_content = data_email_html_template(logo_cid[1:-1], booking_number, name, checkin_date, checkout_date,
-                                            now, nationalitet, web, ankomst, seng, procent_v, num_rooms, num_guests,
+                                            now, nationalitet, web, ankomst, seng, procent, num_rooms, num_guests,
                                             email_address, telefon, formatted_pristotal)
 
     # construct email
