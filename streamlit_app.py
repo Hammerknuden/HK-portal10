@@ -864,7 +864,3 @@ if send_data and booking_submitted:
 
 else:
     st.markdown("data mail ikke sendt ")
-
-if st.button("Reset"):
-    st.session_state.clear()
-    st.rerun()
