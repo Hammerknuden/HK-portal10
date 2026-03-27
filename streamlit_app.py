@@ -879,3 +879,4 @@ if check_ankomst:
     search_value = "dato"
     pd.set_option("display.max_columns", None, )
     rows1 = df[df['ankomst'] == search_value]
+    st.dataframe(df)
