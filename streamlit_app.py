@@ -875,8 +875,18 @@ if check_ankomst:
 
     file_name = "2026_BOOKING 10.xlsx"
     df = pd.read_excel(file_name, sheet_name='ankomster')
-    new_data = df[(df['dato'].dt.date >= check_dato_1) & (df['dato'].dt.date < check_dato_2)]
-    search_value = "dato"
-    pd.set_option("display.max_columns", None, )
-    rows1 = df[df['ankomst'] == search_value]
-    st.dataframe(df)
+    df['dato'] = pd.to_datetime(df['dato'])
+
+    new_data = df[
+        (df['dato'].dt.date >= check_dato_1) &
+        (df['dato'].dt.date <= check_dato_2)
+        ]
+
+    st.dataframe(new_data)
+
+
+    #new_data = df[(df['dato'].dt.date >= check_dato_1) & (df['dato'].dt.date < check_dato_2)]
+    #search_value = "dato"
+    #pd.set_option("display.max_columns", None, )
+    #rows1 = df[df['ankomst'] == search_value]
+    #st.dataframe(df)
