@@ -864,29 +864,26 @@ if send_data: #and booking_submitted:
 
 else:
     st.markdown("data mail ikke sendt ")
+#nyt tiltag ankomster
 
-#nyt tiltag
 st.header("check for ankomster")
 check_ankomst = st.checkbox("ankomster")
 
 if check_ankomst:
-    check_dato_1 = st.date_input("ankomstdato")
-    check_dato_2 = st.date_input("range")
+    check_dato_1 = st.date_input("Fra dato")
+    check_dato_2 = st.date_input("Til dato")
 
     file_name = "2026_BOOKING 10.xlsx"
     df = pd.read_excel(file_name, sheet_name='ankomster')
+
     df['dato'] = pd.to_datetime(df['dato'])
 
-    new_data = df[
-        (df['dato'].dt.date >= check_dato_1) &
-        (df['dato'].dt.date <= check_dato_2)
+    if check_dato_1 and check_dato_2:
+        new_data = df[
+            (df['dato'] >= pd.to_datetime(check_dato_1)) &
+            (df['dato'] <= pd.to_datetime(check_dato_2))
         ]
 
-    st.dataframe(new_data)
+        st.write(f"Antal ankomster: {len(new_data)}")
+        st.dataframe(new_data)
 
-
-    #new_data = df[(df['dato'].dt.date >= check_dato_1) & (df['dato'].dt.date < check_dato_2)]
-    #search_value = "dato"
-    #pd.set_option("display.max_columns", None, )
-    #rows1 = df[df['ankomst'] == search_value]
-    #st.dataframe(df)
