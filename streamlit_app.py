@@ -866,9 +866,16 @@ else:
     st.markdown("data mail ikke sendt ")
 
 #nyt tiltag
-check_dato_1 = st.date_input("ankomstdato")
-check_dato_2 = st.date_input("range")
+st.header("check for ankomster")
+check_ankomst = st.checkbox("ankomster")
 
-file_name = "2026_BOOKING 10.xlsx"
-df2 = pd.read_excel(file_name, sheet_name='ankomster')
-new_data = df2[(df['dato'].dt.date >= check_dato_1) & (df2['dato'].dt.date < check_dato_2)]
+if check_ankomst:
+    check_dato_1 = st.date_input("ankomstdato")
+    check_dato_2 = st.date_input("range")
+
+    file_name = "2026_BOOKING 10.xlsx"
+    df = pd.read_excel(file_name, sheet_name='ankomster')
+    new_data = df[(df['dato'].dt.date >= check_dato_1) & (df['dato'].dt.date < check_dato_2)]
+    search_value = "dato"
+    pd.set_option("display.max_columns", None, )
+    rows1 = df[df['ankomst'] == search_value]
