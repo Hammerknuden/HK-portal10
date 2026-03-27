@@ -835,8 +835,8 @@ elif Sprog == "D" and booking_submitted:
 else:
     st.markdown('Booking mail er ikke sendt ')
 
-
-send_data = st.checkbox("Data - mail til admin")
+send_data = st.button("send data fil")
+#send_data = st.checkbox("Data - mail til admin")
 additional_mail = st.checkbox("fleksibel mail address  ")
 if send_data:
     to_addr_1 = admin_email
@@ -844,7 +844,7 @@ if send_data and additional_mail:
     add_mail = st.text_input("enter additional mail")
     to_addr_1 = {admin_email, add_mail}
 
-if send_data and booking_submitted:
+if send_data: #and booking_submitted:
 
     excel_file = add_data(year=year, booking_number=booking_number, name=name, checkin_date=checkin_date,
                           checkout_date=checkout_date, now=now, nationalitet=nationalitet, web=web,
