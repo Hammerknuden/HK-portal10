@@ -864,3 +864,11 @@ if send_data: #and booking_submitted:
 
 else:
     st.markdown("data mail ikke sendt ")
+
+#nyt tiltag
+check_dato_1 = st.date_input("ankomstdato")
+check_dato_2 = st.date_input("range")
+
+file_name = "2026_BOOKING 10.xlsx"
+df = pd.read_excel(file_name, sheet_name='ankomster')
+new_data = df[(df['dato'].dt.date >= check_dato_1) & (df['dato'].dt.date < check_dato_2)]
