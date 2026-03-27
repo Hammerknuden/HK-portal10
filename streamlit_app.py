@@ -870,5 +870,5 @@ check_dato_1 = st.date_input("ankomstdato")
 check_dato_2 = st.date_input("range")
 
 file_name = "2026_BOOKING 10.xlsx"
-df = pd.read_excel(file_name, sheet_name='ankomster')
-new_data = df[(df['dato'].dt.date >= check_dato_1) & (df['dato'].dt.date < check_dato_2)]
+df2 = pd.read_excel(file_name, sheet_name='ankomster')
+new_data = df2[(df['dato'].dt.date >= check_dato_1) & (df2['dato'].dt.date < check_dato_2)]
