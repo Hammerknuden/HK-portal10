@@ -875,7 +875,7 @@ if check_ankomst:
 
     file_name = "2026_BOOKING 10.xlsx"
     df = pd.read_excel(file_name, sheet_name='ankomster', dtype={'dato': str})
-    new_data = df[(df['Fra dato'].dt.date >= check_dato_start) & (df['Til dato'].dt.date < check_dato_slut)]
+    new_data = df[(df['dato'].dt.date >= check_dato_start) & (df['dato'].dt.date < check_dato_slut)]
     search_value = [check_dato_start]
     pd.set_option("display.max_columns", None, )
     rows1 = df[df['dato'].dt.date == search_value]
