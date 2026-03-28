@@ -875,15 +875,19 @@ if check_ankomst:
 
     file_name = "2026_BOOKING 10.xlsx"
     df = pd.read_excel(file_name, sheet_name='ankomster')
+    df = pd.read_excel(file_name, sheet_name='ankomster', dtype={'dato': str})
+    search_value = check_dato_1
+    pd.set_option("display.max_columns", None, )
 
-    df['dato'] = pd.to_datetime(df['dato'])
 
-    if check_dato_1 and check_dato_2:
-        new_data = df[
-            (df['dato'] >= pd.to_datetime(check_dato_1)) &
-            (df['dato'] <= pd.to_datetime(check_dato_2))
-        ]
+    #df['dato'] = pd.to_datetime(df['dato'])
 
-        st.write(f"Antal ankomster: {len(new_data)}")
-        st.dataframe(new_data)
+    #if check_dato_1 and check_dato_2:
+    #    new_data = df[
+    #        (df['dato'] >= pd.to_datetime(check_dato_1)) &
+    #        (df['dato'] <= pd.to_datetime(check_dato_2))
+    #    ]
+
+    #    st.write(f"Antal ankomster: {len(new_data)}")
+    #    st.dataframe(new_data)
 
