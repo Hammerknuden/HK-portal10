@@ -873,25 +873,26 @@ if check_ankomst:
     check_dato_start = st.date_input("Fra dato")
     check_dato_slut = st.date_input("Til dato")
 
+    file_name = "2026_BOOKING 10.xlsx"
+    df = pd.read_excel(file_name, sheet_name='ankomster')
+
+    # Rens kolonnenavne (MEGET vigtigt!)
+    df.columns = df.columns.str.strip()
+
+    # Konverter EFTER load
     df['Fra dato'] = pd.to_datetime(df['Fra dato'], errors='coerce')
     df['Til dato'] = pd.to_datetime(df['Til dato'], errors='coerce')
     df['dato'] = pd.to_datetime(df['dato'], errors='coerce')
 
-    file_name = "2026_BOOKING 10.xlsx"
-    df = pd.read_excel(file_name, sheet_name='ankomster', dtype={'dato': str})
-    new_data = df[(df['dato'].dt.date >= check_dato_start) & (df['dato'].dt.date < check_dato_slut)]
-    search_value = [check_dato_start]
-    pd.set_option("display.max_columns", None, )
-    rows1 = df[df['dato'].dt.date == search_value]
+    # Filtrering
+    new_data = df[
+        (df['dato'].dt.date >= check_dato_start) &
+        (df['dato'].dt.date < check_dato_slut)
+    ]
 
-    #df['dato'] = pd.to_datetime(df['dato'])
+    # Fix her
+    rows1 = df[df['dato'].dt.date == check_dato_start]
 
-    #if check_dato_1 and check_dato_2:
-    #    new_data = df[
-    #        (df['dato'] >= pd.to_datetime(check_dato_1)) &
-    #        (df['dato'] <= pd.to_datetime(check_dato_2))
-    #    ]
+    pd.set_option("display.max_columns", None)
 
-    #    st.write(f"Antal ankomster: {len(new_data)}")
-    #    st.dataframe(new_data)
-
+i
