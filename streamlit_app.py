@@ -877,7 +877,7 @@ if check_ankomst:
     df = pd.read_excel(file_name, sheet_name='ankomster', dtype={'dato': str})
     search_value = [check_dato_1]
     pd.set_option("display.max_columns", None, )
-    rows1 = df[df['dato'] == search_value]
+    rows1 = df[df['dato'].dt.date == search_value]
 
     #df['dato'] = pd.to_datetime(df['dato'])
 
