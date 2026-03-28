@@ -874,7 +874,7 @@ if check_ankomst:
     check_dato_2 = st.date_input("Til dato")
 
     file_name = "2026_BOOKING 10.xlsx"
-    df = pd.read_excel(file_name, sheet_name='ankomster')
+    #df = pd.read_excel(file_name, sheet_name='ankomster')
     df = pd.read_excel(file_name, sheet_name='ankomster', dtype={'dato': str})
     search_value = check_dato_1
     pd.set_option("display.max_columns", None, )
