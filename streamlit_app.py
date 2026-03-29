@@ -880,8 +880,8 @@ if check_ankomst:
     df.columns = df.columns.str.strip()
 
     # Konverter EFTER load
-    df['dato'] = pd.to_datetime(df['Fra dato'], errors='coerce')
-    df['dato'] = pd.to_datetime(df['Til dato'], errors='coerce')
+    df['check_dato_start'] = pd.to_datetime(df['check_dato_start'], errors='coerce')
+    df['check_dato_slut'] = pd.to_datetime(df['check_dato_slut'], errors='coerce')
     df['dato'] = pd.to_datetime(df['dato'], errors='coerce')
 
     # Filtrering
