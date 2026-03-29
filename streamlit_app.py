@@ -870,8 +870,8 @@ st.header("check for ankomster")
 check_ankomst = st.checkbox("ankomster")
 
 if check_ankomst:
-    check_dato_start = st.date_input("Fra dato")
-    check_dato_slut = st.date_input("Til dato")
+    check_dato_start = st.date_input("start dato")
+    check_dato_slut = st.date_input("slut dato")
 
     file_name = "2026_BOOKING 10.xlsx"
     df = pd.read_excel(file_name, sheet_name='ankomster')
@@ -880,8 +880,8 @@ if check_ankomst:
     df.columns = df.columns.str.strip()
 
     # Konverter EFTER load
-    df['check_dato_start'] = pd.to_datetime(df['check_dato_start'], errors='coerce')
-    df['check_dato_slut'] = pd.to_datetime(df['check_dato_slut'], errors='coerce')
+    df['start dato'] = pd.to_datetime(df['start dato'], errors='coerce')
+    df['slut dato'] = pd.to_datetime(df['slut dato'], errors='coerce')
     df['dato'] = pd.to_datetime(df['dato'], errors='coerce')
 
     # Filtrering
