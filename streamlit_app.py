@@ -866,7 +866,7 @@ else:
     st.markdown("data mail ikke sendt ")
 #nyt tiltag ankomster
 
-st.header("check for ankomster")
+st.header("check for ankomster" " NOT OPERATIONAL YET")
 check_ankomst = st.checkbox("ankomster")
 
 if check_ankomst:
