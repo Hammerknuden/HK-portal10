@@ -886,8 +886,8 @@ if check_ankomst:
 
     # Filtrering
     new_data = df[
-        (df['dato'].dt.date >= check_dato_start) &
-        (df['dato'].dt.date < check_dato_slut)
+        (df['start dato'].dt.date >= check_dato_start) &
+        (df['slut dato'].dt.date < check_dato_slut)
     ]
 
     # Fix her
