@@ -895,4 +895,4 @@ if check_ankomst:
 
     pd.set_option("display.max_columns", None)
 
-i
+
