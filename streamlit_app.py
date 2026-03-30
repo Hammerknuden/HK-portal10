@@ -901,7 +901,7 @@ if check_ankomst:
             ]
 
         # Vis resultat
-        st.write("Filtrerede data:")
+        st.write("Ankomst oversigt:")
         st.dataframe(filtreret_df)
         file_name = "2026_BOOKING 10.xlsx"
         df = pd.read_excel(file_name, sheet_name="ankomst navn")
@@ -926,7 +926,7 @@ if check_ankomst:
                 ]
 
             # Vis resultat
-            st.write("Filtrerede data:")
+            st.write("Navne på ankomster:")
             st.dataframe(filtreret_df)
 
 
