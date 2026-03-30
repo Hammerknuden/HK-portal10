@@ -870,29 +870,36 @@ st.header("check for ankomster" " NOT OPERATIONAL YET")
 check_ankomst = st.checkbox("ankomster")
 
 if check_ankomst:
-    check_dato_start = st.date_input("start dato")
-    check_dato_slut = st.date_input("slut dato")
+    # Date inputs fra Streamlit
+    check_dato_start = st.date_input("Start dato")
+    check_dato_slut = st.date_input("Slut dato")
 
+    # Load Excel
     file_name = "2026_BOOKING 10.xlsx"
-    df = pd.read_excel(file_name, sheet_name='ankomster')
+    df = pd.read_excel(file_name, sheet_name="ankomster")
 
-    # Rens kolonnenavne (MEGET vigtigt!)
-    df.columns = df.columns.str.strip()
+    # Rens kolonnenavne (vigtigt!)
+    df.columns = df.columns.str.strip().str.lower()
 
-    # Konverter EFTER load
-    df['start dato'] = pd.to_datetime(df['start dato'], errors='coerce')
-    df['slut dato'] = pd.to_datetime(df['slut dato'], errors='coerce')
-    df['dato'] = pd.to_datetime(df['dato'], errors='coerce')
+    # Sikr at 'dato' findes
+    if 'dato' not in df.columns:
+        st.error(f"Kolonnen 'dato' findes ikke. Fundet kolonner: {df.columns.tolist()}")
+    else:
+        # Konverter til datetime
+        df['dato'] = pd.to_datetime(df['dato'], errors='coerce')
 
-    # Filtrering
-    new_data = df[
-        (df['start dato'].dt.date >= check_dato_start) &
-        (df['slut dato'].dt.date < check_dato_slut)
-    ]
+        # Fjern rækker med ugyldige datoer
+        df = df.dropna(subset=['dato'])
 
-    # Fix her
-    rows1 = df[df['dato'].dt.date == check_dato_start]
+        # Filtrer på interval
+        filtreret_df = df[
+            (df['dato'].dt.date >= check_dato_start) &
+            (df['dato'].dt.date <= check_dato_slut)
+            ]
 
-    pd.set_option("display.max_columns", None)
+        # Vis resultat
+        st.write("Filtrerede data:")
+        st.dataframe(filtreret_df)
+
 
 
