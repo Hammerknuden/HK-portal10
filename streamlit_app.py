@@ -629,6 +629,8 @@ else:
     print(formatted_pristotal)
 st.markdown(f"**Den totale pris** {formatted_pristotal}kr".replace(".",","))
 
+st.subheader("Kontakt information")
+
 name = st.text_input("Navn ")
 fam_name = st.text_input("Efternavn (kun til søgning ellers blank)  ")
 telefon = st.text_input(" Kontakt telefon")
@@ -866,7 +868,7 @@ else:
     st.markdown("data mail ikke sendt ")
 #nyt tiltag ankomster
 
-st.header("check for ankomster" " NOT OPERATIONAL YET")
+st.subheader("Check for ankomster")
 check_ankomst = st.checkbox("ankomster")
 
 if check_ankomst:
