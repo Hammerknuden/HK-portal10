@@ -623,6 +623,7 @@ elif web == "FM":
     pristotal = prismed + pris_add_t
     formatted_pristotal = f"{pristotal:.2f}".replace(".",",")
 else:
+    rabat_a = 0
     formatted_prismed = f"{prismed:.2f}".replace(".",",")
     formatted_pristotal = formatted_prismed
 
