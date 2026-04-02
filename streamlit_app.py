@@ -819,7 +819,6 @@ confirmation_password = st.text_input("Admin kodeord")
 booking_submitted = st.button("Send booking mail")
 
 
-
 if Sprog == "DK" and booking_submitted:
     send_danish_confirmation_email(to_addr, confirmation_password, name, num_rooms, num_guests, booking_number,
                                    checkin_date, checkout_date, text_bf, formatted_prismed, text_web, formatted_justering,
