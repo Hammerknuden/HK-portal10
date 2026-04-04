@@ -871,6 +871,7 @@ else:
 st.subheader("Check for ankomster")
 check_for_ankomst = st.checkbox("ankomster")
 
+
 if year == 2026 and check_for_ankomst:
     # Date inputs fra Streamlit
     check_dato_start = st.date_input("Start dato")
@@ -890,14 +891,14 @@ if year == 2026 and check_for_ankomst:
         # Konverter til datetime
         df['dato'] = pd.to_datetime(df['dato'], errors='coerce')
 
-        # Fjern rækker med ugyldige datoer
-        df = df.dropna(subset=['dato'])
+    # Fjern rækker med ugyldige datoer
+    df = df.dropna(subset=['dato'])
 
-        # Filtrer på interval
-        filtreret_df = df[
-            (df['dato'].dt.date >= check_dato_start) &
-            (df['dato'].dt.date <= check_dato_slut)
-            ]
+    # Filtrer på interval
+    filtreret_df = df[
+        (df['dato'].dt.date >= check_dato_start) &
+        (df['dato'].dt.date <= check_dato_slut)
+        ]
 
         # Vis resultat
     st.write("Ankomst oversigt:")
