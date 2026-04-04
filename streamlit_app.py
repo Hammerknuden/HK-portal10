@@ -927,8 +927,8 @@ if check_for_ankomst:
         ]
 
     # Vis resultat
-    st.write("Ankomst oversigt:")
-    st.dataframe(filtreret_df)
+    #st.write("Ankomst oversigt:")
+    #st.dataframe(filtreret_df)
 
     # Vis resultat
     st.write("Navne på ankomster:")
