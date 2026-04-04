@@ -877,22 +877,23 @@ if check_for_ankomst:
     check_dato_start = st.date_input("Start dato")
     check_dato_slut = st.date_input("Slut dato")
 
-    # Load Excel
-    file_name = "2026_BOOKING 10.xlsx"
-    df = pd.read_excel(file_name, sheet_name="ankomster")
+    if year == 2026:
+        # Load Excel
+        file_name = "2026_BOOKING 10.xlsx"
+        df = pd.read_excel(file_name, sheet_name="ankomster")
 
-    # Rens kolonnenavne (vigtigt!)
-    df.columns = df.columns.str.strip().str.lower()
+        # Rens kolonnenavne (vigtigt!)
+        df.columns = df.columns.str.strip().str.lower()
 
-    # Sikr at 'dato' findes
-    if 'dato' not in df.columns:
-        st.error(f"Kolonnen 'dato' findes ikke. Fundet kolonner: {df.columns.tolist()}")
-    else:
-        # Konverter til datetime
-        df['dato'] = pd.to_datetime(df['dato'], errors='coerce')
+        # Sikr at 'dato' findes
+        if 'dato' not in df.columns:
+            st.error(f"Kolonnen 'dato' findes ikke. Fundet kolonner: {df.columns.tolist()}")
+        else:
+            # Konverter til datetime
+            df['dato'] = pd.to_datetime(df['dato'], errors='coerce')
 
-    # Fjern rækker med ugyldige datoer
-    df = df.dropna(subset=['dato'])
+        # Fjern rækker med ugyldige datoer
+        df = df.dropna(subset=['dato'])
 
     # Filtrer på interval
     filtreret_df = df[
