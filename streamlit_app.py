@@ -905,39 +905,39 @@ if check_ankomst and year == 2026:
         file_name = "2026_BOOKING 10.xlsx"
         df = pd.read_excel(file_name, sheet_name="ankomst navn")
 
-        if check_ankomst and year == 2027:
-            # Date inputs fra Streamlit
-            check_dato_start = st.date_input("Start dato")
-            check_dato_slut = st.date_input("Slut dato")
+    if check_ankomst and year == 2027:
+        # Date inputs fra Streamlit
+        check_dato_start = st.date_input("Start dato")
+        check_dato_slut = st.date_input("Slut dato")
 
-            # Load Excel
-            file_name = "2027_BOOKING 10.xlsx"
-            df = pd.read_excel(file_name, sheet_name="ankomster")
+        # Load Excel
+        file_name = "2027_BOOKING 10.xlsx"
+        df = pd.read_excel(file_name, sheet_name="ankomster")
 
-            # Rens kolonnenavne (vigtigt!)
-            df.columns = df.columns.str.strip().str.lower()
+        # Rens kolonnenavne (vigtigt!)
+        df.columns = df.columns.str.strip().str.lower()
 
-            # Sikr at 'dato' findes
-            if 'dato' not in df.columns:
-                st.error(f"Kolonnen 'dato' findes ikke. Fundet kolonner: {df.columns.tolist()}")
-            else:
-                # Konverter til datetime
-                df['dato'] = pd.to_datetime(df['dato'], errors='coerce')
+        # Sikr at 'dato' findes
+        if 'dato' not in df.columns:
+            st.error(f"Kolonnen 'dato' findes ikke. Fundet kolonner: {df.columns.tolist()}")
+        else:
+            # Konverter til datetime
+            df['dato'] = pd.to_datetime(df['dato'], errors='coerce')
 
-                # Fjern rækker med ugyldige datoer
-                df = df.dropna(subset=['dato'])
+            # Fjern rækker med ugyldige datoer
+            df = df.dropna(subset=['dato'])
 
-                # Filtrer på interval
-                filtreret_df = df[
-                    (df['dato'].dt.date >= check_dato_start) &
-                    (df['dato'].dt.date <= check_dato_slut)
-                    ]
+            # Filtrer på interval
+            filtreret_df = df[
+                (df['dato'].dt.date >= check_dato_start) &
+                (df['dato'].dt.date <= check_dato_slut)
+                ]
 
-                # Vis resultat
-                st.write("Ankomst oversigt:")
-                st.dataframe(filtreret_df)
-                file_name = "2026_BOOKING 10.xlsx"
-                df = pd.read_excel(file_name, sheet_name="ankomst navn")
+            # Vis resultat
+            st.write("Ankomst oversigt:")
+            st.dataframe(filtreret_df)
+            file_name = "2026_BOOKING 10.xlsx"
+            df = pd.read_excel(file_name, sheet_name="ankomst navn")
 
         # Rens kolonnenavne (vigtigt!)
         df.columns = df.columns.str.strip().str.lower()
