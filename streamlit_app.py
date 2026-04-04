@@ -905,6 +905,10 @@ if check_ankomst and year == 2026:
         file_name = "2026_BOOKING 10.xlsx"
         df = pd.read_excel(file_name, sheet_name="ankomst navn")
 
+        # Vis resultat
+        st.write("Navne på ankomster:")
+        st.dataframe(filtreret_df)
+
     if check_ankomst and year == 2027:
         # Date inputs fra Streamlit
         check_dato_start = st.date_input("Start dato")
