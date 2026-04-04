@@ -871,7 +871,7 @@ else:
 st.subheader("Check for ankomster")
 check_ankomst = st.checkbox("ankomster")
 
-if check_ankomst and year == 2026:
+if year == 2026 and check_ankomst:
     # Date inputs fra Streamlit
     check_dato_start = st.date_input("Start dato")
     check_dato_slut = st.date_input("Slut dato")
