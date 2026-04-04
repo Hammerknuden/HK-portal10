@@ -387,7 +387,7 @@ def highlight_cells(val):
 
     color = 'background-color: #66FF66' if val == 'va' else ''  # Grøn for 'va'
     return color
-styled_data = new_data[['dato', '1-I', '2-I', '3-I', '4-I', '5-I']].style.map(highlight_cells) # Vis den styliserede DataFrame i Streamlit
+styled_data = new_data[['dato', '1-I', '2-I', '3-I', '4-I', '5-I']].style.map(highlight_cells)
 st.dataframe(styled_data)
 #style.applymap(highlight_cells)
 if single_room:
@@ -538,12 +538,12 @@ if year == '2027':
     high_season_start = datetime.strptime("22-06-27", _format := "%d-%m-%y").date()
     high_season_end = datetime.strptime("17-08-27", _format := "%d-%m-%y").date()
     st.markdown(f"**Højsæson starter** {high_season_start}")
-    st.markdown(f"**Højsæson slutter** {high_season_end}"),
+    st.markdown(f"**Højsæson slutter** {high_season_end}")
 if year == '2028':
     high_season_start = datetime.strptime("29-06-25", _format := "%d-%m-%y").date()
     high_season_end = datetime.strptime("26-08-25", _format := "%d-%m-%y").date()
     st.markdown(f"**Højsæson starter** {high_season_start}")
-    st.markdown(f"**Højsæson slutter** {high_season_end}",)
+    st.markdown(f"**Højsæson slutter** {high_season_end}")
 if year == '2026':
     high_season_start = datetime.strptime("28-06-26", _format := "%d-%m-%y").date()
     high_season_end = datetime.strptime("15-08-26", _format := "%d-%m-%y").date()
