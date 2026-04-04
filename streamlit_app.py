@@ -869,11 +869,10 @@ else:
 #nyt tiltag ankomster
 
 st.subheader("Check for ankomster")
-check_ankomst = st.checkbox("ankomster")
+check_for_ankomst = st.checkbox("ankomster")
 
-if year == 2026 and check_ankomst:
+if year == 2026 and check_for_ankomst:
     # Date inputs fra Streamlit
-    
     check_dato_start = st.date_input("Start dato")
     check_dato_slut = st.date_input("Slut dato")
 
@@ -901,8 +900,8 @@ if year == 2026 and check_ankomst:
             ]
 
         # Vis resultat
-        st.write("Ankomst oversigt:")
-        st.dataframe(filtreret_df)
+    st.write("Ankomst oversigt:")
+    st.dataframe(filtreret_df)
 
     file_name = "2026_BOOKING 10.xlsx"
     df = pd.read_excel(file_name, sheet_name="ankomst navn")
@@ -912,7 +911,7 @@ if year == 2026 and check_ankomst:
     st.write("Navne på ankomster:")
     st.dataframe(filtreret_df)
 
-if check_ankomst and year == 2027:
+if check_for_ankomst and year == 2027:
     # Date inputs fra Streamlit
     check_dato_start = st.date_input("Start dato")
     check_dato_slut = st.date_input("Slut dato")
