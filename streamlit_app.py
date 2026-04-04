@@ -873,6 +873,7 @@ check_ankomst = st.checkbox("ankomster")
 
 if year == 2026 and check_ankomst:
     # Date inputs fra Streamlit
+    
     check_dato_start = st.date_input("Start dato")
     check_dato_slut = st.date_input("Slut dato")
 
