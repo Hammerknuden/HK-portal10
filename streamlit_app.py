@@ -997,7 +997,7 @@ if clear_alt:
     st.session_state.clear()
     st.rerun()
 
-if clear_alt:
-    st.write("CLEAR KØRT")
-    st.session_state.clear()
-    st.rerun()
+    if clear_alt:
+        st.write("CLEAR KØRT")
+        st.session_state.clear()
+        st.rerun()
