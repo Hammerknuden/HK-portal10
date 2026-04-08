@@ -991,8 +991,9 @@ if check_for_ankomst and year == 2027:
             st.write("Navne på ankomster:")
             st.dataframe(filtreret_df)
 
-nulstil_alt = st.button("clear indtastninger")
+
+nulstil_alt = st.button("Clear indtastninger")
 
 if nulstil_alt:
-    for key in st.session_state.keys():
+    for key in list(st.session_state.keys()):
         del st.session_state[key]
