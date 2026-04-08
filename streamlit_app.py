@@ -991,10 +991,5 @@ if check_for_ankomst and year == 2027:
             st.write("Navne på ankomster:")
             st.dataframe(filtreret_df)
 
-clear_alt = st.button("Clear indtastninger")
 
-if clear_alt:
-    st.write("CLEAR KØRT")
-    st.session_state.clear()
-    st.rerun()
 
