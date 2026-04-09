@@ -1,5 +1,5 @@
 import streamlit as st
-import streamlit_auth as stauth
+import streamlit_authenticator as stauth
 import pandas as pd
 import openpyxl
 import requests
