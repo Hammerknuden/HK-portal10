@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit_auth as stauth
 import pandas as pd
 import openpyxl
 import requests
@@ -16,6 +17,27 @@ import base64
 # for at starte:)
 # tryk ctrl+shift+A for at få action menuen, vælg "terminal"
 # skriv `streamlit run streamlit_app.py`
+
+# Define your users
+users = {'finn': 'pc0012', 'naja': 'pc0012nb', 'admin': '0012'}
+
+authenticator = stauth.Authenticate(
+    users,
+    'hk portal',
+    'hammerknuden',
+    cookie_expiry_days=30
+)
+
+name, authentication_status = authenticator.login('Login', 'main')
+
+if authentication_status:
+    st.write("Welcome", name)
+elif authentication_status is False:
+    st.error("Username/password is incorrect")
+else:
+    st.warning("Please enter your username and password")
+
+
 
 st.subheader("Velkommen til")
 
