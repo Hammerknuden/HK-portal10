@@ -37,7 +37,7 @@ users = {'finn': 'pc0012', 'naja': 'pc0012nb', 'admin': '0012'}
 #else:
     #st.warning("Please enter your username and password")
 
-st.write("Authenticator loaded:", stauth.__version__)
+st.write("Authenticator loaded successfully")
 
 st.subheader("Velkommen til")
 
