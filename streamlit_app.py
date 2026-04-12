@@ -1,5 +1,5 @@
 import streamlit as st
-#import streamlit_authenticator as stauth
+import streamlit_authenticator as stauth
 import pandas as pd
 import openpyxl
 import requests
@@ -37,7 +37,7 @@ users = {'finn': 'pc0012', 'naja': 'pc0012nb', 'admin': '0012'}
 #else:
     #st.warning("Please enter your username and password")
 
-
+st.write("Authenticator loaded:", stauth.__version__)
 
 st.subheader("Velkommen til")
 
