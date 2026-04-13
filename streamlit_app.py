@@ -76,7 +76,6 @@ elif authentication_status is False:
 elif authentication_status is None:
     st.warning("Indtast brugernavn og password")
 
-st.subheader("Velkommen til")
 
 st.title("**HAMMERKNUDEN SOMMERPENSION - BOOKING PORTAL**")
 
