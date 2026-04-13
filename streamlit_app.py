@@ -24,7 +24,7 @@ names = ['Finn', 'Naja', 'Admin']
 usernames = ['finn', 'naja', 'admin']
 passwords = ['pc0012', 'pc0012nb', '0012']
 st.image("logo2.jpg")
-
+st.title("**HAMMERKNUDEN SOMMERPENSION - BOOKING PORTAL**")
 
 # Hash passwords korrekt
 hashed_passwords = [stauth.Hasher().hash(pw) for pw in passwords]
@@ -57,8 +57,8 @@ authentication_status = st.session_state.get("authentication_status")
 username = st.session_state.get("username")
 # ------------------------
 # UI
-st.image("logo2.jpg")
-st.title("**HAMMERKNUDEN SOMMERPENSION - BOOKING PORTAL**")
+#st.image("logo2.jpg")
+#st.title("**HAMMERKNUDEN SOMMERPENSION - BOOKING PORTAL**")
 # LOGIN STATES
 # ------------------------
 if authentication_status:
