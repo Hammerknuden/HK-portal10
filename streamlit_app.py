@@ -21,21 +21,21 @@ import base64
 # Define your users
 users = {'finn': 'pc0012', 'naja': 'pc0012nb', 'admin': '0012'}
 
-#authenticator = stauth.Authenticate(
-    #users,
-    #'hk portal',
-    #'hammerknuden',
-    #cookie_expiry_days=30
-#)
+authenticator = stauth.Authenticate(
+    users,
+    'hk portal',
+    'hammerknuden',
+    cookie_expiry_days=30
+)
 
-#name, authentication_status = authenticator.login('Login', 'main')
+name, authentication_status = authenticator.login('Login', 'main')
 
-#if authentication_status:
-    #st.write("Welcome", name)
-#elif authentication_status is False:
-    #st.error("Username/password is incorrect")
-#else:
-    #st.warning("Please enter your username and password")
+if authentication_status:
+    st.write("Welcome", name)
+elif authentication_status is False:
+    st.error("Username/password is incorrect")
+else:
+    st.warning("Please enter your username and password")
 
 st.write("Authenticator loaded successfully")
 
