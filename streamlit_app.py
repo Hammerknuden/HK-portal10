@@ -65,7 +65,7 @@ if authentication_status:
     st.success(f"Velkommen {name} 👋")
     authenticator.logout('Logout', 'sidebar')
 
-    st.subheader("Velkommen til")
+    #st.subheader("Velkommen til")
 
 elif authentication_status is False:
     st.error("Forkert brugernavn eller password")
