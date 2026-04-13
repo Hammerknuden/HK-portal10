@@ -55,10 +55,6 @@ authentication_status = st.session_state.get("authentication_status")
 username = st.session_state.get("username")
 # ------------------------
 # UI
-# ------------------------
-st.title("HAMMERKNUDEN SOMMERPENSION - BOOKING PORTAL")
-
-# ------------------------
 # LOGIN STATES
 # ------------------------
 if authentication_status:
@@ -67,14 +63,13 @@ if authentication_status:
 
     st.subheader("Velkommen til")
 
-    # 👉 HER starter resten af din app
-    # fx booking, emails osv.
-
 elif authentication_status is False:
     st.error("Forkert brugernavn eller password")
+    st.stop()
 
 elif authentication_status is None:
     st.warning("Indtast brugernavn og password")
+    st.stop()
 
 
 st.title("**HAMMERKNUDEN SOMMERPENSION - BOOKING PORTAL**")
