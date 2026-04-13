@@ -6,38 +6,75 @@ import requests
 from datetime import datetime, date
 from pathlib import Path
 import numpy as np
-from confirmation_email import (admin_email, send_danish_confirmation_email, send_english_confirmation_email,
-                                send_german_confirmation_email)
+from confirmation_email import (
+    admin_email,
+    send_danish_confirmation_email,
+    send_english_confirmation_email,
+    send_german_confirmation_email
+)
 from data_email import (add_data, send_data_email)
 from PIL import Image, ImageDraw, ImageFont
 from io import BytesIO
 import base64
 
+# ------------------------
+# USER SETUP
+# ------------------------
+names = ['Finn', 'Naja', 'Admin']
+usernames = ['finn', 'naja', 'admin']
+passwords = ['pc0012', 'pc0012nb', '0012']
 
-# for at starte:)
-# tryk ctrl+shift+A for at få action menuen, vælg "terminal"
-# skriv `streamlit run streamlit_app.py`
+# Hash passwords korrekt
+hashed_passwords = [stauth.Hasher().hash(pw) for pw in passwords]
+credentials = {
+    "usernames": {
+        usernames[i]: {
+            "name": names[i],
+            "password": hashed_passwords[i]
+        }
+        for i in range(len(usernames))
+    }
+}
 
-# Define your users
-users = {'finn': 'pc0012', 'naja': 'pc0012nb', 'admin': '0012'}
-
+# ------------------------
+# AUTHENTICATION
+# ------------------------
 authenticator = stauth.Authenticate(
-    users,
-    'hk portal',
+    credentials,
+    'hk_portal',
     'hammerknuden',
     cookie_expiry_days=30
 )
+# ------------------------
+# LOGIN
+# ------------------------
+authenticator.login(location='main')
 
-name, authentication_status = authenticator.login('Login', 'main')
+name = st.session_state.get("name")
+authentication_status = st.session_state.get("authentication_status")
+username = st.session_state.get("username")
+# ------------------------
+# UI
+# ------------------------
+st.title("HAMMERKNUDEN SOMMERPENSION - BOOKING PORTAL")
 
+# ------------------------
+# LOGIN STATES
+# ------------------------
 if authentication_status:
-    st.write("Welcome", name)
-elif authentication_status is False:
-    st.error("Username/password is incorrect")
-else:
-    st.warning("Please enter your username and password")
+    st.success(f"Velkommen {name} 👋")
+    authenticator.logout('Logout', 'sidebar')
 
-st.write("Authenticator loaded successfully")
+    st.subheader("Velkommen til")
+
+    # 👉 HER starter resten af din app
+    # fx booking, emails osv.
+
+elif authentication_status is False:
+    st.error("Forkert brugernavn eller password")
+
+elif authentication_status is None:
+    st.warning("Indtast brugernavn og password")
 
 st.subheader("Velkommen til")
 
