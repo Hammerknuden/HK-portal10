@@ -55,6 +55,7 @@ authentication_status = st.session_state.get("authentication_status")
 username = st.session_state.get("username")
 # ------------------------
 # UI
+st.image("logo2.jpg")
 # LOGIN STATES
 # ------------------------
 if authentication_status:
