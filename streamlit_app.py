@@ -444,7 +444,7 @@ def highlight_cells(val):
 
     color = 'background-color: #66FF66' if val == 'va' else ''  # Grøn for 'va'
     return color
-styled_data = new_data[['dato', event, '1-I', '2-I', '3-I', '4-I', '5-I']].style.map(highlight_cells)
+styled_data = new_data[['dato', events, '1-I', '2-I', '3-I', '4-I', '5-I']].style.map(highlight_cells)
 st.dataframe(styled_data)
 #style.applymap(highlight_cells)
 if single_room:
