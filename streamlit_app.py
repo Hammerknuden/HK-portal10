@@ -96,7 +96,7 @@ booking_number = st.text_input("booking nummer ")
 checkin_date = st.date_input("Checkin dato")
 checkout_date = st.date_input("Checkout dato")
 
-single_room = st.checkbox("Enkeltværelse")
+#single_room = st.checkbox("Enkeltværelse")
 
 days = checkout_date - checkin_date
 st.text("Skema viser ikke udchecksdagen da den er irelevant i forbindelse med reservation")
@@ -447,12 +447,28 @@ def highlight_cells(val):
 styled_data = new_data[['dato', '1-I', '2-I', '3-I', '4-I', '5-I']].style.map(highlight_cells)
 st.dataframe(styled_data)
 #style.applymap(highlight_cells)
-if single_room:
-    num_guests = st.number_input("max en gæst", value=1, step=0)
-else:
-    num_guests = st.number_input("Antal gæster", value=2, step=1)
-
 num_rooms = st.number_input("Antal rum", value=1, step=1)
+if num_rooms == 1:
+    single_room = st.checkbox("Enkeltværelse")
+    if single_room:
+        num_guests = st.number_input("max en gæst", value=1, step=0)
+    else:
+        num_guests = st.number_input("Antal gæster", value=2, step=1)
+if num_rooms == 2:
+    st.text("værekse 1: ")
+    single_room = st.checkbox("vær 1 er et enkelt")
+    if single_room:
+        num_guests_1 = st.number_input("max en gæst", value=1, step=0)
+    else:
+        num_guests_1 = st.number_input("Antal gæster", value=2, step=1)
+    st.text("værelse 2: ")
+    single_room = st.checkbox("vær 1 er et enkelt")
+    if single_room:
+        num_guests_2 = st.number_input("max en gæst", value=1, step=0)
+    else:
+        num_guests_2 = st.number_input("Antal gæster", value=2, step=1)
+    num_guests = num_guests_1 + num_guests_2
+
 web = st.selectbox("booking via web bc eller FM folkemøde ( ikke mulighed for enk rum)", options=["web", "bc", "FM"])
 ankomst = st.text_input("Angiv ankomsts tidspunkt hvis haves ")
 seng = st.text_input(" type seng Doob, Sing, OPCH, OPIN ")
